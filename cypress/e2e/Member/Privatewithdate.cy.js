@@ -1,4 +1,4 @@
-import { login } from '../../support/Login';
+import { login } from '../../support/login';
 
 describe('Member Task - Create Task Private Project with date', () => {
   const selector = {

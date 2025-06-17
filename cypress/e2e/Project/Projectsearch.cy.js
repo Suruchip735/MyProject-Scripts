@@ -1,4 +1,4 @@
-import { login } from '../../support/Login';
+import { login } from '../../support/login';
 
 describe('Search Project - Redirect Detail Page', () => {
   const selector = {

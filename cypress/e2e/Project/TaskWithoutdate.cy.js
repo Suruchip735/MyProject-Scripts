@@ -1,4 +1,4 @@
-import { login } from '../../support/Login';
+import { login } from '../../support/login';
 
 describe('Project Task - Project Create task without date', () => {
   const selector = {

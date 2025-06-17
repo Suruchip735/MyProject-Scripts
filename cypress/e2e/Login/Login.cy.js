@@ -1,4 +1,4 @@
-import { login } from '../../support/Login';
+import { login } from '../../support/login';
 describe('Validate Login Functionality', () => {
   beforeEach(() => {
     const appDomain = Cypress.env('APP_DOMAIN');

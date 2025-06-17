@@ -1,0 +1,54 @@
+name: Cypress E2E Tests
+
+on:
+  # Run on pushes to main branches only
+  push:
+    branches: [ main ]
+  
+  # Run on all pull requests
+  pull_request:
+    branches: [ main ]
+  
+  # Run daily at 8 AM UTC
+  schedule:
+    - cron: '0 8 * * *'
+  
+  # Allow manual triggers
+  workflow_dispatch:
+
+concurrency:
+  group: cypress-e2e-tests
+  cancel-in-progress: true # Cancel any in-progress runs of this workflow
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04 
+    strategy:
+      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
+      matrix:
+        containers: [1, 2, 3, 4] # Uses 4 parallel instances
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Install dependencies
+        run: |
+          curl https://mise.run | sh
+          echo "$HOME/.local/share/mise/bin" >> $GITHUB_PATH
+          echo "$HOME/.local/share/mise/shims" >> $GITHUB_PATH
+          mise install
+          npm ci
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+          parallel: true # Runs test in parallel using settings above  
+        env:
+          # Cypress environment variables
+          CYPRESS_PROJECT_ID: ${{ vars.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
+          LOGIN_USERNAME: ${{ vars.LOGIN_USERNAME }}
+          APP_DOMAIN: ${{ vars.APP_DOMAIN }}
