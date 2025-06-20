@@ -19,6 +19,7 @@ Before getting started, ensure you have the following installed:
 ### Required Tools
 
 1. **[mise](https://mise.jdx.dev/)** - Development tool version manager (examples using Linux/macOS)
+
    ```bash
    # Install mise
    curl https://mise.run | sh
@@ -32,13 +33,16 @@ Before getting started, ensure you have the following installed:
 ## Installation
 
 ### 1. Clone the Repository
+
 ```bash
 git clone <repository-url>
 cd mosaic-e2e-tests
 ```
 
 ### 2. Install Development Tools
+
 The project uses mise to manage tool versions. Install all required tools:
+
 ```bash
 # Install all tools defined in .mise.toml
 mise install
@@ -48,16 +52,19 @@ mise list
 ```
 
 This will automatically install:
+
 - **Bun** (JavaScript runtime and package manager)
 - **TypeScript** (for type checking)
 
 ### 3. Install Dependencies
+
 ```bash
 # Install project dependencies using Bun
 bun install
 ```
 
 ### 4. Verify Installation
+
 ```bash
 # Check TypeScript compilation
 bun run type-check
@@ -99,27 +106,32 @@ mosaic-e2e-tests/
 The test suite covers all major application modules:
 
 ### 🏠 **Home & Tasks**
+
 - Personal tasks with/without dates
 - Public tasks with/without dates
 - Task management workflows
 
 ### 🔐 **Authentication**
+
 - User login/logout flows
 - Session management
 - Authentication error handling
 
 ### 👥 **Member Management**
+
 - Private member tasks
 - Member permissions
 - Collaboration features
 
 ### 📊 **Project & Portfolio Management**
+
 - Project creation and search
 - Portfolio management
 - Duplicate project handling
 - Task scheduling
 
 ### 🎯 **Phase Management**
+
 - Custom phases and milestones
 - Phase dependencies
 - Subphase management
@@ -127,18 +139,24 @@ The test suite covers all major application modules:
 ## Running Tests
 
 ### Interactive Development
+
 Open the Cypress Test Runner for interactive test development:
+
 ```bash
 bun run test:open
 ```
 
 ### Headless Execution
+
 Run all tests in headless chrome:
+
 ```bash
 bun run test
 
 ```
+
 ### Running Specific Tests
+
 ```bash
 # Run a specific test file
 bun exec cypress run --spec "cypress/e2e/login/login.cy.ts"
@@ -152,17 +170,23 @@ bun exec cypress run --spec "cypress/e2e/**/*task*.cy.ts"
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `bun run open` | Open Cypress Test Runner for interactive testing |
-| `bun run test` | Run tests headless |
-| `bun run type-check` | Run TypeScript type checking |
-| `bun run cypress --verify` | Check if Cypress is installed correctly |
+| Command                    | Description                                      |
+| -------------------------- | ------------------------------------------------ |
+| `bun run cypress:open`     | Open Cypress Test Runner for interactive testing |
+| `bun run cypress:run`      | Run Cypress Tests with Chrome                    |
+| `bun run cypress`          | Verify Cypress installation                      |
+| `bun run type-check`       | Run TypeScript type checking                     |
+| `bun run cypress --verify` | Check if Cypress is installed correctly          |
+| `bun run prettier:write`   | Format code using Prettier                       |
+| `bun run prettier:check`   | Check code formatting with Prettier              |
+| `bun run lint`             | Lint code using ESLint                           |
 
 ## Environment Configuration
 
 ### Environment Variables
+
 Create a `.env` file in the project root:
+
 ```bash
 # Application settings
 APP_DOMAIN=https://mosaic-app-domain
@@ -171,7 +195,9 @@ LOGIN_PASSWORD=secure-password
 ```
 
 ### Environment-Specific URLs
+
 The application supports multiple environments:
+
 - **Local**: `http://localhost:3000`
 - **Party**: `https://party.mosaicapp.com/`
 - **Staging**: `https://release.party.mosaicapp.com/`
@@ -198,16 +224,17 @@ cy.checkPageTitle('Expected Title');
 ## CI/CD Integration
 
 The project includes GitHub Actions workflows that:
+
 - ✅ Run on pull requests and main branch pushes
 - ✅ Execute tests in parallel across multiple containers
 - ✅ Use aggressive caching for faster builds
 - ✅ Upload test artifacts (videos, screenshots) to Cypress Cloud
 - ✅ Run daily scheduled tests at 8 AM UTC
 
-
 ## Troubleshooting
 
 ### mise Issues
+
 ```bash
 # Verify mise installation
 mise doctor
@@ -218,6 +245,7 @@ mise install
 ```
 
 ### Bun Issues
+
 ```bash
 # Verify bun installation
 bun --version
@@ -227,6 +255,7 @@ bun install --force
 ```
 
 ### Cypress Issues
+
 ```bash
 # Verify Cypress
 bun exec cypress verify
@@ -239,6 +268,7 @@ bun exec cypress cache clear
 ```
 
 ### TypeScript Issues
+
 ```bash
 # Check compilation
 bun run type-check
@@ -250,18 +280,21 @@ bun exec tsc --showConfig
 ## Best Practices
 
 ### Test Organization
+
 - Group related tests in logical folders
 - Use descriptive test names
 - Keep tests independent and atomic
 - Use fixtures for test data
 
 ### Code Quality
+
 - Write TypeScript for type safety
 - Use custom commands for reusability
 - Follow consistent naming conventions
 - Add proper error handling
 
 ### Performance
+
 - Use data attributes for element selection
 - Avoid unnecessary waits and delays
 - Leverage Cypress's automatic retry logic

@@ -17,6 +17,6 @@
 import './commands';
 
 // Handle uncaught exceptions to prevent test failures
-Cypress.on('uncaught:exception', (err: Error, runnable: Mocha.Runnable) => {
+Cypress.on('uncaught:exception', () => {
   return false;
 });

@@ -6,7 +6,7 @@ describe('Project schdule - set or clear Phase date with dependency', () => {
       '[data-testid="sidebar-menu-projects-btn"] > .styledComponents__ImageContainer-sc-tmkfvh-20',
     CalanderMonth: '.CalendarMonth',
   };
-  function clearAndConfirm($cell: JQuery<any>) {
+  function clearAndConfirm($cell: JQuery<HTMLLIElement>) {
     cy.wrap($cell).click({ force: true });
     cy.get('button.styles__CancelButton-sc-5z27h7-22.fBhvcq')
       .should('be.visible')

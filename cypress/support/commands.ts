@@ -3,6 +3,10 @@
 // ***********************************************
 
 // TypeScript declarations for custom commands
+// The @typescript-eslint/prefer-namespace-keyword rule is disabled here because
+// the `namespace` keyword is used within a `declare global` block, which is a valid
+// and standard TypeScript practice for extending global types.
+/* eslint-disable @typescript-eslint/no-namespace */
 declare global {
   namespace Cypress {
     interface Chainable {
@@ -20,6 +24,7 @@ declare global {
     }
   }
 }
+/* eslint-enable @typescript-eslint/no-namespace */
 
 // Import login utility
 import { login } from './login';
