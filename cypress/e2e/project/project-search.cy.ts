@@ -14,18 +14,8 @@ describe('Search Project - Redirect Detail Page', () => {
     ProjectListItem: '.ProjectRow__ProjectTitle-sc-17zwnx2-8', // Generic project name selector
   };
 
-  const ProjectList = ['SwiftNote', 'PlayBox', 'myCookApp', 'Frost Echo'];
-
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
   it('should log in successfully with valid credentials and search project redirect to Project detail Page', () => {
     // Set viewport to Full HD resolution
-    cy.viewport(1920, 1080);
 
     //Perfom Login
     login(
@@ -35,29 +25,31 @@ describe('Search Project - Redirect Detail Page', () => {
     );
 
     cy.contains('Dashboard', { timeout: 10000 }).should('be.visible'); // or some unique element
-    cy.wait(10000);
 
     //Click on the side Menu Project Option
     cy.get(selector.Project).click({ force: true });
 
     // cy.get('#root > div > div.home-side > div > div > div > div > div.ProjectsSidebar__CustomHeaderContainer-sc-hzelzc-3.bUJpsJ > div.ProjectsSidebar__StyledSearchContainer-sc-hzelzc-6.cmysdn > input').click().type('Po');
-    // cy.wait(3000);
 
     // Pick a random project from the list
-    const randomIndex = Math.floor(Math.random() * ProjectList.length);
-    const selectedProject = ProjectList[randomIndex] || 'Default Project';
-    cy.log(`Selected Project: ${selectedProject}`);
+    cy.get("[data-testid*='row-board-']").eq(2).click({ force: true });
+    cy.get("[class*='ProjectRow__ProjectTitle']")
+      .eq(0)
+      .invoke('text')
+      .then((text) => {
+        const selectedProject = text.trim();
+        cy.log(`Selected Project: ${selectedProject}`);
 
-    // Type selected project in search box
-    cy.get(selector.SearchInput).click().clear().type(selectedProject);
-    cy.wait(2000);
+        // Type selected project in search box
+        cy.get(selector.SearchInput).click().clear().type(selectedProject);
 
-    // Click on the matched project in the dropdown/list
-    cy.get(selector.ProjectListItem)
-      .contains(selectedProject)
-      .should('be.visible')
-      .click({ force: true });
+        // Click on the matched project in the dropdown/list
+        cy.get(selector.ProjectListItem)
+          .contains(selectedProject)
+          .should('be.visible')
+          .click({ force: true });
 
-    cy.get('[data-testid="sidebar-menu-projects-btn"]').click();
+        cy.get('[data-testid="sidebar-menu-projects-btn"]').click();
+      });
   });
 });

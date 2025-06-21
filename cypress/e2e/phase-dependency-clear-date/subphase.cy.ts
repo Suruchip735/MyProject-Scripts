@@ -17,21 +17,13 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
     Input: '[data-testid="phase-name-input"]',
     Submit: '[data-testid="phase-modal-submit-btn-container"]',
   };
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.visit(appDomain);
-  });
 
   it('should log in, create/expand subphase, plan dates, add dependency or clear it if exists', () => {
-    cy.viewport(1920, 1080);
-
     login(
       (Cypress.env('LOGIN_USERNAME') as string) || '',
       (Cypress.env('Button') as string) || '',
       (Cypress.env('LOGIN_PASSWORD') as string) || ''
     );
-
-    cy.wait(10000); // Wait for login to complete
 
     const handlePlanDateAndDependency = () => {
       cy.get('[data-testid="plan-date-cell"]')
@@ -65,7 +57,6 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
                   const endIndex = Math.min(startIndex + 5, totalDays - 1);
 
                   cy.wrap($days[startIndex]).click({ force: true });
-                  cy.wait(3000);
                   cy.wrap($days[endIndex]).click({ force: true });
 
                   // === Add Dependency ===
@@ -74,8 +65,6 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
                   )
                     .should('be.visible')
                     .click({ force: true });
-
-                  cy.wait(2000);
 
                   cy.get(
                     '.DependencyTag__DependencyTagItemContent-sc-87juxu-2.clPMzy'
@@ -103,21 +92,15 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
                     .first()
                     .click({ force: true });
 
-                  cy.wait(3000);
-
                   cy.get(
                     '.styles__MenuItemContainer-sc-13vjrrx-1.TargetTypeMenuRenderer__StyledMenuItemContainer-sc-f32l49-0.iESmHK.cqaZPi.TargetTypePopover__StyledTargetTypeMenuRenderer-sc-1wvyn8x-1.gLEvPE'
                   )
                     .first()
                     .click({ force: true });
 
-                  cy.wait(3000);
-
                   cy.get('.styles__DoneButton-sc-5z27h7-21.fpeeBn')
                     .should('be.visible')
                     .click({ force: true });
-
-                  cy.wait(3000);
 
                   cy.get('body').then(($body) => {
                     if (
@@ -131,7 +114,6 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
                 }
               });
           } else {
-            cy.wait(3000);
             clearAndConfirm();
           }
         });
@@ -139,7 +121,6 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
 
     // Navigate to the project
     cy.get(selector.projectIcon).click();
-    cy.wait(3000);
     cy.get('[data-testid="My Projects"]').click({ force: true });
     cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
       .first()
@@ -147,9 +128,7 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
       .click({ force: true });
 
     cy.get(selector.projectIcon).click();
-    cy.wait(3000);
     cy.get('.ProjectPhasesButton__NumPhases-sc-evyft6-2').click();
-    cy.wait(3000);
 
     cy.get('body').then(($body) => {
       const collapseSelector =
@@ -190,7 +169,6 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
               .type(uniquePhaseName)
               .should('have.value', uniquePhaseName);
             cy.get(selector.Submit).should('be.visible').click();
-            cy.wait(3000);
             openSubphaseMenu();
           }
 
@@ -213,7 +191,6 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
               );
             } else {
               cy.log(`Subphase "${uniqueSubphaseName}" created successfully.`);
-              cy.wait(3000);
 
               // Expand and apply logic
               cy.get(collapseSelector).first().click({ force: true });

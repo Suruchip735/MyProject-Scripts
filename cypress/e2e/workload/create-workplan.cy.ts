@@ -19,16 +19,7 @@ describe('Create work plan - Workload module', () => {
     createbutton: '.WorkPlanModalHeader__StyledSaveButton-sc-f6kiq0-1',
   };
 
-  beforeEach(() => {
-    // Visit application URL
-    const appDomain = Cypress.env('APP_DOMAIN');
-    cy.log('APP_DOMAIN:', appDomain);
-    cy.visit(appDomain);
-  });
-
   it('should log in successfully with valid credentials and create a work plan in Workload Page', () => {
-    cy.viewport(1920, 1080); // Set screen size
-
     // 🔐 Login with credentials from environment
     login(
       Cypress.env('LOGIN_USERNAME'),
@@ -36,15 +27,11 @@ describe('Create work plan - Workload module', () => {
       Cypress.env('LOGIN_PASSWORD')
     );
 
-    cy.wait(10000); // Wait for dashboard to load
-
     // 📘 Navigate to Workload module
     cy.get(selector.workload).click();
-    cy.wait(3000);
 
     // 👤 Select the first team member
     cy.get(selector.Member).first().click({ force: true });
-    cy.wait(5000);
 
     // 📅 Select a random availability bucket for that member
     cy.get('.rct-hl.rct-hl-even')
@@ -58,34 +45,26 @@ describe('Create work plan - Workload module', () => {
         );
       });
 
-    cy.wait(3000);
-
     // 📂 Select a project
     cy.get(selector.selectProject).click();
-    cy.wait(3000);
 
     // ✅ Click on the first available project
     cy.get(selector.Project).click({ force: true });
-    cy.wait(3000);
 
     // 🔽 Select a phase
+    cy.get('[data-testid="confirm-modal-confirm-btn"]').click({ force: true });
     cy.get(selector.Phase).first().click({ force: true });
-    cy.wait(3000);
 
     // 💯 Enter % per day
     cy.get(selector.percent).first().click().type('30');
-    cy.wait(3000);
 
     // 🕐 Enter Hours per Day
     cy.get(selector.HRSDAY).click().type('8');
-    cy.wait(3000);
 
     // 🗓️ Enter Work Days
     cy.get(selector.workday).click().type('3');
-    cy.wait(3000);
 
     // ✅ click on create button
     cy.get(selector.createbutton).click({ force: true });
-    cy.wait(3000);
   });
 });

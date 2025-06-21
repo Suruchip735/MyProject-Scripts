@@ -20,29 +20,16 @@ describe('Report Timesheet - Edit Timesheet', () => {
       '.styles__StyledItemRowContainer-sc-uz02q-14.cDQChH.flyout-item-row-container',
     Description: '.styles__ReportTimesheetStyledCell-sc-194g64u-61.hFWJAc',
   };
-  beforeEach(() => {
-    const appDomain = Cypress.env('APP_DOMAIN');
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
 
   it('Timesheet-  edit Timesheet', () => {
-    cy.viewport(1920, 1080);
-
     login(
       Cypress.env('LOGIN_USERNAME'),
       Cypress.env('Button'),
       Cypress.env('LOGIN_PASSWORD')
     );
 
-    cy.wait(10000);
-
     cy.get(selector.Report).click({ force: true });
-    cy.wait(3000);
     cy.get(selector.TimeSheet).click({ force: true });
-    cy.wait(3000);
 
     cy.get('.timesheetRow', { timeout: 10000 })
       .first()
@@ -55,8 +42,6 @@ describe('Report Timesheet - Edit Timesheet', () => {
         } else {
           // Click the first timesheet row to open/edit it
           cy.wrap($firstTimesheet).click({ force: true });
-
-          cy.wait(3000);
 
           // Change date
           cy.get(selector.DateCells)
@@ -71,7 +56,6 @@ describe('Report Timesheet - Edit Timesheet', () => {
             .click({ force: true });
 
           cy.contains('Save').click();
-          cy.wait(3000);
 
           // Select the first member
           cy.get(selector.MemberItems)
@@ -83,8 +67,6 @@ describe('Report Timesheet - Edit Timesheet', () => {
             .first()
             .click({ force: true });
 
-          cy.wait(3000);
-
           // Select and change the project (first item)
           cy.get(selector.ProjectCell)
             .should('exist')
@@ -92,7 +74,6 @@ describe('Report Timesheet - Edit Timesheet', () => {
             .click({ force: true });
           cy.contains('Change Project').click();
 
-          cy.wait(3000);
           cy.get(selector.Project).then(($items) => {
             const count = $items.length;
             if (count > 0) {
@@ -124,7 +105,6 @@ describe('Report Timesheet - Edit Timesheet', () => {
 
           // Choose random work category
           cy.get(selector.ClickWorkCategory).first().click({ force: true });
-          cy.wait(3000);
           cy.get(selector.WorkCategory).then(($items) => {
             if ($items.length > 0) {
               const randomIndex = Math.floor(Math.random() * $items.length);

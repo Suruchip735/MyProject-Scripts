@@ -16,16 +16,8 @@ describe('Member Task - Create Task Private Project without date', () => {
   // Select a random task name from the array
   const randomTaskName: string =
     taskNames[Math.floor(Math.random() * taskNames.length)] || 'Default Task';
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
   it('should log in successfully with valid credentials Member task Private Project without date select', () => {
     // Set viewport to Full HD resolution
-    cy.viewport(1920, 1080);
 
     //Perfom Login
     login(
@@ -34,8 +26,6 @@ describe('Member Task - Create Task Private Project without date', () => {
       (Cypress.env('LOGIN_PASSWORD') as string) || ''
     );
 
-    cy.wait(10000);
-
     //Click on side menu Member option
     cy.get(selector.Member, { timeout: 1000 }).click({ force: true });
 
@@ -43,12 +33,9 @@ describe('Member Task - Create Task Private Project without date', () => {
     cy.get(selector.MemberModle).first().click({ force: true });
 
     //click on the task
-    cy.wait(9000);
     cy.contains('Tasks').click();
-    cy.wait(5000);
 
     cy.contains('Type task').click({ force: true });
-    cy.wait(3000);
     //click on the select Project and Phase
     cy.get(
       '.styles__TaskMainContentPanel-sc-1qh66b5-3 > .styles__TaskDescriptionAndProjectContainer-sc-1qh66b5-19 > .ProjectMenuButton__BlankContainer-sc-37y9ih-4'
@@ -63,7 +50,6 @@ describe('Member Task - Create Task Private Project without date', () => {
     )
       .first()
       .click({ force: true });
-    cy.wait(3000);
 
     // Open the calendar
     cy.get(selector.planned).first().click();
@@ -138,7 +124,6 @@ describe('Member Task - Create Task Private Project without date', () => {
 
         // Optionally, you can click "Done" or "Save" if applicable
         cy.get('button.styles__DoneButton-sc-5z27h7-21').click();
-        cy.wait(3000);
       });
 
     //cy.get('#task-description-field-0').click().type('{enter}');

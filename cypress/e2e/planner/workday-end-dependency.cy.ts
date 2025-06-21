@@ -17,16 +17,7 @@ describe('Planner - Create Planner Workday End Date Dependency', () => {
     createButton: 'button:contains("Create")',
   };
 
-  beforeEach(() => {
-    // Load the application URL from environment variable
-    const appDomain = Cypress.env('APP_DOMAIN');
-    cy.log('APP_DOMAIN:', appDomain);
-    cy.visit(appDomain);
-  });
-
   it('should log in and create a plan in Planner with locked Workday and end date dependency', () => {
-    cy.viewport(1920, 1080); // Set screen resolution
-
     // 🔐 Login using credentials from .env
     login(
       Cypress.env('LOGIN_USERNAME'),
@@ -34,22 +25,16 @@ describe('Planner - Create Planner Workday End Date Dependency', () => {
       Cypress.env('LOGIN_PASSWORD')
     );
 
-    cy.wait(10000); // Wait for login to complete and dashboard to load
-
     // 📘 Navigate to Planner
-    cy.wait(4000);
     cy.get(selector.planner).click({ force: true });
 
     // 📁 Select a project
-    cy.wait(8000);
     cy.get(selector.project).first().click({ force: true });
 
     // 👤 Select a member
-    cy.wait(4000);
     cy.get(selector.member).first().click({ force: true });
 
     // 📅 Select a random availability bucket
-    cy.wait(5000);
     cy.get('.rct-hl.rct-hl-even')
       .eq(1)
       .within(() => {
@@ -62,11 +47,9 @@ describe('Planner - Create Planner Workday End Date Dependency', () => {
       });
 
     // 📌 Open phase selector
-    cy.wait(3000);
     cy.get(selector.selectPhase).click({ force: true });
 
     // ✅ Select a non-archived phase
-    cy.wait(4000);
     cy.get(selector.phaseList)
       .filter((i, el) => {
         const tooltip = el.getAttribute('data-tooltip-content');
@@ -87,9 +70,7 @@ describe('Planner - Create Planner Workday End Date Dependency', () => {
     }
 
     // 🔣 Fill % per day
-    cy.wait(3000);
     cy.get(selector.percent).clear().type('30');
-    cy.wait(2000);
 
     // 🕐 Fill Daily Hours with random value
     cy.get('input[name="daily_hours"]')
@@ -98,13 +79,11 @@ describe('Planner - Create Planner Workday End Date Dependency', () => {
 
     // 🔒 Lock % per day
     cy.get(selector.LockIcon).eq(2).click({ force: true });
-    cy.wait(1000);
 
     // 📆 Enable End Date Dependency
     cy.get(selector.endDateDependency).click({ force: true });
 
     // 🗓️ Enter number of workdays
-    cy.wait(2000);
     cy.get(selector.workday).clear().type('3');
 
     // 🔐 Lock Workdays (2nd lock icon)
@@ -112,10 +91,8 @@ describe('Planner - Create Planner Workday End Date Dependency', () => {
       .find('.NumberField__EndAdornment-sc-197e418-5')
       .eq(1)
       .click();
-    cy.wait(2000);
 
     // ✅ click on create button
     cy.get(selector.createButton).click({ force: true });
-    cy.wait(3000);
   });
 });

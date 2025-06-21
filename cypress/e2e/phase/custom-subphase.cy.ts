@@ -18,15 +18,7 @@ describe('Project schdule - Create Custom subphase', () => {
       '.SvgIcon__Svg-sc-vv99ju-0.iNBxYk.SharedTitleCell__StyledThreeDotIcon-sc-1qrqldg-18.loEUVY',
   };
 
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-    cy.visit(appDomain);
-  });
-
   it('should log in and add a Phase and Subphase if needed', () => {
-    cy.viewport(1920, 1080);
-
     // Login step
     login(
       (Cypress.env('LOGIN_USERNAME') as string) || '',
@@ -34,16 +26,12 @@ describe('Project schdule - Create Custom subphase', () => {
       (Cypress.env('LOGIN_PASSWORD') as string) || ''
     );
 
-    cy.wait(10000); // Wait for login to complete
-
     const uniquePhaseName = `P-${Math.floor(Math.random() * 10000)}`;
     const uniqueSubphaseName = `SP-${Math.floor(Math.random() * 10000)}`;
 
     // Navigate to project
     cy.get(selector.Project).click({ force: true });
-    cy.wait(3000);
     cy.get(selector.SelectProject).click({ force: true });
-    cy.wait(3000);
 
     cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
       .first()
@@ -53,11 +41,9 @@ describe('Project schdule - Create Custom subphase', () => {
     // Open Phases section
     cy.get('[data-testid="sidebar-menu-projects-btn"]').click();
     cy.get('.ProjectPhasesButton__NumPhases-sc-evyft6-2').click();
-    cy.wait(3000);
 
     const openSubphaseMenu = () => {
       cy.get(selector.ThreeDotIcon).first().click({ force: true });
-      cy.wait(3000);
       cy.get('[data-testid="add-schedule"] > :nth-child(2)')
         // .contains('Add Schedule Item')
         .scrollIntoView()
@@ -83,8 +69,6 @@ describe('Project schdule - Create Custom subphase', () => {
           .type(uniquePhaseName)
           .should('have.value', uniquePhaseName);
         cy.get(selector.Submit).should('be.visible').click();
-
-        cy.wait(3000);
 
         // Try again to open Subphase menu
         openSubphaseMenu();

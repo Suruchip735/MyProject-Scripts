@@ -14,29 +14,17 @@ describe('Project schdule - Create Custom Milestone', () => {
       '.styles__TextButton-sc-1lvufti-0.styles__TextButtonWithBorder-sc-1lvufti-1.styles__BlueSubmitButton-sc-1lvufti-2.MilestoneInfoModalFooter__StyledSubmitButton-sc-dfb87o-3.dGTMwD.fgunCm.eapiTK.BFFrF',
   };
 
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-    cy.visit(appDomain);
-  });
-
   it('should log in successfully and create one short unique milestone name', () => {
-    cy.viewport(1920, 1080);
-
     login(
       (Cypress.env('LOGIN_USERNAME') as string) || '',
       (Cypress.env('Button') as string) || '',
       (Cypress.env('LOGIN_PASSWORD') as string) || ''
     );
 
-    cy.wait(10000);
-
     // Navigate to the project and open phase section
     cy.get(selector.Project).click({ force: true });
-    cy.wait(3000);
 
     cy.get(selector.SelectProject).click({ force: true });
-    cy.wait(3000);
 
     cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
       .first()

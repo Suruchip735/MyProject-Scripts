@@ -1,13 +1,5 @@
 import { login } from '../../support/login';
 describe('Validate Login Functionality', () => {
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
-
   it('Validate Login with valid Credentials', () => {
     // Intercept the API call that confirms user login
     login(

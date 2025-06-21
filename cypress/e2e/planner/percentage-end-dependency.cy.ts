@@ -15,16 +15,8 @@ describe('Planner - Create Planner Percentage Lock End Date Dependency', () => {
     CreateButton: 'button:contains("Create")',
   };
 
-  beforeEach(() => {
-    // Get the application URL from the environment and navigate to it
-    const appDomain = Cypress.env('APP_DOMAIN');
-    cy.log('APP_DOMAIN:', appDomain);
-    cy.visit(appDomain);
-  });
-
   it('should log in and create a plan with end date dependency and percentage lock', () => {
     // Set screen size to full HD
-    cy.viewport(1920, 1080);
 
     // Perform login with credentials from environment variables
     login(
@@ -34,22 +26,17 @@ describe('Planner - Create Planner Percentage Lock End Date Dependency', () => {
     );
 
     // Wait for the dashboard to load
-    cy.wait(10000);
 
     // Navigate to the "Planner" section
-    cy.wait(4000);
     cy.get(selector.Planner).click({ force: true });
 
     // Select the first project in the list
-    cy.wait(4000);
     cy.get(selector.Project).first().click({ force: true });
 
     // Select the first member in the list
-    cy.wait(4000);
     cy.get(selector.Member).first().click({ force: true });
 
     // Select a random availability bucket in the schedule timeline
-    cy.wait(5000);
     cy.get('.rct-hl.rct-hl-even')
       .eq(1)
       .within(() => {
@@ -63,7 +50,6 @@ describe('Planner - Create Planner Percentage Lock End Date Dependency', () => {
 
     // Open the phase selection popup
     cy.get(selector.SelectPhase).click({ force: true });
-    cy.wait(5000);
 
     // Select a non-archived phase from the list
     cy.get(selector.PhaseList)
@@ -88,7 +74,6 @@ describe('Planner - Create Planner Percentage Lock End Date Dependency', () => {
     }
 
     //Enter Daily Hrs
-    cy.wait(2000);
     cy.get('input[name="daily_hours"]')
       .clear()
       .type(getRandomInt(1, 10).toString());
@@ -98,23 +83,16 @@ describe('Planner - Create Planner Percentage Lock End Date Dependency', () => {
       .clear()
       .type(getRandomInt(1, 20).toString());
 
-    cy.wait(2000);
-
     // Fill in % per day and enable "Lock" and "End Date Dependency"
     cy.get('input[name="workday_percent"]')
       .clear()
       .type(getRandomInt(1, 100).toString());
 
-    cy.wait(2000);
-
     // Click the lock icon to lock percentage per day
     cy.get(selector.LockIcon).first().click({ force: true });
 
     // Click the end date dependency icon
-    cy.wait(1000);
     cy.get(selector.EndDateDependency).click({ force: true });
-
-    cy.wait(2000);
 
     // clicking "Create" button
     cy.contains('button', 'Create').click();

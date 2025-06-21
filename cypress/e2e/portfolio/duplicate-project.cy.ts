@@ -27,13 +27,7 @@ describe('Project Creation Test Suite', () => {
     Math.floor(Math.random() * projectNameID.length)
   ] || { key: 'Default Project', value: 'default-id' };
 
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.visit(appDomain);
-  });
   it('Create a project with a duplicate name within the same portfolio should show error', () => {
-    cy.viewport(1920, 1080);
-
     //Perfom Login
     login(
       (Cypress.env('LOGIN_USERNAME') as string) || '',
@@ -42,13 +36,10 @@ describe('Project Creation Test Suite', () => {
     );
 
     // Start creating new project
-    cy.wait(3500);
     cy.get(selectors.plusButton).click();
 
-    cy.wait(3000);
     cy.get(selectors.newProjectOption).click();
 
-    cy.wait(3000);
     cy.get(selectors.portfolioDropdown).click();
 
     // Enter project name and ID
