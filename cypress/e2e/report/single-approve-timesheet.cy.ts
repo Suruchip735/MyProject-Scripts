@@ -8,7 +8,7 @@ describe('Report Timesheet - Approve Single Time sheet', () => {
       '[style="display: flex; width: 100%; position: absolute; left: 0px; top: 372px; height: 62px; margin: 0px;"] > .approver > .styles__StatusContainer-sc-194g64u-37 > .dropdown > .ApproverCell__StyledDropdownMenu-sc-1rdtvyr-2 > :nth-child(1) > .ApproverCell__DropdownOption-sc-1rdtvyr-3',
   };
 
-  it('Timesheet Report approve single Time sheet', () => {
+  it('Timesheet Report approve single Time sheet', { tags: ['TESC-0'] }, () => {
     // Set viewport to Full HD resolution
 
     //Perfom Login

@@ -27,30 +27,34 @@ describe('Project Creation Test Suite', () => {
     Math.floor(Math.random() * projectNameID.length)
   ] || { key: 'Default Project', value: 'default-id' };
 
-  it('Create a project with a duplicate name within the same portfolio should show error', () => {
-    //Perfom Login
-    login(
-      (Cypress.env('LOGIN_USERNAME') as string) || '',
-      (Cypress.env('Button') as string) || '', // This should be the text on the Continue button (e.g., "Continue")
-      (Cypress.env('LOGIN_PASSWORD') as string) || ''
-    );
+  it(
+    'Create a project with a duplicate name within the same portfolio should show error',
+    { tags: ['TESC-0'] },
+    () => {
+      //Perfom Login
+      login(
+        (Cypress.env('LOGIN_USERNAME') as string) || '',
+        (Cypress.env('Button') as string) || '', // This should be the text on the Continue button (e.g., "Continue")
+        (Cypress.env('LOGIN_PASSWORD') as string) || ''
+      );
 
-    // Start creating new project
-    cy.get(selectors.plusButton).click();
+      // Start creating new project
+      cy.get(selectors.plusButton).click();
 
-    cy.get(selectors.newProjectOption).click();
+      cy.get(selectors.newProjectOption).click();
 
-    cy.get(selectors.portfolioDropdown).click();
+      cy.get(selectors.portfolioDropdown).click();
 
-    // Enter project name and ID
-    cy.get(selectors.projectNameInput).type(
-      randomPair?.key || 'Default Project'
-    );
-    cy.get(selectors.projectIdInput).type(
-      String(randomPair?.value || 'default-id')
-    );
+      // Enter project name and ID
+      cy.get(selectors.projectNameInput).type(
+        randomPair?.key || 'Default Project'
+      );
+      cy.get(selectors.projectIdInput).type(
+        String(randomPair?.value || 'default-id')
+      );
 
-    // Submit the form
-    cy.get(selectors.submitButton).click();
-  });
+      // Submit the form
+      cy.get(selectors.submitButton).click();
+    }
+  );
 });

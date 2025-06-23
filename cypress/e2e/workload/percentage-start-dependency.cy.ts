@@ -18,58 +18,62 @@ describe('Workload - Create Planner Percentage Lock start Date Dependency', () =
     lockIcon: '.NumberField__EndAdornment-sc-197e418-5.boWnvT',
   };
 
-  it('should log in and create a plan with start date dependency and percentage lock in workload Module', () => {
-    // 🖥 Set viewport resolution for consistent rendering
+  it(
+    'should log in and create a plan with start date dependency and percentage lock in workload Module',
+    { tags: ['TESC-0'] },
+    () => {
+      // 🖥 Set viewport resolution for consistent rendering
 
-    // 🔐 Perform login using environment variables
-    login(
-      Cypress.env('LOGIN_USERNAME'),
-      Cypress.env('Button'), // e.g., "Continue"
-      Cypress.env('LOGIN_PASSWORD')
-    );
+      // 🔐 Perform login using environment variables
+      login(
+        Cypress.env('LOGIN_USERNAME'),
+        Cypress.env('Button'), // e.g., "Continue"
+        Cypress.env('LOGIN_PASSWORD')
+      );
 
-    // 📁 Navigate to Workload section
-    cy.get(selector.workload).click();
+      // 📁 Navigate to Workload section
+      cy.get(selector.workload).click();
 
-    // 👤 Click on the first team member to assign work
-    cy.get(selector.Member).first().click({ force: true });
+      // 👤 Click on the first team member to assign work
+      cy.get(selector.Member).first().click({ force: true });
 
-    // 📆 Select a random availability bucket to assign work
-    cy.get('.rct-hl.rct-hl-even')
-      .eq(1)
-      .within(() => {
-        cy.get('.styles__BucketValue-sc-3rt6x5-69.bMJFpM.regular-bucket').then(
-          ($boxes) => {
+      // 📆 Select a random availability bucket to assign work
+      cy.get('.rct-hl.rct-hl-even')
+        .eq(1)
+        .within(() => {
+          cy.get(
+            '.styles__BucketValue-sc-3rt6x5-69.bMJFpM.regular-bucket'
+          ).then(($boxes) => {
             const randomIndex = Math.floor(Math.random() * $boxes.length);
             cy.wrap($boxes[randomIndex]).click({ force: true });
-          }
-        );
+          });
+        });
+
+      // 📌 Select the first project listed
+      cy.get(selector.selectProject).click();
+
+      // 📂 Select a project from the dropdown
+      cy.get(selector.Project).click({ force: true });
+
+      // 🗂 Select the first available phase
+      cy.get(selector.Phase).first().click({ force: true });
+
+      // ⌨️ Enter 30% as daily effort percentage
+      cy.get(selector.percent).first().click().type('30');
+
+      // 🔗 Enable the end-date dependency
+      cy.get('[data-testid="start-date-dependency-icon-button"]').click({
+        force: true,
       });
 
-    // 📌 Select the first project listed
-    cy.get(selector.selectProject).click();
+      // ⌨️ Enter  workday
+      cy.get(selector.workday).click().type('3');
 
-    // 📂 Select a project from the dropdown
-    cy.get(selector.Project).click({ force: true });
+      // 🔒 Click lock icon for percentage per day
+      cy.get(selector.lockIcon).first().click({ force: true });
 
-    // 🗂 Select the first available phase
-    cy.get(selector.Phase).first().click({ force: true });
-
-    // ⌨️ Enter 30% as daily effort percentage
-    cy.get(selector.percent).first().click().type('30');
-
-    // 🔗 Enable the end-date dependency
-    cy.get('[data-testid="start-date-dependency-icon-button"]').click({
-      force: true,
-    });
-
-    // ⌨️ Enter  workday
-    cy.get(selector.workday).click().type('3');
-
-    // 🔒 Click lock icon for percentage per day
-    cy.get(selector.lockIcon).first().click({ force: true });
-
-    // ✅ click on create Button
-    cy.get(selector.createbutton).click({ force: true });
-  });
+      // ✅ click on create Button
+      cy.get(selector.createbutton).click({ force: true });
+    }
+  );
 });

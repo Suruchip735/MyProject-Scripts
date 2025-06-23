@@ -18,187 +18,193 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
     Submit: '[data-testid="phase-modal-submit-btn-container"]',
   };
 
-  it('should log in, create/expand subphase, plan dates, add dependency or clear it if exists', () => {
-    login(
-      (Cypress.env('LOGIN_USERNAME') as string) || '',
-      (Cypress.env('Button') as string) || '',
-      (Cypress.env('LOGIN_PASSWORD') as string) || ''
-    );
+  it(
+    'should log in, create/expand subphase, plan dates, add dependency or clear it if exists',
+    { tags: ['TESC-0'] },
+    () => {
+      login(
+        (Cypress.env('LOGIN_USERNAME') as string) || '',
+        (Cypress.env('Button') as string) || '',
+        (Cypress.env('LOGIN_PASSWORD') as string) || ''
+      );
 
-    const handlePlanDateAndDependency = () => {
-      cy.get('[data-testid="plan-date-cell"]')
-        .eq(1)
-        .then(($cell) => {
-          const classList = $cell.attr('class');
+      const handlePlanDateAndDependency = () => {
+        cy.get('[data-testid="plan-date-cell"]')
+          .eq(1)
+          .then(($cell) => {
+            const classList = $cell.attr('class');
 
-          const clearAndConfirm = () => {
-            cy.wrap($cell).click({ force: true });
-            cy.get('button.styles__CancelButton-sc-5z27h7-22.fBhvcq')
-              .should('be.visible')
-              .click({ force: true });
-            cy.get('[data-testid="confirm-modal-confirm-btn"]')
-              .should('be.visible')
-              .click({ force: true });
+            const clearAndConfirm = () => {
+              cy.wrap($cell).click({ force: true });
+              cy.get('button.styles__CancelButton-sc-5z27h7-22.fBhvcq')
+                .should('be.visible')
+                .click({ force: true });
+              cy.get('[data-testid="confirm-modal-confirm-btn"]')
+                .should('be.visible')
+                .click({ force: true });
+            };
+
+            if (classList && classList.includes('unplanned')) {
+              cy.wrap($cell).click({ force: true });
+
+              cy.get(selector.CalanderMonth)
+                .find(
+                  'td:not(.CalendarDay__blocked_out_of_range):not(.CalendarDay__blocked_calendar)'
+                )
+                .then(($days) => {
+                  const totalDays = $days.length;
+                  if (totalDays >= 2) {
+                    const startIndex = Math.floor(
+                      Math.random() * (totalDays - 1)
+                    );
+                    const endIndex = Math.min(startIndex + 5, totalDays - 1);
+
+                    cy.wrap($days[startIndex]).click({ force: true });
+                    cy.wrap($days[endIndex]).click({ force: true });
+
+                    // === Add Dependency ===
+                    cy.get(
+                      '.MultiOptionDependency__BaseTransparentButton-sc-13z66o4-2'
+                    )
+                      .should('be.visible')
+                      .click({ force: true });
+
+                    cy.get(
+                      '.DependencyTag__DependencyTagItemContent-sc-87juxu-2.clPMzy'
+                    )
+                      .contains('Select')
+                      .click({ force: true });
+
+                    cy.get('[data-testid="start"]').click({ force: true });
+
+                    cy.get('[data-testid="start"]')
+                      .trigger('mouseover')
+                      .wait(500)
+                      .within(() => {
+                        cy.contains('Waiting').click({ force: true });
+                      });
+
+                    cy.get(
+                      '.target > .DependencyTag__DependencyTagItem-sc-87juxu-0 > .DependencyTag__DependencyTagItemContent-sc-87juxu-2'
+                    ).click();
+
+                    cy.get(
+                      '.PhaseDependableItemRowRenderer__BaseRow-sc-128gn5t-1.PhaseDependableItemRowRenderer__MiddleRow-sc-128gn5t-3.kZcrjs.gBmweY'
+                    )
+                      .not('[data-tooltip-content="Phase does not have dates"]')
+                      .first()
+                      .click({ force: true });
+
+                    cy.get(
+                      '.styles__MenuItemContainer-sc-13vjrrx-1.TargetTypeMenuRenderer__StyledMenuItemContainer-sc-f32l49-0.iESmHK.cqaZPi.TargetTypePopover__StyledTargetTypeMenuRenderer-sc-1wvyn8x-1.gLEvPE'
+                    )
+                      .first()
+                      .click({ force: true });
+
+                    cy.get('.styles__DoneButton-sc-5z27h7-21.fpeeBn')
+                      .should('be.visible')
+                      .click({ force: true });
+
+                    cy.get('body').then(($body) => {
+                      if (
+                        $body.find(
+                          '.SvgIcon__Svg-sc-vv99ju-0.iNBxYk.DateRangeTag__StyledDependencyLinkIcon-sc-1bpyqqi-1.bCzuZb'
+                        ).length > 0
+                      ) {
+                        clearAndConfirm();
+                      }
+                    });
+                  }
+                });
+            } else {
+              clearAndConfirm();
+            }
+          });
+      };
+
+      // Navigate to the project
+      cy.get(selector.projectIcon).click();
+      cy.get('[data-testid="My Projects"]').click({ force: true });
+      cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
+        .first()
+        .find('.ProjectRow__ProjectInfo-sc-17zwnx2-2')
+        .click({ force: true });
+
+      cy.get(selector.projectIcon).click();
+      cy.get('.ProjectPhasesButton__NumPhases-sc-evyft6-2').click();
+
+      cy.get('body').then(($body) => {
+        const collapseSelector =
+          '.CollapseToggle__CollapseIcon-sc-1f2atxa-0.SharedTitleCell__StyledCollapseIcon-sc-1qrqldg-11.hhGICB.dzshDR';
+
+        if (
+          $body.find(collapseSelector).length > 0 &&
+          $body.find(collapseSelector).is(':visible')
+        ) {
+          cy.get(collapseSelector).first().click({ force: true });
+          handlePlanDateAndDependency(); // Subphase logic
+        } else {
+          // Create phase + subphase if not present
+          const uniquePhaseName = `Phase-${Date.now()}`;
+          const uniqueSubphaseName = `Subphase-${Date.now()}`;
+
+          const openSubphaseMenu = () => {
+            cy.get(selector.ThreeDotIcon).first().click({ force: true });
+            cy.get(selector.SubmenuParent)
+              .contains('Add Schedule Item')
+              .scrollIntoView()
+              .trigger('mouseover')
+              .invoke('show');
+            cy.get(selector.Submenu).invoke('show');
           };
 
-          if (classList && classList.includes('unplanned')) {
-            cy.wrap($cell).click({ force: true });
+          openSubphaseMenu();
 
-            cy.get(selector.CalanderMonth)
-              .find(
-                'td:not(.CalendarDay__blocked_out_of_range):not(.CalendarDay__blocked_calendar)'
-              )
-              .then(($days) => {
-                const totalDays = $days.length;
-                if (totalDays >= 2) {
-                  const startIndex = Math.floor(
-                    Math.random() * (totalDays - 1)
-                  );
-                  const endIndex = Math.min(startIndex + 5, totalDays - 1);
+          cy.get(selector.AddSubphase).then(($el) => {
+            if ($el.is(':disabled') || $el.hasClass('disabled')) {
+              cy.log('Add Subphase is disabled. Creating a new phase first...');
+              cy.get(selector.AddPhaseButton).click();
+              cy.get(selector.ModalItem).first().click();
+              cy.get(selector.AddCustomRow).click();
+              cy.get(selector.Input, { timeout: 10000 })
+                .should('be.visible')
+                .clear()
+                .type(uniquePhaseName)
+                .should('have.value', uniquePhaseName);
+              cy.get(selector.Submit).should('be.visible').click();
+              openSubphaseMenu();
+            }
 
-                  cy.wrap($days[startIndex]).click({ force: true });
-                  cy.wrap($days[endIndex]).click({ force: true });
-
-                  // === Add Dependency ===
-                  cy.get(
-                    '.MultiOptionDependency__BaseTransparentButton-sc-13z66o4-2'
-                  )
-                    .should('be.visible')
-                    .click({ force: true });
-
-                  cy.get(
-                    '.DependencyTag__DependencyTagItemContent-sc-87juxu-2.clPMzy'
-                  )
-                    .contains('Select')
-                    .click({ force: true });
-
-                  cy.get('[data-testid="start"]').click({ force: true });
-
-                  cy.get('[data-testid="start"]')
-                    .trigger('mouseover')
-                    .wait(500)
-                    .within(() => {
-                      cy.contains('Waiting').click({ force: true });
-                    });
-
-                  cy.get(
-                    '.target > .DependencyTag__DependencyTagItem-sc-87juxu-0 > .DependencyTag__DependencyTagItemContent-sc-87juxu-2'
-                  ).click();
-
-                  cy.get(
-                    '.PhaseDependableItemRowRenderer__BaseRow-sc-128gn5t-1.PhaseDependableItemRowRenderer__MiddleRow-sc-128gn5t-3.kZcrjs.gBmweY'
-                  )
-                    .not('[data-tooltip-content="Phase does not have dates"]')
-                    .first()
-                    .click({ force: true });
-
-                  cy.get(
-                    '.styles__MenuItemContainer-sc-13vjrrx-1.TargetTypeMenuRenderer__StyledMenuItemContainer-sc-f32l49-0.iESmHK.cqaZPi.TargetTypePopover__StyledTargetTypeMenuRenderer-sc-1wvyn8x-1.gLEvPE'
-                  )
-                    .first()
-                    .click({ force: true });
-
-                  cy.get('.styles__DoneButton-sc-5z27h7-21.fpeeBn')
-                    .should('be.visible')
-                    .click({ force: true });
-
-                  cy.get('body').then(($body) => {
-                    if (
-                      $body.find(
-                        '.SvgIcon__Svg-sc-vv99ju-0.iNBxYk.DateRangeTag__StyledDependencyLinkIcon-sc-1bpyqqi-1.bCzuZb'
-                      ).length > 0
-                    ) {
-                      clearAndConfirm();
-                    }
-                  });
-                }
-              });
-          } else {
-            clearAndConfirm();
-          }
-        });
-    };
-
-    // Navigate to the project
-    cy.get(selector.projectIcon).click();
-    cy.get('[data-testid="My Projects"]').click({ force: true });
-    cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
-      .first()
-      .find('.ProjectRow__ProjectInfo-sc-17zwnx2-2')
-      .click({ force: true });
-
-    cy.get(selector.projectIcon).click();
-    cy.get('.ProjectPhasesButton__NumPhases-sc-evyft6-2').click();
-
-    cy.get('body').then(($body) => {
-      const collapseSelector =
-        '.CollapseToggle__CollapseIcon-sc-1f2atxa-0.SharedTitleCell__StyledCollapseIcon-sc-1qrqldg-11.hhGICB.dzshDR';
-
-      if (
-        $body.find(collapseSelector).length > 0 &&
-        $body.find(collapseSelector).is(':visible')
-      ) {
-        cy.get(collapseSelector).first().click({ force: true });
-        handlePlanDateAndDependency(); // Subphase logic
-      } else {
-        // Create phase + subphase if not present
-        const uniquePhaseName = `Phase-${Date.now()}`;
-        const uniqueSubphaseName = `Subphase-${Date.now()}`;
-
-        const openSubphaseMenu = () => {
-          cy.get(selector.ThreeDotIcon).first().click({ force: true });
-          cy.get(selector.SubmenuParent)
-            .contains('Add Schedule Item')
-            .scrollIntoView()
-            .trigger('mouseover')
-            .invoke('show');
-          cy.get(selector.Submenu).invoke('show');
-        };
-
-        openSubphaseMenu();
-
-        cy.get(selector.AddSubphase).then(($el) => {
-          if ($el.is(':disabled') || $el.hasClass('disabled')) {
-            cy.log('Add Subphase is disabled. Creating a new phase first...');
-            cy.get(selector.AddPhaseButton).click();
-            cy.get(selector.ModalItem).first().click();
+            cy.get(selector.AddSubphase)
+              .should('be.visible')
+              .click({ force: true });
             cy.get(selector.AddCustomRow).click();
             cy.get(selector.Input, { timeout: 10000 })
               .should('be.visible')
               .clear()
-              .type(uniquePhaseName)
-              .should('have.value', uniquePhaseName);
+              .type(uniqueSubphaseName)
+              .should('have.value', uniqueSubphaseName);
             cy.get(selector.Submit).should('be.visible').click();
-            openSubphaseMenu();
-          }
 
-          cy.get(selector.AddSubphase)
-            .should('be.visible')
-            .click({ force: true });
-          cy.get(selector.AddCustomRow).click();
-          cy.get(selector.Input, { timeout: 10000 })
-            .should('be.visible')
-            .clear()
-            .type(uniqueSubphaseName)
-            .should('have.value', uniqueSubphaseName);
-          cy.get(selector.Submit).should('be.visible').click();
+            cy.get('body').then(($body) => {
+              if ($body.find(selector.Input).length > 0) {
+                cy.log(`Failed to create subphase "${uniqueSubphaseName}".`);
+                throw new Error(
+                  `Subphase creation failed — input still present.`
+                );
+              } else {
+                cy.log(
+                  `Subphase "${uniqueSubphaseName}" created successfully.`
+                );
 
-          cy.get('body').then(($body) => {
-            if ($body.find(selector.Input).length > 0) {
-              cy.log(`Failed to create subphase "${uniqueSubphaseName}".`);
-              throw new Error(
-                `Subphase creation failed — input still present.`
-              );
-            } else {
-              cy.log(`Subphase "${uniqueSubphaseName}" created successfully.`);
-
-              // Expand and apply logic
-              cy.get(collapseSelector).first().click({ force: true });
-              handlePlanDateAndDependency();
-            }
+                // Expand and apply logic
+                cy.get(collapseSelector).first().click({ force: true });
+                handlePlanDateAndDependency();
+              }
+            });
           });
-        });
-      }
-    });
-  });
+        }
+      });
+    }
+  );
 });
