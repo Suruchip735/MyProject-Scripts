@@ -18,7 +18,7 @@ describe('Project schdule - set or clear Phase date with dependency', () => {
 
   it(
     'should log in, plan date, add dependency or clear it if exists',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Login
       login(

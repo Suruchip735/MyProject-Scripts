@@ -16,7 +16,7 @@ describe('Planner - Create Planner HRSDAY Lock End Date Dependency', () => {
 
   it(
     'should log in and create a plan with end date dependency and HRSDAY lock',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Set screen resolution
 

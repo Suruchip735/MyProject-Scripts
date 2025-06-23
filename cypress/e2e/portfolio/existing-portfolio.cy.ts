@@ -8,7 +8,7 @@ describe('Existing Portfolio - Create New Project', () => {
       '.BoardSelectMenu__BoardItemContents-sc-aholn7-6.cvVGdF.board-item-contents',
   };
 
-  it('Create New Project Exsting Portfolio ', { tags: ['TESC-0'] }, () => {
+  it('Create New Project Exsting Portfolio ', { tags: ['@TESC-0'] }, () => {
     // Set viewport to Full HD resolution
 
     // Perform Login

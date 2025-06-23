@@ -20,7 +20,7 @@ describe('Project schdule - set or clear subphase date with dependency', () => {
 
   it(
     'should log in, create/expand subphase, plan dates, add dependency or clear it if exists',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       login(
         (Cypress.env('LOGIN_USERNAME') as string) || '',

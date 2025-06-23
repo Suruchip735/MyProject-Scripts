@@ -16,7 +16,7 @@ describe('Search Project - Redirect Detail Page', () => {
 
   it(
     'should log in successfully with valid credentials and search project redirect to Project detail Page',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Set viewport to Full HD resolution
 

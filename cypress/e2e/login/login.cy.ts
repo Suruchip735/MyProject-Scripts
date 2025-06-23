@@ -1,6 +1,6 @@
 import { login } from '../../support/login';
 describe('Validate Login Functionality', () => {
-  it('Validate Login with valid Credentials', { tags: ['TESC-0'] }, () => {
+  it('Validate Login with valid Credentials', { tags: ['@TESC-0'] }, () => {
     // Intercept the API call that confirms user login
     login(
       (Cypress.env('LOGIN_USERNAME') as string) || '',

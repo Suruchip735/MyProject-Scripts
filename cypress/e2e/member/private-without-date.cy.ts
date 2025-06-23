@@ -18,7 +18,7 @@ describe('Member Task - Create Task Private Project without date', () => {
     taskNames[Math.floor(Math.random() * taskNames.length)] || 'Default Task';
   it(
     'should log in successfully with valid credentials Member task Private Project without date select',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Set viewport to Full HD resolution
 

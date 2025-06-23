@@ -10,7 +10,7 @@ describe('Report Timesheet - Approve Multiple Time sheet using modify', () => {
 
   it(
     'Timesheet Report approve Multiple Time sheet',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Set viewport to Full HD resolution
 

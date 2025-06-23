@@ -22,7 +22,7 @@ describe('Create New Portfolio - New Project', () => {
     'Kuehne Nagel',
     'Ryder System, Inc.',
   ];
-  it('Crearte New Portfolio - New Project', { tags: ['TESC-0'] }, () => {
+  it('Crearte New Portfolio - New Project', { tags: ['@TESC-0'] }, () => {
     // Set viewport to Full HD resolution
 
     //Perfom Login

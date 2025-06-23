@@ -20,7 +20,7 @@ describe('Project schedule - Create Custom subphase', () => {
 
   it(
     'should log in and add a Phase and Subphase if needed',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Login step
       login(

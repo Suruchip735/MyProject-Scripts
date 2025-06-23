@@ -21,7 +21,7 @@ describe('Create work plan - Workload module', () => {
 
   it(
     'should log in successfully with valid credentials and create a work plan in Workload Page',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // 🔐 Login with credentials from environment
       login(

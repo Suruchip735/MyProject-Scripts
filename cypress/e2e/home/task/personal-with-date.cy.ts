@@ -11,7 +11,7 @@ describe('MosaicApp Login Test', () => {
 
   it(
     'should log in, create a task, and delete it if possible',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       login(
         (Cypress.env('LOGIN_USERNAME') as string) || '',

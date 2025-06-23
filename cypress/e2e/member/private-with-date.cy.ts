@@ -15,7 +15,7 @@ describe('Member Task - Create Task Private Project with date', () => {
 
   it(
     'should log in successfully with valid credentials member create task Private Project with date select',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Set viewport to Full HD resolution
 

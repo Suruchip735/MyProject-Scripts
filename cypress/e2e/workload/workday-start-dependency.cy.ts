@@ -18,7 +18,7 @@ describe('Workload - Create Planner Workday Lock start Date Dependency', () => {
 
   it(
     'should log in and create a plan in Workload with locked Workday and start date dependency',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // 🖥 Set screen size for consistency
 

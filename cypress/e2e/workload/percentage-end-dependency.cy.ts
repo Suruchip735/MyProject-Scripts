@@ -32,7 +32,7 @@ describe('Workload - Create Planner Percentage Lock End Date Dependency', () => 
 
   it(
     'should log in and create a plan with end date dependency and percentage lock in workload Module',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // 🖥 Set browser resolution for consistent test view
 

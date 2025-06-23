@@ -101,6 +101,14 @@ mosaic-e2e-tests/
 └── README.md                 # This file
 ```
 
+## Linting and Test Tagging Requirements
+
+> **Note:**
+> All test cases (`it` blocks) must include a `@TESC-` tag in their configuration object (e.g., `{ tags: ['@TESC-0'] }`).
+> If a test does not include a `@TESC-` tag, linting will fail and the test will not be accepted in CI.
+
+---
+
 ## Running Tests
 
 ### Interactive Development

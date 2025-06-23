@@ -31,7 +31,7 @@ describe('workload - Create Planner HRSDAY Lock End Date Dependency', () => {
 
   it(
     'should log in and create a plan with end date dependency and HRSDAY lock in workload module',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // 🖥 Set viewport resolution for consistent rendering
 

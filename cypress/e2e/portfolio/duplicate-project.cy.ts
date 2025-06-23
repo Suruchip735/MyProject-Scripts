@@ -29,7 +29,7 @@ describe('Project Creation Test Suite', () => {
 
   it(
     'Create a project with a duplicate name within the same portfolio should show error',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       //Perfom Login
       login(
