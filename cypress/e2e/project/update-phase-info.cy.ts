@@ -1,4 +1,3 @@
-import { getEffectiveTypeRoots } from 'typescript';
 import { login } from '../../support/login';
 // This file is part of the Cypress end-to-end tests for updating phase info in the budget modal
 
@@ -98,7 +97,7 @@ describe('Edit phase budget/fee on budget modal', () => {
           // Type into the Phase of Work input
           cy.get(selectors.custPhaseName).clear().type(phaseName1);
 
-          const newPhaseCreated = phaseName1;
+          //const newPhaseCreated = phaseName1;
 
           cy.log(`Typed new phase name: ${phaseName1}`);
 
@@ -163,7 +162,7 @@ describe('Edit phase budget/fee on budget modal', () => {
 
           // Creating variable to store select value in the Planning Time on phase dropdown
           let timeTrackingText = '';
-          let newtrackingoptionold = '';
+          const newtrackingoptionold = '';
 
           cy.get(
             '[data-testid="time-tracking-dropdown-toggle"] > .EllipsisText__Text-sc-1vtmsnz-0'
@@ -396,14 +395,14 @@ describe('Edit phase budget/fee on budget modal', () => {
                     );
 
                     // Storing reference number to variable
-                    const stdPhaseRef = updateNumber;
+                    //  const stdPhaseRef = updateNumber;
                   } else {
                     cy.log('No phase reference number added');
                     cy.get(selectors.phaseRefInp).type('908491');
                     console.log('Added new phase reference number 908491');
 
                     // Storing reference number to variable
-                    const stdPhaseRefold = 908491;
+                    //const stdPhaseRefold = 908491;
                   }
                 });
 
@@ -454,7 +453,7 @@ describe('Edit phase budget/fee on budget modal', () => {
                       cy.wait(2000);
 
                       // Storing value of selected option in variable
-                      const stdtimetrackingold = newOptionText;
+                      // const stdtimetrackingold = newOptionText;
                       // Only click confirm if modal is visible
                       cy.get('body').then(($body) => {
                         const confirmBtn =
@@ -544,12 +543,12 @@ describe('Edit phase budget/fee on budget modal', () => {
                       cy.get(selectors.phaseInfo).first().click();
 
                       //Invoke values and check if values match
-                      cy.get(selectors.stdPhaseDrpDownArrow)
+                      /* cy.get(selectors.stdPhaseDrpDownArrow)
                         .invoke('val')
                         .then((val) => {
-                          const phaseNow = String(val).replace(/,/g, '');
+                          //const phaseNow = String(val).replace(/,/g, '');
                           // expect(phaseNow).to.eq(stdPhaseold);
-                        });
+                        }); */
                     });
                 });
             } else if (

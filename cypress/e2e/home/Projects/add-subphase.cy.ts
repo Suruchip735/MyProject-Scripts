@@ -16,7 +16,7 @@ describe('Creating automation scripts for mosaic project', () => {
 
   it(
     'Delete phases from the project',
-    { tags: ['Project', 'Phase', 'Subphase'] },
+    { tags: ['@TESC-001', 'Project', 'Phase', 'Subphase'] },
     () => {
       login(
         Cypress.env('LOGIN_USERNAME'),
