@@ -15,7 +15,7 @@ describe('Project schdule - set or clear milestone date with dependency', () => 
 
   it(
     'should log in and set or clear milestone date with dependency',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       login(
         (Cypress.env('LOGIN_USERNAME') as string) || '',

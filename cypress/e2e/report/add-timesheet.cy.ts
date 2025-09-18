@@ -17,7 +17,7 @@ describe('Report Timesheet - Create Timesheet', () => {
     Description: '.styles__ReportTimesheetStyledCell-sc-194g64u-61.gtbTPi',
   };
 
-  it('Create Time sheet', { tags: ['TESC-0'] }, () => {
+  it('Create Time sheet', { tags: ['@TESC-0'] }, () => {
     login(
       Cypress.env('LOGIN_USERNAME'),
       Cypress.env('Button'),

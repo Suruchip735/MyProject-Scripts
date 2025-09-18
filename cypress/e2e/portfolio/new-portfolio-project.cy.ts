@@ -14,7 +14,7 @@ describe('Create New Project - New Portfolio ', () => {
       '.BoardSelectMenu__BoardItemContents-sc-aholn7-6.cvVGdF.board-item-contents',
   };
 
-  it('Create a New Project - New Portfolio', { tags: ['TESC-0'] }, () => {
+  it('Create a New Project - New Portfolio', { tags: ['@TESC-0'] }, () => {
     login(
       Cypress.env('LOGIN_USERNAME'),
       Cypress.env('Button'),

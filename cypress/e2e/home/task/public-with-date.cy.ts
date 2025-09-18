@@ -13,7 +13,7 @@ describe('MosaicApp Login Test', () => {
 
   it(
     'should log in successfully with valid credentials Home task personal Project with date select',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Set viewport to Full HD resolution
 

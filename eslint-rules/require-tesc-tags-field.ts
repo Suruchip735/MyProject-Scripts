@@ -45,7 +45,7 @@ export default createRule({
                 if (titleArg && configArg) {
                   return fixer.insertTextAfterRange(
                     [titleArg.range[1], titleArg.range[1]],
-                    `, { tags: ['TESC-0'] }`
+                    `, { tags: ['@TESC-0'] }`
                   );
                 }
                 return null;
@@ -76,7 +76,7 @@ export default createRule({
                   const prefix = configArg.properties.length > 0 ? ', ' : '';
                   return fixer.insertTextAfterRange(
                     [insertPosition, insertPosition],
-                    `${prefix}tags: ['TESC-0']`
+                    `${prefix}tags: ['@TESC-0']`
                   );
                 },
               });
@@ -100,7 +100,7 @@ export default createRule({
                 )
                 .map((el) => el.value as string);
 
-              const hasTESCTag = tags.some((tag) => tag.startsWith('TESC'));
+              const hasTESCTag = tags.some((tag) => tag.startsWith('@TESC-'));
 
               if (!hasTESCTag) {
                 context.report({
@@ -120,7 +120,7 @@ export default createRule({
                       arrayExpression.elements.length > 0 ? ', ' : '';
                     return fixer.insertTextBeforeRange(
                       [insertPosition, insertPosition],
-                      `'TESC-0'${suffix}`
+                      `'@TESC-0'${suffix}`
                     );
                   },
                 });

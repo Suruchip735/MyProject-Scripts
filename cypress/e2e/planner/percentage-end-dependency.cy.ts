@@ -17,7 +17,7 @@ describe('Planner - Create Planner Percentage Lock End Date Dependency', () => {
 
   it(
     'should log in and create a plan with end date dependency and percentage lock',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Set screen size to full HD
 

@@ -17,7 +17,7 @@ describe('Project Task - Project Create task without date', () => {
 
   it(
     'should log in successfully with valid credentials Project Create task without date',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Set viewport to Full HD resolution
 

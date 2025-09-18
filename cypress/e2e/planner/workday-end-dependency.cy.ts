@@ -19,7 +19,7 @@ describe('Planner - Create Planner Workday End Date Dependency', () => {
 
   it(
     'should log in and create a plan in Planner with locked Workday and end date dependency',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // 🔐 Login using credentials from .env
       login(

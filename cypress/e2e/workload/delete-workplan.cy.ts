@@ -11,7 +11,7 @@ describe('Create work plan - Workload module', () => {
 
   it(
     'should log in successfully and delete an existing work plan in Workload Page',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // Set the viewport size for full screen view
 

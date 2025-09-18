@@ -20,7 +20,7 @@ describe('Workload - Create Planner Percentage Lock start Date Dependency', () =
 
   it(
     'should log in and create a plan with start date dependency and percentage lock in workload Module',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       // 🖥 Set viewport resolution for consistent rendering
 

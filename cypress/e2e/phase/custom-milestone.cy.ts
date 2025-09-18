@@ -16,7 +16,7 @@ describe('Project schdule - Create Custom Milestone', () => {
 
   it(
     'should log in successfully and create one short unique milestone name',
-    { tags: ['TESC-0'] },
+    { tags: ['@TESC-0'] },
     () => {
       login(
         (Cypress.env('LOGIN_USERNAME') as string) || '',

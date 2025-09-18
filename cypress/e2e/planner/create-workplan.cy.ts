@@ -10,7 +10,7 @@ describe('Validate Login Functionality', () => {
     SelectPhase: '[data-testid="select-phase-button"]',
   };
 
-  it('Validate Login with valid Credentials', { tags: ['TESC-0'] }, () => {
+  it('Validate Login with valid Credentials', { tags: ['@TESC-0'] }, () => {
     // Perform login using environment variables
     login(
       Cypress.env('LOGIN_USERNAME'),
