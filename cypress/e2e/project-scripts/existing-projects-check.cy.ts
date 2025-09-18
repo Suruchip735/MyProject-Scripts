@@ -1,5 +1,5 @@
 /// referencee
-import { login } from '../../../support/login';
+import { login } from '../../support/login';
 describe('Check if creating existing projects fail', () => {
   const selector = {
     plusBtn: '[data-testid="quick-actions-plus-button"]',
