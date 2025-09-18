@@ -21,48 +21,143 @@ concurrency:
   cancel-in-progress: true # Cancel any in-progress runs of this workflow
 
 jobs:
-  cypress-run:
+  lint:
     runs-on: ubuntu-24.04
-    strategy:
-      fail-fast: false # https://github.com/cypress-io/github-action/issues/48
-      matrix:
-        containers: [1, 2, 3, 4] # Uses 4 parallel instances
+    env:
+      TERM: xterm-256color
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Install dependencies
+
+      # Cache mise installation and tools
+      - name: Cache mise and tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/mise
+            ~/.cache/mise
+            ~/.local/bin
+          key: ${{ runner.os }}-mise-${{ hashFiles('.mise.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-mise-
+
+      - name: Install mise and dependencies
         run: |
-          # Install mise
-          curl https://mise.run | sh
-          
-          # Add mise to PATH for subsequent steps
+          # Install mise if not cached
+          if [ ! -f "$HOME/.local/share/mise/bin/mise" ]; then
+            echo "Installing mise..."
+            curl https://mise.run | sh
+          else
+            echo "mise found in cache"
+          fi
+
+          # Add mise to PATH
           echo "$HOME/.local/share/mise/bin" >> $GITHUB_PATH
           echo "$HOME/.local/share/mise/shims" >> $GITHUB_PATH
-          
+
           # Install tools
           mise install
-      
+
           # Install dependencies with bun
           mise exec -- bun install
+
+      - name: Run Prettier
+        run: |
+          # Run Prettier with bun
+          mise exec -- bun run prettier
+
       - name: Lint code
         run: |
           # Run linting with bun
-          # mise exec -- bun run lint
-      - name: Run Cypress tests
+          mise exec -- bun run lint
+
+      - name: Run TypeScript checks
         run: |
-          # Alternative: use mise exec to run bun commands
-          mise exec -- bun --version
-          
-          # Run Cypress with bun manually
-          mise exec -- bun run cypress run --browser chrome --record --parallel
+          # Run TypeScript checks with bun
+          mise exec -- bun run type-check
+
+      - name: Run Verify Cypress
+        run: |
+          # Run Cypress verification with bun
+          mise exec -- bun run cypress
+
+  cypress-run:
+    needs: lint # This job depends on lint passing
+    runs-on: ubuntu-24.04
+    env:
+      TERM: xterm-256color
+    strategy:
+      fail-fast: false
+      max-parallel: 8 # Run up to 4 test suites in parallel
+      matrix:
+        test-suite:
+          - name: 'Home Tasks'
+            spec: 'cypress/e2e/home/**/*.cy.ts'
+          - name: 'Login Tests'
+            spec: 'cypress/e2e/login/**/*.cy.ts'
+          - name: 'Member Tests'
+            spec: 'cypress/e2e/member/**/*.cy.ts'
+          - name: 'Phase Tests'
+            spec: 'cypress/e2e/phase/**/*.cy.ts'
+          - name: 'Phase Dependencies'
+            spec: 'cypress/e2e/phase-dependancy-clear-date/**/*.cy.ts'
+          - name: 'Portfolio Tests'
+            spec: 'cypress/e2e/portfolio/**/*.cy.ts'
+          - name: 'Project Tests'
+            spec: 'cypress/e2e/project/**/*.cy.ts'
+          - name: 'Report Tests'
+            spec: 'cypress/e2e/report/**/*.cy.ts'
+          - name: 'Planner Tests'
+            spec: 'cypress/e2e/planner/**/*.cy.ts'
+          - name: 'Workload Tests'
+            spec: 'cypress/e2e/workload/**/*.cy.ts'
+          - name: 'Core Spec'
+            spec: 'cypress/e2e/spec.cy.ts'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Reuse the same cache configuration
+      - name: Cache mise and tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/mise
+            ~/.cache/mise
+            ~/.local/bin
+          key: ${{ runner.os }}-mise-${{ hashFiles('.mise.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-mise-
+
+      - name: Install mise and dependencies
+        run: |
+          # Install mise if not cached
+          if [ ! -f "$HOME/.local/share/mise/bin/mise" ]; then
+            echo "Installing mise..."
+            curl https://mise.run | sh
+          else
+            echo "mise found in cache"
+          fi
+
+          # Add mise to PATH
+          echo "$HOME/.local/share/mise/bin" >> $GITHUB_PATH
+          echo "$HOME/.local/share/mise/shims" >> $GITHUB_PATH
+
+          # Install tools
+          mise install
+
+          # Install dependencies with bun
+          mise exec -- bun install
+
+      - name: Run ${{ matrix.test-suite.name }}
+        run: |
+          # Run specific test suite with bun
+          mise exec -- bun x cypress run --browser chrome --spec "${{ matrix.test-suite.spec }}" --record
         env:
           # Cypress environment variables
           CYPRESS_PROJECT_ID: ${{ vars.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
-          LOGIN_USERNAME: ${{ vars.LOGIN_USERNAME }} 
+          LOGIN_USERNAME: ${{ vars.LOGIN_USERNAME }}
           APP_DOMAIN: ${{ vars.APP_DOMAIN }}
-          CI: true

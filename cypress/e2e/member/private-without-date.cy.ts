@@ -90,7 +90,7 @@ describe('Member Task - Create Task Private Project without date', () => {
     // Step 3: Select the end date (3 days after today)
     cy.get('td.CalendarDay[role="button"][aria-disabled="false"]')
       .should('be.visible')
-      .then(($dates) => {
+      .then(() => {
         // Convert today's date to a format
         const today = new Date();
         const endDate = new Date(today);

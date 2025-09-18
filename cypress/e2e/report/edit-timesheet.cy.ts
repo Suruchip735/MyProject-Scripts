@@ -92,14 +92,14 @@ describe('Report Timesheet - Edit Timesheet', () => {
             .click({ force: true });
           cy.contains('Change Project').click();
 
-          cy.wait(3000),
-            cy.get(selector.Project).then(($items) => {
-              const count = $items.length;
-              if (count > 0) {
-                const randomIndex = Math.floor(Math.random() * count);
-                cy.wrap($items[randomIndex]).click({ force: true });
-              }
-            });
+          cy.wait(3000);
+          cy.get(selector.Project).then(($items) => {
+            const count = $items.length;
+            if (count > 0) {
+              const randomIndex = Math.floor(Math.random() * count);
+              cy.wrap($items[randomIndex]).click({ force: true });
+            }
+          });
 
           cy.get('body').then(($body) => {
             if (

@@ -77,7 +77,7 @@ describe('Project schdule - set or clear milestone date with dependency', () => 
       }
     });
 
-    function handleMilestone($cell: JQuery<any>) {
+    function handleMilestone($cell: JQuery<HTMLLIElement>) {
       const classList = $cell.attr('class');
 
       function clearMilestoneDate() {
