@@ -1,13 +1,6 @@
 import { login } from '../../../support/login';
 
 describe('MosaicApp Login Test', () => {
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-
-    cy.visit(appDomain);
-  });
-
   const selector = {
     Task: '.react-grid-item',
     TaskDescription: '#task-description-field-0',
@@ -17,21 +10,16 @@ describe('MosaicApp Login Test', () => {
   };
 
   it('should log in, create a task, and delete it if possible', () => {
-    cy.viewport(1920, 1080);
-
     login(
       (Cypress.env('LOGIN_USERNAME') as string) || '',
       (Cypress.env('Button') as string) || '',
       (Cypress.env('LOGIN_PASSWORD') as string) || ''
     );
 
-    cy.wait(9000);
     cy.contains('Tasks').click({ force: true });
-    cy.wait(5000);
 
     cy.contains('Type task').click({ force: true });
     cy.get(selector.TaskDescription).click().type('Test perwithdate');
-    cy.wait(3000);
 
     cy.get(selector.planned).first().click();
 
@@ -46,7 +34,6 @@ describe('MosaicApp Login Test', () => {
 
     cy.contains('Done').click();
     cy.get(selector.TaskDescription).click().type('{enter}');
-    cy.wait(2000);
 
     const taskText = 'Test perwithdate';
 
@@ -54,15 +41,10 @@ describe('MosaicApp Login Test', () => {
       .first()
       .as('firstTask');
 
-    cy.get('@firstTask')
-      .find('input[type="checkbox"]')
-      .first()
-      .check({ force: true });
+    cy.get('@firstTask').find('input[type="checkbox"]').first().check();
 
     cy.contains('Delete').click();
-    cy.wait(3000);
     cy.contains('Permanently Delete').click();
-    cy.wait(3000);
 
     // ✅ Check if an error message is shown
     cy.get('body').then(($body) => {

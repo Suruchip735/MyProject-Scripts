@@ -18,17 +18,9 @@ describe('Workload - Create Planner HRSDAY Lock start Date Dependency', () => {
     workday: '[data-testid="workplan-workdays"]',
     lockIcon: '.NumberField__EndAdornment-sc-197e418-5.boWnvT',
   };
-  beforeEach(() => {
-    // 🌐 Visit application before each test
-    const appDomain = Cypress.env('APP_DOMAIN');
-    cy.log('APP_DOMAIN:', appDomain);
-
-    cy.visit(appDomain);
-  });
 
   it('should log in and create a plan with start date dependency and HRSDAY lock in workload module', () => {
     // 🖥 Set viewport resolution for consistent rendering
-    cy.viewport(1920, 1080);
 
     // 🔐 Perform login using environment variables
     login(
@@ -37,15 +29,11 @@ describe('Workload - Create Planner HRSDAY Lock start Date Dependency', () => {
       Cypress.env('LOGIN_PASSWORD')
     );
 
-    cy.wait(10000);
-
     // 📁 Navigate to Workload section
     cy.get(selector.workload).click();
-    cy.wait(3000);
 
     // 👤 Click on the first team member to assign work
     cy.get(selector.Member).first().click({ force: true });
-    cy.wait(5000);
 
     // 📆 Select a random availability bucket to assign work
     cy.get('.rct-hl.rct-hl-even')
@@ -59,39 +47,29 @@ describe('Workload - Create Planner HRSDAY Lock start Date Dependency', () => {
         );
       });
 
-    cy.wait(3000);
-
     // 📌 Click to open project selection modal
     cy.get(selector.selectProject).click();
-    cy.wait(3000);
 
     // 📂 Select a project from the dropdown
     cy.get(selector.Project).click({ force: true });
-    cy.wait(3000);
     // 🗂 Select the first available phase
     cy.get(selector.Phase).first().click({ force: true });
-    cy.wait(3000);
 
     // ⌨️ Enter  hours/day in HRSDAY field
     cy.get(selector.HRSDAY).click().type('8');
-    cy.wait(3000);
 
     // ⌨️ Enter  workday
     cy.get(selector.workday).click().type('3');
-    cy.wait(3000);
 
     // 🔗 Enable Start date dependency by clicking on the chain icon
     cy.get('[data-testid="start-date-dependency-icon-button"]').click({
       force: true,
     });
-    cy.wait(3000);
 
     // 🔒 Lock the percentage value using the lock icon
     cy.get(selector.lockIcon).first().click({ force: true });
-    cy.wait(1000);
 
     // ✅ click on create button
     cy.get(selector.createbutton).click({ force: true });
-    cy.wait(3000);
   });
 });

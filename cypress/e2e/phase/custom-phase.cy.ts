@@ -13,29 +13,18 @@ describe('Project schdule - Create Custom Phase', () => {
     Submit: '[data-testid="phase-modal-submit-btn-container"]',
     ModalItem: '.Menu__Item-sc-l2d90n-11.fMUOCW',
   };
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-    cy.visit(appDomain);
-  });
 
   it('should log in successfully and create one short unique phase name', () => {
-    cy.viewport(1920, 1080);
-
     login(
       (Cypress.env('LOGIN_USERNAME') as string) || '',
       (Cypress.env('Button') as string) || '',
       (Cypress.env('LOGIN_PASSWORD') as string) || ''
     );
 
-    cy.wait(10000);
-
     // Navigate to the project and open phase section
     cy.get(selector.Project).click({ force: true });
-    cy.wait(3000);
 
     cy.get(selector.SelectProject).click({ force: true });
-    cy.wait(3000);
 
     cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
       .first()
@@ -62,7 +51,6 @@ describe('Project schdule - Create Custom Phase', () => {
 
     // Submit
     cy.get(selector.Submit).should('be.visible').click();
-    cy.wait(3000);
 
     // Verify success
     cy.get('body').then(($body) => {

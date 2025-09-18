@@ -9,14 +9,6 @@ describe('Crearte New Portfolio - New Project', () => {
       '.AddEditBoardForm__StyledButtonRow-sc-9bmej6-4 > div > .ButtonBase-sc-1h8v6sc-0',
   };
 
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
-
   // Define an array of names
   const names = [
     'FedEx',
@@ -32,7 +24,6 @@ describe('Crearte New Portfolio - New Project', () => {
   ];
   it('Crearte New Portfolio - New Project', () => {
     // Set viewport to Full HD resolution
-    cy.viewport(1920, 1080);
 
     //Perfom Login
     login(
@@ -42,7 +33,6 @@ describe('Crearte New Portfolio - New Project', () => {
     );
 
     cy.contains('Dashboard', { timeout: 10000 }).should('be.visible'); // or some unique element
-    cy.wait(10000);
 
     //click on Add Icon
     cy.get(selector.Addicon).click();
@@ -59,10 +49,8 @@ describe('Crearte New Portfolio - New Project', () => {
 
     //Click on slider Public Private
     cy.get('.slider').click();
-    cy.wait(3000);
 
     //click on Create Button
     cy.contains('Create').click({ force: true });
-    cy.wait(3000);
   });
 });

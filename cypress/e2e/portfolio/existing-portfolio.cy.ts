@@ -8,17 +8,8 @@ describe('Exsting Portfolio - Create New Project', () => {
       '.BoardSelectMenu__BoardItemContents-sc-aholn7-6.cvVGdF.board-item-contents',
   };
 
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
-
   it('Create New Project Exsting Portfolio ', () => {
     // Set viewport to Full HD resolution
-    cy.viewport(1920, 1080);
 
     // Perform Login
     login(
@@ -26,8 +17,6 @@ describe('Exsting Portfolio - Create New Project', () => {
       (Cypress.env('Button') as string) || '', // Button text like "Continue"
       (Cypress.env('LOGIN_PASSWORD') as string) || ''
     );
-
-    cy.wait(10000);
 
     // Dynamically generate prefixes PA to PZ
     const prefixes = Array.from(
@@ -41,14 +30,11 @@ describe('Exsting Portfolio - Create New Project', () => {
 
     // Click on Add Icon
     cy.get(selector.Addicon).click();
-    cy.wait(3000);
 
     cy.get(selector.Project).click();
-    cy.wait(3000);
 
     // Fill the form
     cy.get(selector.SelectPortfolio).first().click();
-    cy.wait(3000);
 
     cy.get('.form-project-title').click().type(shortName); // Using as project name
     cy.get('.form-project-description').click().type('This is for testing');
@@ -56,6 +42,5 @@ describe('Exsting Portfolio - Create New Project', () => {
     cy.get('.client-input').click().type('55555').type('{enter}');
     cy.get('.Checkbox__OriginalInput-sc-uli8ed-0.cUieaw').first().click();
     cy.get('button.submit-button').click();
-    cy.wait(5000);
   });
 });

@@ -13,16 +13,9 @@ describe('Planner - Create Planner HRSDAY Lock End Date Dependency', () => {
   };
 
   // This block runs before each test
-  beforeEach(() => {
-    // Get app domain from environment variable
-    const appDomain = Cypress.env('APP_DOMAIN');
-    cy.log('APP_DOMAIN:', appDomain);
-    cy.visit(appDomain);
-  });
 
   it('should log in and create a plan with end date dependency and HRSDAY lock', () => {
     // Set screen resolution
-    cy.viewport(1920, 1080);
 
     // Login using custom function and environment credentials
     login(
@@ -31,22 +24,14 @@ describe('Planner - Create Planner HRSDAY Lock End Date Dependency', () => {
       Cypress.env('LOGIN_PASSWORD')
     );
 
-    cy.wait(10000);
-
-    cy.wait(4000);
-
     // Click on the Planner tab
     cy.get(selector.Planner).click({ force: true });
-    cy.wait(4000);
 
     // Select the first project in the list
     cy.get(selector.Project).first().click({ force: true });
-    cy.wait(4000);
 
     // Select the first team member
     cy.get(selector.Member).first().click({ force: true });
-
-    cy.wait(5000);
 
     // Get the first even row
     cy.get('.rct-hl.rct-hl-even')
@@ -63,7 +48,6 @@ describe('Planner - Create Planner HRSDAY Lock End Date Dependency', () => {
 
     // Open phase selector
     cy.get(selector.SelectPhase).click({ force: true });
-    cy.wait(5000);
 
     // Filter and select only non-archived phases
     cy.get(
@@ -83,8 +67,6 @@ describe('Planner - Create Planner HRSDAY Lock End Date Dependency', () => {
           );
         }
       });
-
-    cy.wait(5000);
 
     // Helper to generate random number
     function getRandomInt(min: number, max: number) {
@@ -106,19 +88,14 @@ describe('Planner - Create Planner HRSDAY Lock End Date Dependency', () => {
       .clear()
       .type(getRandomInt(1, 10).toString());
 
-    cy.wait(3000);
-
     // ✅ Add End Date Dependency
     cy.get(selector.EndDateDependency).click({ force: true });
-    cy.wait(2000);
 
     // Optional 🔒 Lock icon for % per day
     cy.get(selector.LockIcon).first().click({ force: true });
-    cy.wait(1000);
     cy.get('input[name="work_days"]')
       .clear()
       .type(getRandomInt(1, 20).toString());
-    cy.wait(2000);
 
     // click on create button
     cy.contains('button', 'Create').click();

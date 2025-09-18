@@ -90,29 +90,7 @@ jobs:
       fail-fast: false
       max-parallel: 8 # Run up to 4 test suites in parallel
       matrix:
-        test-suite:
-          - name: 'Home Tasks'
-            spec: 'cypress/e2e/home/**/*.cy.ts'
-          - name: 'Login Tests'
-            spec: 'cypress/e2e/login/**/*.cy.ts'
-          - name: 'Member Tests'
-            spec: 'cypress/e2e/member/**/*.cy.ts'
-          - name: 'Phase Tests'
-            spec: 'cypress/e2e/phase/**/*.cy.ts'
-          - name: 'Phase Dependencies'
-            spec: 'cypress/e2e/phase-dependancy-clear-date/**/*.cy.ts'
-          - name: 'Portfolio Tests'
-            spec: 'cypress/e2e/portfolio/**/*.cy.ts'
-          - name: 'Project Tests'
-            spec: 'cypress/e2e/project/**/*.cy.ts'
-          - name: 'Report Tests'
-            spec: 'cypress/e2e/report/**/*.cy.ts'
-          - name: 'Planner Tests'
-            spec: 'cypress/e2e/planner/**/*.cy.ts'
-          - name: 'Workload Tests'
-            spec: 'cypress/e2e/workload/**/*.cy.ts'
-          - name: 'Core Spec'
-            spec: 'cypress/e2e/spec.cy.ts'
+        containers: [1, 2, 3, 4, 5, 6, 7, 8] # Number of containers to run
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -152,7 +130,7 @@ jobs:
       - name: Run ${{ matrix.test-suite.name }}
         run: |
           # Run specific test suite with bun
-          mise exec -- bun x cypress run --browser chrome --spec "${{ matrix.test-suite.spec }}" --record
+          mise exec -- bun x cypress run --browser chrome --record --parallel
         env:
           # Cypress environment variables
           CYPRESS_PROJECT_ID: ${{ vars.CYPRESS_PROJECT_ID }}

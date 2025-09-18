@@ -9,16 +9,8 @@ describe('Create work plan - Workload module', () => {
       '.MemberGroupRenderer__StyledGroupBodyContainer-sc-qgfkme-11.jNQJGI',
   };
 
-  beforeEach(() => {
-    // 🌐 Visit the application domain from environment variables
-    const appDomain = Cypress.env('APP_DOMAIN');
-    cy.log('APP_DOMAIN:', appDomain);
-    cy.visit(appDomain);
-  });
-
   it('should log in successfully and delete an existing work plan in Workload Page', () => {
     // Set the viewport size for full screen view
-    cy.viewport(1920, 1080);
 
     // 🔐 Log in using custom command with env credentials
     login(
@@ -27,15 +19,11 @@ describe('Create work plan - Workload module', () => {
       Cypress.env('LOGIN_PASSWORD')
     );
 
-    cy.wait(10000); // Wait for the app/dashboard to fully load
-
     // 📘 Click on the "Workload" tab in the sidebar
     cy.get(selector.workload).click();
-    cy.wait(3000);
 
     // 👤 Select the first member from the list
     cy.get(selector.Member).first().click({ force: true });
-    cy.wait(5000);
 
     // 🗂️ Try to find existing work plans (bars) for the selected user
     cy.document().then((doc) => {
@@ -56,7 +44,6 @@ describe('Create work plan - Workload module', () => {
 
         // 🗑️ Click on "Delete" option
         cy.contains('Delete').click({ force: true });
-        cy.wait(3000);
 
         // ✅ Confirm deletion by clicking "Yes"
         cy.contains('button', 'Yes').click({ force: true });

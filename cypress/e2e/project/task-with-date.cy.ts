@@ -15,17 +15,8 @@ describe('Project Task- Project Create task with date', () => {
       '.filter-list-item-container > [style="position: absolute; left: 0px; top: 120px; height: 50px; width: calc(100% + 0px); padding-left: 24px; display: flex; align-items: center; outline: none;"]',
   };
 
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
-
   it('should log in successfully with valid credentials Project Create task with date select', () => {
     // Set viewport to Full HD resolution
-    cy.viewport(1920, 1080);
 
     // Perform Login
     login(
@@ -34,21 +25,16 @@ describe('Project Task- Project Create task with date', () => {
       (Cypress.env('LOGIN_PASSWORD') as string) || ''
     );
 
-    cy.wait(10000);
-
     // Click on the side Menu Project Option
     cy.get(selector.Project).click({ force: true });
-    cy.wait(3000);
 
     cy.get(selector.SelectProject).click({ force: true });
-    cy.wait(3000);
 
     cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
       .first()
       .find('.ProjectRow__ProjectInfo-sc-17zwnx2-2')
       .click({ force: true });
 
-    cy.wait(9000);
     cy.get("[id='tasks-tab']").click({ force: true });
 
     // Enter task name
@@ -67,14 +53,12 @@ describe('Project Task- Project Create task with date', () => {
         const randomIndex = Math.floor(Math.random() * $days.length);
         cy.wrap($days[randomIndex]).click({ force: true });
       });
-    cy.wait(5000);
 
     cy.contains('Done').click();
 
     cy.get('.styles__ContentEditable-sc-1x862sm-13.cVboZc.creating').as(
       'firstTask'
     );
-    cy.wait(4000);
 
     // // Generate and type short random task name
     // const randomTaskName = `T${Math.floor(Math.random() * 1000)}`;

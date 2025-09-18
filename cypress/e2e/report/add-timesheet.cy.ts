@@ -17,37 +17,21 @@ describe('Report Timesheet - Create Timesheet', () => {
     Description: '.styles__ReportTimesheetStyledCell-sc-194g64u-61.gtbTPi',
   };
 
-  beforeEach(() => {
-    const appDomain = Cypress.env('APP_DOMAIN');
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
-
   it('Create Time sheet', () => {
-    cy.viewport(1920, 1080);
     login(
       Cypress.env('LOGIN_USERNAME'),
       Cypress.env('Button'),
       Cypress.env('LOGIN_PASSWORD')
     );
 
-    cy.wait(10000);
-
     cy.get(selector.Report).click({ force: true });
-    cy.wait(3000);
     cy.get(selector.TimeSheet).click({ force: true });
-    cy.wait(3000);
 
     cy.get(
       '.SvgIcon__Svg-sc-vv99ju-0.iNBxYk.styles__StyledAddPlusIcon-sc-194g64u-0.fKhZDW'
     ).click();
-    cy.wait(3000);
 
     cy.contains('Select Date').click({ force: true });
-
-    cy.wait(3000);
 
     cy.get(selector.CalanderMonth)
       .find(
@@ -61,7 +45,6 @@ describe('Report Timesheet - Create Timesheet', () => {
     cy.contains('Save').click();
 
     cy.get(selector.SelectMember).click({ force: true });
-    cy.wait(3000);
 
     cy.get('.flyout-list-item-container').then(($items) => {
       const randomIndex = Math.floor(Math.random() * $items.length);
@@ -72,8 +55,6 @@ describe('Report Timesheet - Create Timesheet', () => {
       force: true,
     });
 
-    cy.wait(3000);
-
     cy.get(selector.Project).then(($items) => {
       const count = $items.length;
       if (count > 0) {
@@ -82,8 +63,6 @@ describe('Report Timesheet - Create Timesheet', () => {
       }
     });
 
-    cy.wait(3000);
-
     cy.get('body').then(($body) => {
       if ($body.find('[data-testid="confirm-modal-confirm-btn"]').length > 0) {
         cy.get('[data-testid="confirm-modal-confirm-btn"]')
@@ -91,8 +70,6 @@ describe('Report Timesheet - Create Timesheet', () => {
           .click();
       }
     });
-
-    cy.wait(3000);
 
     cy.get('body').then(($body) => {
       if (
@@ -119,8 +96,6 @@ describe('Report Timesheet - Create Timesheet', () => {
       }
     );
 
-    cy.wait(3000);
-
     cy.get(selector.WorkCategory).then(($items) => {
       const count = $items.length;
       if (count > 1) {
@@ -145,7 +120,5 @@ describe('Report Timesheet - Create Timesheet', () => {
       .type(randomNumber.toString() + '{enter}');
 
     cy.contains('Add').click();
-
-    cy.wait(3000);
   });
 });

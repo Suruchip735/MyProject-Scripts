@@ -1,17 +1,8 @@
 import { login } from '../../../support/login';
 
 describe('MosaicApp Login Test', () => {
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
-
   it('should log in successfully with valid credentials Home task personal Project without date select', () => {
     // Set viewport to Full HD resolution
-    cy.viewport(1920, 1080);
 
     //Perfom Login
     login(
@@ -21,7 +12,6 @@ describe('MosaicApp Login Test', () => {
     );
 
     // cy.contains('Dashboard', { timeout: 10000 }).should('be.visible'); // or some unique element
-    cy.wait(10000);
 
     const selector = {
       Task: '.react-grid-item',
@@ -32,9 +22,7 @@ describe('MosaicApp Login Test', () => {
     };
 
     //click on task
-    cy.wait(9000);
     cy.contains('Tasks').click();
-    cy.wait(5000);
 
     // opens/activates the input
     cy.contains('Type task').click({ force: true });
@@ -44,21 +32,15 @@ describe('MosaicApp Login Test', () => {
       .click()
       .type('Test perwithoutdate')
       .type('{enter}');
-    cy.wait(2000);
 
     cy.get('.InfiniteScroller__GroupWrapper-sc-10n31g4-3')
       .first()
       .as('firstTask');
 
-    cy.get('@firstTask')
-      .find('input[type="checkbox"]')
-      .first()
-      .check({ force: true });
+    cy.get('@firstTask').find('input[type="checkbox"]').first().check();
 
     cy.contains('Delete').click();
-    cy.wait(3000);
     cy.contains('Permanently Delete').click();
-    cy.wait(3000);
 
     // ✅ Check if an error message is shown
     cy.get('body').then(($body) => {

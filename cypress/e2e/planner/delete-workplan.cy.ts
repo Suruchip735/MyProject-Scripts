@@ -11,18 +11,9 @@ describe('Validate Login Functionality', () => {
   };
 
   // Runs before each test in the block
-  beforeEach(() => {
-    // Read the domain from environment variables
-    const appDomain = Cypress.env('APP_DOMAIN');
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the application URL
-    cy.visit(appDomain);
-  });
 
   it('Validate Login with valid Credentials', () => {
     // Set viewport size to mimic full HD screen
-    cy.viewport(1920, 1080);
 
     // Perform login using environment variables
     login(
@@ -32,21 +23,15 @@ describe('Validate Login Functionality', () => {
     );
 
     // Wait for page and user data to load
-    cy.wait(10000);
 
     // Navigate to 'Planner' section
-    cy.wait(4000);
     cy.get(selector.Planner).click({ force: true });
 
     // Click on the first project in the list
-    cy.wait(4000);
     cy.get(selector.Project).first().click({ force: true });
 
     // Select the first team member
-    cy.wait(4000);
     cy.get(selector.Member).first().click({ force: true });
-
-    cy.wait(5000);
 
     // Try to find existing schedule bars (work plans)
     cy.document().then((doc) => {
@@ -69,7 +54,6 @@ describe('Validate Login Functionality', () => {
         cy.contains('Delete').click({ force: true });
 
         // Confirm the delete action
-        cy.wait(3000);
         cy.contains('button', 'Yes').click({ force: true });
       } else {
         // Log message if no work plans are found
@@ -78,6 +62,5 @@ describe('Validate Login Functionality', () => {
     });
 
     // Final wait to ensure actions complete
-    cy.wait(5000);
   });
 });

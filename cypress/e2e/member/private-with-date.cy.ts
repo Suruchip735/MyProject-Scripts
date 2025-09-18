@@ -13,16 +13,8 @@ describe('Member Task - Create Task Private Project with date', () => {
     CalanderMonth: '.CalendarMonth',
   };
 
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-
-    // Visit the site
-    cy.visit(appDomain);
-  });
   it('should log in successfully with valid credentials member create task Private Project with date select', () => {
     // Set viewport to Full HD resolution
-    cy.viewport(1920, 1080);
 
     //Perfom Login
     login(
@@ -32,7 +24,6 @@ describe('Member Task - Create Task Private Project with date', () => {
     );
 
     cy.contains('Dashboard', { timeout: 10000 }).should('be.visible'); // or some unique element
-    cy.wait(10000);
 
     //Click on side menu Member option
     cy.get(selector.Member, { timeout: 15000 })

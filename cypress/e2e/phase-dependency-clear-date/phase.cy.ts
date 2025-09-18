@@ -16,15 +16,7 @@ describe('Project schdule - set or clear Phase date with dependency', () => {
       .click({ force: true });
   }
 
-  beforeEach(() => {
-    const appDomain = (Cypress.env('APP_DOMAIN') as string) || '';
-    cy.log('APP_DOMAIN:', appDomain);
-    cy.visit(appDomain);
-  });
-
   it('should log in, plan date, add dependency or clear it if exists', () => {
-    cy.viewport(1920, 1080);
-
     // Login
     login(
       (Cypress.env('LOGIN_USERNAME') as string) || '',
@@ -32,11 +24,8 @@ describe('Project schdule - set or clear Phase date with dependency', () => {
       (Cypress.env('LOGIN_PASSWORD') as string) || ''
     );
 
-    cy.wait(10000);
-
     // Open project
     cy.get(selector.projectIcon).click();
-    cy.wait(5000);
     cy.get('[data-testid="My Projects"]').click({ force: true });
 
     cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
@@ -45,11 +34,9 @@ describe('Project schdule - set or clear Phase date with dependency', () => {
       .click({ force: true });
 
     cy.get(selector.projectIcon).click();
-    cy.wait(4000);
 
     // Go to phases
     cy.get('.ProjectPhasesButton__NumPhases-sc-evyft6-2').click();
-    cy.wait(3000);
 
     cy.get('[data-testid="plan-date-cell"]')
       .eq(1)
@@ -71,7 +58,6 @@ describe('Project schdule - set or clear Phase date with dependency', () => {
                 const endIndex = Math.min(startIndex + 5, totalDays - 1);
 
                 cy.wrap($days[startIndex]).click({ force: true });
-                cy.wait(2000);
                 cy.wrap($days[endIndex]).click({ force: true });
 
                 // === Add Dependency ===
@@ -80,8 +66,6 @@ describe('Project schdule - set or clear Phase date with dependency', () => {
                 )
                   .should('be.visible')
                   .click({ force: true });
-
-                cy.wait(2000);
 
                 cy.get(
                   '.DependencyTag__DependencyTagItemContent-sc-87juxu-2.clPMzy'
@@ -109,21 +93,16 @@ describe('Project schdule - set or clear Phase date with dependency', () => {
                   .first()
                   .click({ force: true });
 
-                cy.wait(3000);
-
                 cy.get(
                   '.styles__MenuItemContainer-sc-13vjrrx-1.TargetTypeMenuRenderer__StyledMenuItemContainer-sc-f32l49-0.iESmHK.cqaZPi.TargetTypePopover__StyledTargetTypeMenuRenderer-sc-1wvyn8x-1.gLEvPE'
                 )
                   .first()
                   .click({ force: true });
-                cy.wait(3000);
 
                 // ✅ Click Done AFTER dependency is added
                 cy.get('.styles__DoneButton-sc-5z27h7-21.fpeeBn')
                   .should('be.visible')
                   .click({ force: true });
-
-                cy.wait(3000);
 
                 // ✅ Optional: Clear if dependency still exists
                 cy.get('body').then(($body) => {
@@ -139,7 +118,6 @@ describe('Project schdule - set or clear Phase date with dependency', () => {
             });
         } else {
           // Already planned, just clear
-          cy.wait(3000);
           clearAndConfirm($cell);
         }
       });
