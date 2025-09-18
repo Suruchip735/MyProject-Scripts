@@ -10,7 +10,7 @@ describe('Search Project - Redirect Detail Page', () => {
     firstMemAdd:
       '[style="display: flex; width: 100%; position: absolute; left: 0px; top: 0px; height: 50px; margin: 0px;"] > .add > .SharedAddCell__StyledContainer-sc-9z35hl-0',
     AddMemdoneBtn: '[data-testid="add-done-button"]',
-    teamBuilderBtn: 
+    teamBuilderBtn:
       '.InviteRow__StyledContainer-sc-19qnagk-0 > .styles__TextButton-sc-1lvufti-0',
     teamBuilderDoneBtn:
       '.Header__HeaderContainer-sc-kpo3b9-1 > .styles__TextButton-sc-1lvufti-0',
@@ -83,7 +83,7 @@ describe('Search Project - Redirect Detail Page', () => {
 
           //Org Settings back button
           cy.get('.styles__StyledNavTextNavItem-sc-xxn0d4-0').click();
-          
+
           cy.get(selector.projectIcon).click();
 
           cy.get(selector.myProjects).click();

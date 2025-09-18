@@ -1,36 +1,1015 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <script
+      type="module"
+      crossorigin
+      src="./assets/polyfills-BL2LGzjx.js"
+    ></script>
 
-<head>
-  <script type="module" crossorigin src="./assets/polyfills-BL2LGzjx.js"></script>
+    <meta charset="utf-8" />
+    <link href="/__cypress/assets/favicon.png?v2" rel="icon" />
+    <title>mosaic-e2e-tests</title>
+    <link href="/__cypress/runner/favicon.ico?v2" rel="icon" />
+    <script type="module" crossorigin src="./assets/index-BVZ6TAOi.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DbbJtRtD.css" />
+  </head>
 
-  <meta charset="utf-8" />
-  <link href="/__cypress/assets/favicon.png?v2" rel="icon">
-  <title>mosaic-e2e-tests</title>
-  <link href="/__cypress/runner/favicon.ico?v2" rel="icon">
-  <script type="module" crossorigin src="./assets/index-BVZ6TAOi.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DbbJtRtD.css">
-</head>
+  <body>
+    <script>
+      window.__RUN_MODE_SPECS__ = [
+        {
+          fileExtension: '.ts',
+          baseName: 'createDashboard.cy.ts',
+          fileName: 'createDashboard',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'Dashboard/createDashboard.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/Dashboard/createDashboard.cy.ts',
+          relative: 'cypress\\e2e\\Dashboard\\createDashboard.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/Dashboard/createDashboard.cy.ts',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'inviteMember.cy.js',
+          fileName: 'inviteMember',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'member/inviteMember.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/member/inviteMember.cy.js',
+          relative: 'cypress\\e2e\\member\\inviteMember.cy.js',
+          absolute: 'D:/mosaic-e2e-tests/cypress/e2e/member/inviteMember.cy.js',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'private-with-date.cy.ts',
+          fileName: 'private-with-date',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'member/private-with-date.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/member/private-with-date.cy.ts',
+          relative: 'cypress\\e2e\\member\\private-with-date.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/member/private-with-date.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'private-without-date.cy.ts',
+          fileName: 'private-without-date',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'member/private-without-date.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/member/private-without-date.cy.ts',
+          relative: 'cypress\\e2e\\member\\private-without-date.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/member/private-without-date.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'login.cy.ts',
+          fileName: 'login',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'login/login.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/login/login.cy.ts',
+          relative: 'cypress\\e2e\\login\\login.cy.ts',
+          absolute: 'D:/mosaic-e2e-tests/cypress/e2e/login/login.cy.ts',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'inviteMember.cy.js',
+          fileName: 'inviteMember',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'Org Settings/inviteMember.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/Org Settings/inviteMember.cy.js',
+          relative: 'cypress\\e2e\\Org Settings\\inviteMember.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/Org Settings/inviteMember.cy.js',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'milestone.cy.ts',
+          fileName: 'milestone',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'phase-dependency-clear-date/milestone.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/phase-dependency-clear-date/milestone.cy.ts',
+          relative:
+            'cypress\\e2e\\phase-dependency-clear-date\\milestone.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/phase-dependency-clear-date/milestone.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'phase.cy.ts',
+          fileName: 'phase',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'phase-dependency-clear-date/phase.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/phase-dependency-clear-date/phase.cy.ts',
+          relative: 'cypress\\e2e\\phase-dependency-clear-date\\phase.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/phase-dependency-clear-date/phase.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'subphase.cy.ts',
+          fileName: 'subphase',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'phase-dependency-clear-date/subphase.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/phase-dependency-clear-date/subphase.cy.ts',
+          relative: 'cypress\\e2e\\phase-dependency-clear-date\\subphase.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/phase-dependency-clear-date/subphase.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'Planner_combined_dependency.cy.ts',
+          fileName: 'Planner_combined_dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'planner/Planner_combined_dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/planner/Planner_combined_dependency.cy.ts',
+          relative: 'cypress\\e2e\\planner\\Planner_combined_dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/planner/Planner_combined_dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'create-workplan.cy.ts',
+          fileName: 'create-workplan',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'planner/create-workplan.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/planner/create-workplan.cy.ts',
+          relative: 'cypress\\e2e\\planner\\create-workplan.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/planner/create-workplan.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'delete-workplan.cy.ts',
+          fileName: 'delete-workplan',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'planner/delete-workplan.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/planner/delete-workplan.cy.ts',
+          relative: 'cypress\\e2e\\planner\\delete-workplan.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/planner/delete-workplan.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'edit_workplan.cy.ts',
+          fileName: 'edit_workplan',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'planner/edit_workplan.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/planner/edit_workplan.cy.ts',
+          relative: 'cypress\\e2e\\planner\\edit_workplan.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/planner/edit_workplan.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'hrsday-end-dependency.cy.ts',
+          fileName: 'hrsday-end-dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'planner/hrsday-end-dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/planner/hrsday-end-dependency.cy.ts',
+          relative: 'cypress\\e2e\\planner\\hrsday-end-dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/planner/hrsday-end-dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'percentage-end-dependency.cy.ts',
+          fileName: 'percentage-end-dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'planner/percentage-end-dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/planner/percentage-end-dependency.cy.ts',
+          relative: 'cypress\\e2e\\planner\\percentage-end-dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/planner/percentage-end-dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'testWorkplan.cy.ts',
+          fileName: 'testWorkplan',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'planner/testWorkplan.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/planner/testWorkplan.cy.ts',
+          relative: 'cypress\\e2e\\planner\\testWorkplan.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/planner/testWorkplan.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'workday-end-dependency.cy.ts',
+          fileName: 'workday-end-dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'planner/workday-end-dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/planner/workday-end-dependency.cy.ts',
+          relative: 'cypress\\e2e\\planner\\workday-end-dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/planner/workday-end-dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'custom-milestone.cy.ts',
+          fileName: 'custom-milestone',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'phase/custom-milestone.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/phase/custom-milestone.cy.ts',
+          relative: 'cypress\\e2e\\phase\\custom-milestone.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/phase/custom-milestone.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'custom-phase.cy.ts',
+          fileName: 'custom-phase',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'phase/custom-phase.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/phase/custom-phase.cy.ts',
+          relative: 'cypress\\e2e\\phase\\custom-phase.cy.ts',
+          absolute: 'D:/mosaic-e2e-tests/cypress/e2e/phase/custom-phase.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'custom-subphase.cy.ts',
+          fileName: 'custom-subphase',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'phase/custom-subphase.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/phase/custom-subphase.cy.ts',
+          relative: 'cypress\\e2e\\phase\\custom-subphase.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/phase/custom-subphase.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'create-portfolio.cy.ts',
+          fileName: 'create-portfolio',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'portfolio/create-portfolio.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/portfolio/create-portfolio.cy.ts',
+          relative: 'cypress\\e2e\\portfolio\\create-portfolio.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/portfolio/create-portfolio.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'duplicate-project.cy.ts',
+          fileName: 'duplicate-project',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'portfolio/duplicate-project.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/portfolio/duplicate-project.cy.ts',
+          relative: 'cypress\\e2e\\portfolio\\duplicate-project.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/portfolio/duplicate-project.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'existing-portfolio.cy.ts',
+          fileName: 'existing-portfolio',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'portfolio/existing-portfolio.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/portfolio/existing-portfolio.cy.ts',
+          relative: 'cypress\\e2e\\portfolio\\existing-portfolio.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/portfolio/existing-portfolio.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'new-portfolio-project.cy.ts',
+          fileName: 'new-portfolio-project',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'portfolio/new-portfolio-project.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/portfolio/new-portfolio-project.cy.ts',
+          relative: 'cypress\\e2e\\portfolio\\new-portfolio-project.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/portfolio/new-portfolio-project.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'add-members.cy.ts',
+          fileName: 'add-members',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/add-members.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/add-members.cy.ts',
+          relative: 'cypress\\e2e\\project\\add-members.cy.ts',
+          absolute: 'D:/mosaic-e2e-tests/cypress/e2e/project/add-members.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'addMembers_updated.cy.ts',
+          fileName: 'addMembers_updated',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/addMembers_updated.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/addMembers_updated.cy.ts',
+          relative: 'cypress\\e2e\\project\\addMembers_updated.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/addMembers_updated.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'budgetUpdate.cy.ts',
+          fileName: 'budgetUpdate',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/budgetUpdate.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/budgetUpdate.cy.ts',
+          relative: 'cypress\\e2e\\project\\budgetUpdate.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/budgetUpdate.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'budget_override.cy.ts',
+          fileName: 'budget_override',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/budget_override.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/budget_override.cy.ts',
+          relative: 'cypress\\e2e\\project\\budget_override.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/budget_override.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'new_budget_override.cy.ts',
+          fileName: 'new_budget_override',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/new_budget_override.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/new_budget_override.cy.ts',
+          relative: 'cypress\\e2e\\project\\new_budget_override.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/new_budget_override.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'pbudget_override.cy.ts',
+          fileName: 'pbudget_override',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/pbudget_override.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/pbudget_override.cy.ts',
+          relative: 'cypress\\e2e\\project\\pbudget_override.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/pbudget_override.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'phaseInfo_update.cy.ts',
+          fileName: 'phaseInfo_update',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/phaseInfo_update.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/phaseInfo_update.cy.ts',
+          relative: 'cypress\\e2e\\project\\phaseInfo_update.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/phaseInfo_update.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'project-search.cy.ts',
+          fileName: 'project-search',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/project-search.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/project-search.cy.ts',
+          relative: 'cypress\\e2e\\project\\project-search.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/project-search.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'task-with-date.cy.ts',
+          fileName: 'task-with-date',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/task-with-date.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/task-with-date.cy.ts',
+          relative: 'cypress\\e2e\\project\\task-with-date.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/task-with-date.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'task-without-date.cy.ts',
+          fileName: 'task-without-date',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/task-without-date.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/task-without-date.cy.ts',
+          relative: 'cypress\\e2e\\project\\task-without-date.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/task-without-date.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'testAMember.cy.ts',
+          fileName: 'testAMember',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/testAMember.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/testAMember.cy.ts',
+          relative: 'cypress\\e2e\\project\\testAMember.cy.ts',
+          absolute: 'D:/mosaic-e2e-tests/cypress/e2e/project/testAMember.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'update_phase_budget_fee.cy.ts',
+          fileName: 'update_phase_budget_fee',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/update_phase_budget_fee.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/update_phase_budget_fee.cy.ts',
+          relative: 'cypress\\e2e\\project\\update_phase_budget_fee.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/update_phase_budget_fee.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'add-timesheet.cy.ts',
+          fileName: 'add-timesheet',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'report/add-timesheet.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/report/add-timesheet.cy.ts',
+          relative: 'cypress\\e2e\\report\\add-timesheet.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/report/add-timesheet.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'edit-timesheet.cy.ts',
+          fileName: 'edit-timesheet',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'report/edit-timesheet.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/report/edit-timesheet.cy.ts',
+          relative: 'cypress\\e2e\\report\\edit-timesheet.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/report/edit-timesheet.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'multiple-approve-timesheet.cy.ts',
+          fileName: 'multiple-approve-timesheet',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'report/multiple-approve-timesheet.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/report/multiple-approve-timesheet.cy.ts',
+          relative: 'cypress\\e2e\\report\\multiple-approve-timesheet.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/report/multiple-approve-timesheet.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'plannedTime_Report_update.cy.ts',
+          fileName: 'plannedTime_Report_update',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'report/plannedTime_Report_update.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/report/plannedTime_Report_update.cy.ts',
+          relative: 'cypress\\e2e\\report\\plannedTime_Report_update.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/report/plannedTime_Report_update.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'single-approve-timesheet.cy.ts',
+          fileName: 'single-approve-timesheet',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'report/single-approve-timesheet.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/report/single-approve-timesheet.cy.ts',
+          relative: 'cypress\\e2e\\report\\single-approve-timesheet.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/report/single-approve-timesheet.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'workload_report_update.cy.ts',
+          fileName: 'workload_report_update',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'report/workload_report_update.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/report/workload_report_update.cy.ts',
+          relative: 'cypress\\e2e\\report\\workload_report_update.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/report/workload_report_update.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'Combine_dependency.cy.ts',
+          fileName: 'Combine_dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'workload/Combine_dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/workload/Combine_dependency.cy.ts',
+          relative: 'cypress\\e2e\\workload\\Combine_dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/workload/Combine_dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'create-workplan.cy.ts',
+          fileName: 'create-workplan',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'workload/create-workplan.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/workload/create-workplan.cy.ts',
+          relative: 'cypress\\e2e\\workload\\create-workplan.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/workload/create-workplan.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'delete-workplan.cy.ts',
+          fileName: 'delete-workplan',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'workload/delete-workplan.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/workload/delete-workplan.cy.ts',
+          relative: 'cypress\\e2e\\workload\\delete-workplan.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/workload/delete-workplan.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'hrsday-end-dependency.cy.ts',
+          fileName: 'hrsday-end-dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'workload/hrsday-end-dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/workload/hrsday-end-dependency.cy.ts',
+          relative: 'cypress\\e2e\\workload\\hrsday-end-dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/workload/hrsday-end-dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'hrsday-start-dependency.cy.ts',
+          fileName: 'hrsday-start-dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'workload/hrsday-start-dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/workload/hrsday-start-dependency.cy.ts',
+          relative: 'cypress\\e2e\\workload\\hrsday-start-dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/workload/hrsday-start-dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'percentage-end-dependency.cy.ts',
+          fileName: 'percentage-end-dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'workload/percentage-end-dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/workload/percentage-end-dependency.cy.ts',
+          relative: 'cypress\\e2e\\workload\\percentage-end-dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/workload/percentage-end-dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'percentage-start-dependency.cy.ts',
+          fileName: 'percentage-start-dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'workload/percentage-start-dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/workload/percentage-start-dependency.cy.ts',
+          relative: 'cypress\\e2e\\workload\\percentage-start-dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/workload/percentage-start-dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'workday-end-dependency.cy.ts',
+          fileName: 'workday-end-dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'workload/workday-end-dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/workload/workday-end-dependency.cy.ts',
+          relative: 'cypress\\e2e\\workload\\workday-end-dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/workload/workday-end-dependency.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'workday-start-dependency.cy.ts',
+          fileName: 'workday-start-dependency',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'workload/workday-start-dependency.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/workload/workday-start-dependency.cy.ts',
+          relative: 'cypress\\e2e\\workload\\workday-start-dependency.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/workload/workday-start-dependency.cy.ts',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'createDashboard.cy.js',
+          fileName: 'createDashboard',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'Dashboard/Dashboard/createDashboard.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/Dashboard/Dashboard/createDashboard.cy.js',
+          relative: 'cypress\\e2e\\Dashboard\\Dashboard\\createDashboard.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/Dashboard/Dashboard/createDashboard.cy.js',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'edit_task.cy.ts',
+          fileName: 'edit_task',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'home/task/edit_task.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/task/edit_task.cy.ts',
+          relative: 'cypress\\e2e\\home\\task\\edit_task.cy.ts',
+          absolute: 'D:/mosaic-e2e-tests/cypress/e2e/home/task/edit_task.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'personal-with-date.cy.ts',
+          fileName: 'personal-with-date',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'home/task/personal-with-date.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/task/personal-with-date.cy.ts',
+          relative: 'cypress\\e2e\\home\\task\\personal-with-date.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/task/personal-with-date.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'personal-without-date.cy.ts',
+          fileName: 'personal-without-date',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'home/task/personal-without-date.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/task/personal-without-date.cy.ts',
+          relative: 'cypress\\e2e\\home\\task\\personal-without-date.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/task/personal-without-date.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'public-with-date.cy.ts',
+          fileName: 'public-with-date',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'home/task/public-with-date.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/task/public-with-date.cy.ts',
+          relative: 'cypress\\e2e\\home\\task\\public-with-date.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/task/public-with-date.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'public-without-date.cy.ts',
+          fileName: 'public-without-date',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'home/task/public-without-date.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/task/public-without-date.cy.ts',
+          relative: 'cypress\\e2e\\home\\task\\public-without-date.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/task/public-without-date.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'calendar.cy.ts',
+          fileName: 'calendar',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'project/basics/calendar.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/project/basics/calendar.cy.ts',
+          relative: 'cypress\\e2e\\project\\basics\\calendar.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/project/basics/calendar.cy.ts',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'plannerPersonalWithdate.cy.js',
+          fileName: 'plannerPersonalWithdate',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot:
+            'home/Home/Planner/plannerPersonalWithdate.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Planner/plannerPersonalWithdate.cy.js',
+          relative:
+            'cypress\\e2e\\home\\Home\\Planner\\plannerPersonalWithdate.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Planner/plannerPersonalWithdate.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'plannerPrivateWithdate.cy.js',
+          fileName: 'plannerPrivateWithdate',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot:
+            'home/Home/Planner/plannerPrivateWithdate.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Planner/plannerPrivateWithdate.cy.js',
+          relative:
+            'cypress\\e2e\\home\\Home\\Planner\\plannerPrivateWithdate.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Planner/plannerPrivateWithdate.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'existingProjectsCheck.cy.js',
+          fileName: 'existingProjectsCheck',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot:
+            'home/Home/Projects/existingProjectsCheck.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Projects/existingProjectsCheck.cy.js',
+          relative:
+            'cypress\\e2e\\home\\Home\\Projects\\existingProjectsCheck.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/existingProjectsCheck.cy.js',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'nDelete_phase1.cy.ts',
+          fileName: 'nDelete_phase1',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'home/Home/Projects/nDelete_phase1.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Projects/nDelete_phase1.cy.ts',
+          relative: 'cypress\\e2e\\home\\Home\\Projects\\nDelete_phase1.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/nDelete_phase1.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'nEPort_new_Project.cy.ts',
+          fileName: 'nEPort_new_Project',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'home/Home/Projects/nEPort_new_Project.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Projects/nEPort_new_Project.cy.ts',
+          relative:
+            'cypress\\e2e\\home\\Home\\Projects\\nEPort_new_Project.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/nEPort_new_Project.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'nNewPhases_custom.cy.ts',
+          fileName: 'nNewPhases_custom',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'home/Home/Projects/nNewPhases_custom.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Projects/nNewPhases_custom.cy.ts',
+          relative:
+            'cypress\\e2e\\home\\Home\\Projects\\nNewPhases_custom.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/nNewPhases_custom.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'nPort_create_project_icon.cy.ts',
+          fileName: 'nPort_create_project_icon',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot:
+            'home/Home/Projects/nPort_create_project_icon.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Projects/nPort_create_project_icon.cy.ts',
+          relative:
+            'cypress\\e2e\\home\\Home\\Projects\\nPort_create_project_icon.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/nPort_create_project_icon.cy.ts',
+        },
+        {
+          fileExtension: '.ts',
+          baseName: 'ndelete_phases.cy.ts',
+          fileName: 'ndelete_phases',
+          specFileExtension: '.cy.ts',
+          relativeToCommonRoot: 'home/Home/Projects/ndelete_phases.cy.ts',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Projects/ndelete_phases.cy.ts',
+          relative: 'cypress\\e2e\\home\\Home\\Projects\\ndelete_phases.cy.ts',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/ndelete_phases.cy.ts',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'PersonalWithdate.cy.js',
+          fileName: 'PersonalWithdate',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Task/PersonalWithdate.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Task/PersonalWithdate.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Task\\PersonalWithdate.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/PersonalWithdate.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'Personalwithoutdate.cy.js',
+          fileName: 'Personalwithoutdate',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Task/Personalwithoutdate.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Task/Personalwithoutdate.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Task\\Personalwithoutdate.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/Personalwithoutdate.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'Publicwithdate.cy.js',
+          fileName: 'Publicwithdate',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Task/Publicwithdate.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Task/Publicwithdate.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Task\\Publicwithdate.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/Publicwithdate.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'Publicwithoutdate.cy.js',
+          fileName: 'Publicwithoutdate',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Task/Publicwithoutdate.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Task/Publicwithoutdate.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Task\\Publicwithoutdate.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/Publicwithoutdate.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'addTask.cy.js',
+          fileName: 'addTask',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Task/addTask.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Task/addTask.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Task\\addTask.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/addTask.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'deleteTask.cy.js',
+          fileName: 'deleteTask',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Task/deleteTask.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Task/deleteTask.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Task\\deleteTask.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/deleteTask.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'editTask copy.cy.js',
+          fileName: 'editTask copy',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Task/editTask copy.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Task/editTask copy.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Task\\editTask copy.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/editTask copy.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'editTask.cy.js',
+          fileName: 'editTask',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Task/editTask.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Task/editTask.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Task\\editTask.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/editTask.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'create.cy.js',
+          fileName: 'create',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Workplan/create.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Workplan/create.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Workplan\\create.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Workplan/create.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'createPTO.cy.js',
+          fileName: 'createPTO',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Workplan/createPTO.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Workplan/createPTO.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Workplan\\createPTO.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Workplan/createPTO.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'delete.cy.js',
+          fileName: 'delete',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Workplan/delete.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Workplan/delete.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Workplan\\delete.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Workplan/delete.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'create.cy.js',
+          fileName: 'create',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Timesheet/create.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Timesheet/create.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Timesheet\\create.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Timesheet/create.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'delete.cy.js',
+          fileName: 'delete',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Timesheet/delete.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Timesheet/delete.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Timesheet\\delete.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Timesheet/delete.cy.js',
+        },
+        {
+          fileExtension: '.js',
+          baseName: 'edit.cy.js',
+          fileName: 'edit',
+          specFileExtension: '.cy.js',
+          relativeToCommonRoot: 'home/Home/Timesheet/edit.cy.js',
+          specType: 'integration',
+          name: 'cypress/e2e/home/Home/Timesheet/edit.cy.js',
+          relative: 'cypress\\e2e\\home\\Home\\Timesheet\\edit.cy.js',
+          absolute:
+            'D:/mosaic-e2e-tests/cypress/e2e/home/Home/Timesheet/edit.cy.js',
+        },
+      ];
+      window.__CYPRESS_MODE__ = 'open';
+      window.__CYPRESS_CONFIG__ = {
+        projectName: 'mosaic-e2e-tests',
+        namespace: '__cypress',
+        base64Config:
+          'eyJjb25maWdGaWxlIjoiRDpcXG1vc2FpYy1lMmUtdGVzdHNcXGN5cHJlc3MuY29uZmlnLnRzIiwidGVzdGluZ1R5cGUiOiJlMmUiLCJwYWdlTG9hZFRpbWVvdXQiOjEyMDAwMCwiYmFzZVVybCI6Imh0dHBzOi8vbG9naW4tcmVsZWFzZS5wYXJ0eS5tb3NhaWNhcHAuY29tL2xvZ2luP3NvdXJjZVVybD1odHRwczovL3JlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbS8iLCJzdXBwb3J0RmlsZSI6IkQ6XFxtb3NhaWMtZTJlLXRlc3RzXFxjeXByZXNzXFxzdXBwb3J0XFxlMmUudHMiLCJzcGVjUGF0dGVybiI6ImN5cHJlc3MvZTJlLyoqLyouY3kue2pzLGpzeCx0cyx0c3h9Iiwic2V0dXBOb2RlRXZlbnRzIjoiW0Z1bmN0aW9uIHNldHVwTm9kZUV2ZW50c10iLCJkZWZhdWx0Q29tbWFuZFRpbWVvdXQiOjMwMDAwLCJyZXF1ZXN0VGltZW91dCI6MzAwMDAsInJlc3BvbnNlVGltZW91dCI6MzAwMDAsInRhc2tUaW1lb3V0IjozMDAwMCwiZXhlY1RpbWVvdXQiOjMwMDAwLCJ2aWRlb3NGb2xkZXIiOiJEOlxcbW9zYWljLWUyZS10ZXN0c1xcY3lwcmVzc1xcdmlkZW9zIiwic2NyZWVuc2hvdHNGb2xkZXIiOiJEOlxcbW9zYWljLWUyZS10ZXN0c1xcY3lwcmVzc1xcc2NyZWVuc2hvdHMiLCJ2aWRlbyI6dHJ1ZSwidmlld3BvcnRXaWR0aCI6MTkyMCwidmlld3BvcnRIZWlnaHQiOjEwODAsImNocm9tZVdlYlNlY3VyaXR5IjpmYWxzZSwiZXhwZXJpbWVudGFsU3R1ZGlvIjp0cnVlLCJlbnYiOnsiTE9HSU5fVVNFUk5BTUUiOiJwaW5reV9hZG1AeW9wbWFpbC5jb20iLCJMT0dJTl9QQVNTV09SRCI6IlRlc3RAMTIzNDU2Nzg5IiwiaW52YWxpZGVtYWlsIjoia3dtbXlAeW9wbWFpbC5jb20yMyIsImludmFsaWRwYXNzd29yZCI6IlBhcnRoQDEyMzQ1Njc4MyIsImVtYWlsd2hpdGVzcGFjZSI6ImtlbW15QHlvcG1haWwuY29tIiwiQ2FzZWVtYWlsIjoiS0VNTVlAeW9wbWFpbC5jb20iLCJCdXR0b24iOiJDb250aW51ZXgiLCJCdXR0b24yIjoiU2lnbiBJbiIsIkNBQ0hFX0ZPTERFUiI6IkQ6XFxDeXByZXNzQ2FjaGUifSwicHJvamVjdFJvb3QiOiJEOlxcbW9zYWljLWUyZS10ZXN0cyIsInByb2plY3ROYW1lIjoibW9zYWljLWUyZS10ZXN0cyIsInJlcG9Sb290IjoiRDovbW9zYWljLWUyZS10ZXN0cyIsInJhd0pzb24iOnsicGFnZUxvYWRUaW1lb3V0IjoxMjAwMDAsImUyZSI6eyJiYXNlVXJsIjoiaHR0cHM6Ly9sb2dpbi1yZWxlYXNlLnBhcnR5Lm1vc2FpY2FwcC5jb20vbG9naW4/c291cmNlVXJsPWh0dHBzOi8vcmVsZWFzZS5wYXJ0eS5tb3NhaWNhcHAuY29tLyIsInN1cHBvcnRGaWxlIjoiY3lwcmVzcy9zdXBwb3J0L2UyZS50cyIsInNwZWNQYXR0ZXJuIjoiY3lwcmVzcy9lMmUvKiovKi5jeS57anMsanN4LHRzLHRzeH0iLCJzZXR1cE5vZGVFdmVudHMiOiJbRnVuY3Rpb24gc2V0dXBOb2RlRXZlbnRzXSIsImRlZmF1bHRDb21tYW5kVGltZW91dCI6MzAwMDAsInJlcXVlc3RUaW1lb3V0IjozMDAwMCwicmVzcG9uc2VUaW1lb3V0IjozMDAwMCwidGFza1RpbWVvdXQiOjMwMDAwLCJleGVjVGltZW91dCI6MzAwMDAsInZpZGVvc0ZvbGRlciI6ImN5cHJlc3MvdmlkZW9zIiwic2NyZWVuc2hvdHNGb2xkZXIiOiJjeXByZXNzL3NjcmVlbnNob3RzIiwidmlkZW8iOnRydWUsInZpZXdwb3J0V2lkdGgiOjE5MjAsInZpZXdwb3J0SGVpZ2h0IjoxMDgwLCJjaHJvbWVXZWJTZWN1cml0eSI6ZmFsc2UsImV4cGVyaW1lbnRhbFN0dWRpbyI6dHJ1ZSwiZW52Ijp7IkxPR0lOX1VTRVJOQU1FIjoicGlua3lfYWRtQHlvcG1haWwuY29tIiwiTE9HSU5fUEFTU1dPUkQiOiJUZXN0QDEyMzQ1Njc4OSIsImludmFsaWRlbWFpbCI6Imt3bW15QHlvcG1haWwuY29tMjMiLCJpbnZhbGlkcGFzc3dvcmQiOiJQYXJ0aEAxMjM0NTY3ODMiLCJlbWFpbHdoaXRlc3BhY2UiOiJrZW1teUB5b3BtYWlsLmNvbSIsIkNhc2VlbWFpbCI6IktFTU1ZQHlvcG1haWwuY29tIiwiQnV0dG9uIjoiQ29udGludWV4IiwiQnV0dG9uMiI6IlNpZ24gSW4ifX0sImJhc2VVcmwiOiJodHRwczovL2xvZ2luLXJlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbS9sb2dpbj9zb3VyY2VVcmw9aHR0cHM6Ly9yZWxlYXNlLnBhcnR5Lm1vc2FpY2FwcC5jb20vIiwic3VwcG9ydEZpbGUiOiJjeXByZXNzL3N1cHBvcnQvZTJlLnRzIiwic3BlY1BhdHRlcm4iOiJjeXByZXNzL2UyZS8qKi8qLmN5Lntqcyxqc3gsdHMsdHN4fSIsInNldHVwTm9kZUV2ZW50cyI6IltGdW5jdGlvbiBzZXR1cE5vZGVFdmVudHNdIiwiZGVmYXVsdENvbW1hbmRUaW1lb3V0IjozMDAwMCwicmVxdWVzdFRpbWVvdXQiOjMwMDAwLCJyZXNwb25zZVRpbWVvdXQiOjMwMDAwLCJ0YXNrVGltZW91dCI6MzAwMDAsImV4ZWNUaW1lb3V0IjozMDAwMCwidmlkZW9zRm9sZGVyIjoiY3lwcmVzcy92aWRlb3MiLCJzY3JlZW5zaG90c0ZvbGRlciI6ImN5cHJlc3Mvc2NyZWVuc2hvdHMiLCJ2aWRlbyI6dHJ1ZSwidmlld3BvcnRXaWR0aCI6MTkyMCwidmlld3BvcnRIZWlnaHQiOjEwODAsImNocm9tZVdlYlNlY3VyaXR5IjpmYWxzZSwiZXhwZXJpbWVudGFsU3R1ZGlvIjp0cnVlLCJlbnYiOnsiTE9HSU5fVVNFUk5BTUUiOiJwaW5reV9hZG1AeW9wbWFpbC5jb20iLCJMT0dJTl9QQVNTV09SRCI6IlRlc3RAMTIzNDU2Nzg5IiwiaW52YWxpZGVtYWlsIjoia3dtbXlAeW9wbWFpbC5jb20yMyIsImludmFsaWRwYXNzd29yZCI6IlBhcnRoQDEyMzQ1Njc4MyIsImVtYWlsd2hpdGVzcGFjZSI6ImtlbW15QHlvcG1haWwuY29tIiwiQ2FzZWVtYWlsIjoiS0VNTVlAeW9wbWFpbC5jb20iLCJCdXR0b24iOiJDb250aW51ZXgiLCJCdXR0b24yIjoiU2lnbiBJbiJ9LCJlbnZGaWxlIjp7fSwicHJvamVjdFJvb3QiOiJEOlxcbW9zYWljLWUyZS10ZXN0cyIsInByb2plY3ROYW1lIjoibW9zYWljLWUyZS10ZXN0cyIsInJlcG9Sb290IjoiRDovbW9zYWljLWUyZS10ZXN0cyJ9LCJhbmltYXRpb25EaXN0YW5jZVRocmVzaG9sZCI6NSwiYXJjaCI6Ing2NCIsImJsb2NrSG9zdHMiOm51bGwsImNsaWVudENlcnRpZmljYXRlcyI6W10sImRvd25sb2Fkc0ZvbGRlciI6IkQ6XFxtb3NhaWMtZTJlLXRlc3RzXFxjeXByZXNzXFxkb3dubG9hZHMiLCJleHBlcmltZW50YWxDc3BBbGxvd0xpc3QiOmZhbHNlLCJleHBlcmltZW50YWxGZXRjaFBvbHlmaWxsIjpmYWxzZSwiZXhwZXJpbWVudGFsSW50ZXJhY3RpdmVSdW5FdmVudHMiOmZhbHNlLCJleHBlcmltZW50YWxSdW5BbGxTcGVjcyI6ZmFsc2UsImV4cGVyaW1lbnRhbE1lbW9yeU1hbmFnZW1lbnQiOmZhbHNlLCJleHBlcmltZW50YWxNb2RpZnlPYnN0cnVjdGl2ZVRoaXJkUGFydHlDb2RlIjpmYWxzZSwiZXhwZXJpbWVudGFsU2tpcERvbWFpbkluamVjdGlvbiI6bnVsbCwiZXhwZXJpbWVudGFsSnVzdEluVGltZUNvbXBpbGUiOmZhbHNlLCJleHBlcmltZW50YWxPcmlnaW5EZXBlbmRlbmNpZXMiOmZhbHNlLCJleHBlcmltZW50YWxTb3VyY2VSZXdyaXRpbmciOmZhbHNlLCJleHBlcmltZW50YWxTaW5nbGVUYWJSdW5Nb2RlIjpmYWxzZSwiZXhwZXJpbWVudGFsV2ViS2l0U3VwcG9ydCI6ZmFsc2UsImZpbGVTZXJ2ZXJGb2xkZXIiOiJEOlxcbW9zYWljLWUyZS10ZXN0cyIsImZpeHR1cmVzRm9sZGVyIjoiRDpcXG1vc2FpYy1lMmUtdGVzdHNcXGN5cHJlc3NcXGZpeHR1cmVzIiwiZXhjbHVkZVNwZWNQYXR0ZXJuIjoiKi5ob3QtdXBkYXRlLmpzIiwiaW5jbHVkZVNoYWRvd0RvbSI6ZmFsc2UsImtleXN0cm9rZURlbGF5IjowLCJtb2RpZnlPYnN0cnVjdGl2ZUNvZGUiOnRydWUsIm51bVRlc3RzS2VwdEluTWVtb3J5Ijo1MCwicGxhdGZvcm0iOiJ3aW4zMiIsInBvcnQiOjY1MzIzLCJwcm9qZWN0SWQiOm51bGwsInJlZGlyZWN0aW9uTGltaXQiOjIwLCJyZXBvcnRlciI6InNwZWMiLCJyZXBvcnRlck9wdGlvbnMiOm51bGwsInJlc29sdmVkTm9kZVBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlc1xcbm9kZWpzXFxub2RlLmV4ZSIsInJlc29sdmVkTm9kZVZlcnNpb24iOiIyMi4xNi4wIiwicmV0cmllcyI6eyJydW5Nb2RlIjowLCJvcGVuTW9kZSI6MH0sInNjcmVlbnNob3RPblJ1bkZhaWx1cmUiOnRydWUsInNsb3dUZXN0VGhyZXNob2xkIjoxMDAwMCwic2Nyb2xsQmVoYXZpb3IiOiJ0b3AiLCJzdXBwb3J0Rm9sZGVyIjoiRDpcXG1vc2FpYy1lMmUtdGVzdHNcXGN5cHJlc3NcXHN1cHBvcnQiLCJ0ZXN0SXNvbGF0aW9uIjp0cnVlLCJ0cmFzaEFzc2V0c0JlZm9yZVJ1bnMiOnRydWUsInVzZXJBZ2VudCI6bnVsbCwidmlkZW9Db21wcmVzc2lvbiI6ZmFsc2UsIndhaXRGb3JBbmltYXRpb25zIjp0cnVlLCJ3YXRjaEZvckZpbGVDaGFuZ2VzIjp0cnVlLCJhZGRpdGlvbmFsSWdub3JlUGF0dGVybiI6W10sImF1dG9PcGVuIjpmYWxzZSwiYnJvd3NlcnMiOlt7Im5hbWUiOiJjaHJvbWUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImNoYW5uZWwiOiJzdGFibGUiLCJkaXNwbGF5TmFtZSI6IkNocm9tZSIsInZlcnNpb24iOiIxNDAuMC43MzM5LjEyOCIsInBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlc1xcR29vZ2xlXFxDaHJvbWVcXEFwcGxpY2F0aW9uXFxjaHJvbWUuZXhlIiwibWluU3VwcG9ydGVkVmVyc2lvbiI6NjQsIm1ham9yVmVyc2lvbiI6IjE0MCJ9LHsibmFtZSI6ImVkZ2UiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImNoYW5uZWwiOiJzdGFibGUiLCJkaXNwbGF5TmFtZSI6IkVkZ2UiLCJ2ZXJzaW9uIjoiMTQwLjAuMzQ4NS42NiIsInBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlcyAoeDg2KVxcTWljcm9zb2Z0XFxFZGdlXFxBcHBsaWNhdGlvblxcbXNlZGdlLmV4ZSIsIm1pblN1cHBvcnRlZFZlcnNpb24iOjc5LCJtYWpvclZlcnNpb24iOiIxNDAifSx7Im5hbWUiOiJlbGVjdHJvbiIsImNoYW5uZWwiOiJzdGFibGUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImRpc3BsYXlOYW1lIjoiRWxlY3Ryb24iLCJ2ZXJzaW9uIjoiMTE4LjAuNTk5My4xNTkiLCJwYXRoIjoiIiwibWFqb3JWZXJzaW9uIjoxMTh9XSwiY2xpZW50Um91dGUiOiIvX18vIiwiY3lwcmVzc0JpbmFyeVJvb3QiOiJEOlxcQ3lwcmVzc0NhY2hlXFwxMy4xNC4xXFxDeXByZXNzXFxyZXNvdXJjZXNcXGFwcCIsImRldlNlcnZlclB1YmxpY1BhdGhSb3V0ZSI6Ii9fX2N5cHJlc3Mvc3JjIiwiaG9zdHMiOm51bGwsImlzSW50ZXJhY3RpdmUiOnRydWUsImlzVGV4dFRlcm1pbmFsIjpmYWxzZSwibW9yZ2FuIjp0cnVlLCJuYW1lc3BhY2UiOiJfX2N5cHJlc3MiLCJyZXBvcnRlclJvdXRlIjoiL19fY3lwcmVzcy9yZXBvcnRlciIsInNvY2tldElkIjpudWxsLCJzb2NrZXRJb0Nvb2tpZSI6Il9fc29ja2V0Iiwic29ja2V0SW9Sb3V0ZSI6Ii9fX3NvY2tldCIsInZlcnNpb24iOiIxMy4xNC4xIiwicHJvdG9jb2xFbmFibGVkIjpmYWxzZSwiaGlkZUNvbW1hbmRMb2ciOmZhbHNlLCJoaWRlUnVubmVyVWkiOmZhbHNlLCJjeXByZXNzRW52IjoicHJvZHVjdGlvbiIsInJlc29sdmVkIjp7ImFuaW1hdGlvbkRpc3RhbmNlVGhyZXNob2xkIjp7InZhbHVlIjo1LCJmcm9tIjoiZGVmYXVsdCJ9LCJhcmNoIjp7InZhbHVlIjoieDY0IiwiZnJvbSI6ImRlZmF1bHQifSwiYmFzZVVybCI6eyJ2YWx1ZSI6Imh0dHBzOi8vbG9naW4tcmVsZWFzZS5wYXJ0eS5tb3NhaWNhcHAuY29tL2xvZ2luP3NvdXJjZVVybD1odHRwczovL3JlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbS8iLCJmcm9tIjoiY29uZmlnIn0sImJsb2NrSG9zdHMiOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sImNocm9tZVdlYlNlY3VyaXR5Ijp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImNvbmZpZyJ9LCJjbGllbnRDZXJ0aWZpY2F0ZXMiOnsidmFsdWUiOltdLCJmcm9tIjoiZGVmYXVsdCJ9LCJkZWZhdWx0Q29tbWFuZFRpbWVvdXQiOnsidmFsdWUiOjMwMDAwLCJmcm9tIjoiY29uZmlnIn0sImRvd25sb2Fkc0ZvbGRlciI6eyJ2YWx1ZSI6ImN5cHJlc3MvZG93bmxvYWRzIiwiZnJvbSI6ImRlZmF1bHQifSwiZW52Ijp7IkxPR0lOX1VTRVJOQU1FIjp7InZhbHVlIjoicGlua3lfYWRtQHlvcG1haWwuY29tIiwiZnJvbSI6ImNvbmZpZyJ9LCJMT0dJTl9QQVNTV09SRCI6eyJ2YWx1ZSI6IlRlc3RAMTIzNDU2Nzg5IiwiZnJvbSI6ImNvbmZpZyJ9LCJpbnZhbGlkZW1haWwiOnsidmFsdWUiOiJrd21teUB5b3BtYWlsLmNvbTIzIiwiZnJvbSI6ImNvbmZpZyJ9LCJpbnZhbGlkcGFzc3dvcmQiOnsidmFsdWUiOiJQYXJ0aEAxMjM0NTY3ODMiLCJmcm9tIjoiY29uZmlnIn0sImVtYWlsd2hpdGVzcGFjZSI6eyJ2YWx1ZSI6ImtlbW15QHlvcG1haWwuY29tIiwiZnJvbSI6ImNvbmZpZyJ9LCJDYXNlZW1haWwiOnsidmFsdWUiOiJLRU1NWUB5b3BtYWlsLmNvbSIsImZyb20iOiJjb25maWcifSwiQnV0dG9uIjp7InZhbHVlIjoiQ29udGludWV4IiwiZnJvbSI6ImNvbmZpZyJ9LCJCdXR0b24yIjp7InZhbHVlIjoiU2lnbiBJbiIsImZyb20iOiJjb25maWcifSwiQ0FDSEVfRk9MREVSIjp7InZhbHVlIjoiRDpcXEN5cHJlc3NDYWNoZSIsImZyb20iOiJlbnYifX0sImV4ZWNUaW1lb3V0Ijp7InZhbHVlIjozMDAwMCwiZnJvbSI6ImNvbmZpZyJ9LCJleHBlcmltZW50YWxDc3BBbGxvd0xpc3QiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxGZXRjaFBvbHlmaWxsIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwiZXhwZXJpbWVudGFsSW50ZXJhY3RpdmVSdW5FdmVudHMiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxSdW5BbGxTcGVjcyI6eyJ2YWx1ZSI6ZmFsc2UsImZyb20iOiJkZWZhdWx0In0sImV4cGVyaW1lbnRhbE1lbW9yeU1hbmFnZW1lbnQiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxNb2RpZnlPYnN0cnVjdGl2ZVRoaXJkUGFydHlDb2RlIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwiZXhwZXJpbWVudGFsU2tpcERvbWFpbkluamVjdGlvbiI6eyJ2YWx1ZSI6bnVsbCwiZnJvbSI6ImRlZmF1bHQifSwiZXhwZXJpbWVudGFsSnVzdEluVGltZUNvbXBpbGUiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxPcmlnaW5EZXBlbmRlbmNpZXMiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxTb3VyY2VSZXdyaXRpbmciOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxTaW5nbGVUYWJSdW5Nb2RlIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwiZXhwZXJpbWVudGFsU3R1ZGlvIjp7InZhbHVlIjp0cnVlLCJmcm9tIjoiY29uZmlnIn0sImV4cGVyaW1lbnRhbFdlYktpdFN1cHBvcnQiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJmaWxlU2VydmVyRm9sZGVyIjp7InZhbHVlIjoiIiwiZnJvbSI6ImRlZmF1bHQifSwiZml4dHVyZXNGb2xkZXIiOnsidmFsdWUiOiJjeXByZXNzL2ZpeHR1cmVzIiwiZnJvbSI6ImRlZmF1bHQifSwiZXhjbHVkZVNwZWNQYXR0ZXJuIjp7InZhbHVlIjoiKi5ob3QtdXBkYXRlLmpzIiwiZnJvbSI6ImRlZmF1bHQifSwiaW5jbHVkZVNoYWRvd0RvbSI6eyJ2YWx1ZSI6ZmFsc2UsImZyb20iOiJkZWZhdWx0In0sImtleXN0cm9rZURlbGF5Ijp7InZhbHVlIjowLCJmcm9tIjoiZGVmYXVsdCJ9LCJtb2RpZnlPYnN0cnVjdGl2ZUNvZGUiOnsidmFsdWUiOnRydWUsImZyb20iOiJkZWZhdWx0In0sIm51bVRlc3RzS2VwdEluTWVtb3J5Ijp7InZhbHVlIjo1MCwiZnJvbSI6ImRlZmF1bHQifSwicGxhdGZvcm0iOnsidmFsdWUiOiJ3aW4zMiIsImZyb20iOiJkZWZhdWx0In0sInBhZ2VMb2FkVGltZW91dCI6eyJ2YWx1ZSI6MTIwMDAwLCJmcm9tIjoiY29uZmlnIn0sInBvcnQiOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sInByb2plY3RJZCI6eyJ2YWx1ZSI6bnVsbCwiZnJvbSI6ImRlZmF1bHQifSwicmVkaXJlY3Rpb25MaW1pdCI6eyJ2YWx1ZSI6MjAsImZyb20iOiJkZWZhdWx0In0sInJlcG9ydGVyIjp7InZhbHVlIjoic3BlYyIsImZyb20iOiJkZWZhdWx0In0sInJlcG9ydGVyT3B0aW9ucyI6eyJ2YWx1ZSI6bnVsbCwiZnJvbSI6ImRlZmF1bHQifSwicmVxdWVzdFRpbWVvdXQiOnsidmFsdWUiOjMwMDAwLCJmcm9tIjoiY29uZmlnIn0sInJlc29sdmVkTm9kZVBhdGgiOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sInJlc29sdmVkTm9kZVZlcnNpb24iOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sInJlc3BvbnNlVGltZW91dCI6eyJ2YWx1ZSI6MzAwMDAsImZyb20iOiJkZWZhdWx0In0sInJldHJpZXMiOnsidmFsdWUiOnsicnVuTW9kZSI6MCwib3Blbk1vZGUiOjB9LCJmcm9tIjoiZGVmYXVsdCJ9LCJzY3JlZW5zaG90T25SdW5GYWlsdXJlIjp7InZhbHVlIjp0cnVlLCJmcm9tIjoiZGVmYXVsdCJ9LCJzY3JlZW5zaG90c0ZvbGRlciI6eyJ2YWx1ZSI6ImN5cHJlc3Mvc2NyZWVuc2hvdHMiLCJmcm9tIjoiZGVmYXVsdCJ9LCJzbG93VGVzdFRocmVzaG9sZCI6eyJ2YWx1ZSI6MTAwMDAsImZyb20iOiJkZWZhdWx0In0sInNjcm9sbEJlaGF2aW9yIjp7InZhbHVlIjoidG9wIiwiZnJvbSI6ImRlZmF1bHQifSwic3VwcG9ydEZpbGUiOnsidmFsdWUiOiJjeXByZXNzL3N1cHBvcnQvZTJlLnRzIiwiZnJvbSI6ImNvbmZpZyJ9LCJzdXBwb3J0Rm9sZGVyIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwidGFza1RpbWVvdXQiOnsidmFsdWUiOjMwMDAwLCJmcm9tIjoiY29uZmlnIn0sInRlc3RJc29sYXRpb24iOnsidmFsdWUiOnRydWUsImZyb20iOiJkZWZhdWx0In0sInRyYXNoQXNzZXRzQmVmb3JlUnVucyI6eyJ2YWx1ZSI6dHJ1ZSwiZnJvbSI6ImRlZmF1bHQifSwidXNlckFnZW50Ijp7InZhbHVlIjpudWxsLCJmcm9tIjoiZGVmYXVsdCJ9LCJ2aWRlbyI6eyJ2YWx1ZSI6dHJ1ZSwiZnJvbSI6ImNvbmZpZyJ9LCJ2aWRlb0NvbXByZXNzaW9uIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwidmlkZW9zRm9sZGVyIjp7InZhbHVlIjoiY3lwcmVzcy92aWRlb3MiLCJmcm9tIjoiZGVmYXVsdCJ9LCJ2aWV3cG9ydEhlaWdodCI6eyJ2YWx1ZSI6MTA4MCwiZnJvbSI6ImNvbmZpZyJ9LCJ2aWV3cG9ydFdpZHRoIjp7InZhbHVlIjoxOTIwLCJmcm9tIjoiY29uZmlnIn0sIndhaXRGb3JBbmltYXRpb25zIjp7InZhbHVlIjp0cnVlLCJmcm9tIjoiZGVmYXVsdCJ9LCJ3YXRjaEZvckZpbGVDaGFuZ2VzIjp7InZhbHVlIjp0cnVlLCJmcm9tIjoiZGVmYXVsdCJ9LCJzcGVjUGF0dGVybiI6eyJ2YWx1ZSI6ImN5cHJlc3MvZTJlLyoqLyouY3kue2pzLGpzeCx0cyx0c3h9IiwiZnJvbSI6ImRlZmF1bHQifSwiYnJvd3NlcnMiOnsidmFsdWUiOlt7Im5hbWUiOiJjaHJvbWUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImNoYW5uZWwiOiJzdGFibGUiLCJkaXNwbGF5TmFtZSI6IkNocm9tZSIsInZlcnNpb24iOiIxNDAuMC43MzM5LjEyOCIsInBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlc1xcR29vZ2xlXFxDaHJvbWVcXEFwcGxpY2F0aW9uXFxjaHJvbWUuZXhlIiwibWluU3VwcG9ydGVkVmVyc2lvbiI6NjQsIm1ham9yVmVyc2lvbiI6IjE0MCJ9LHsibmFtZSI6ImVkZ2UiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImNoYW5uZWwiOiJzdGFibGUiLCJkaXNwbGF5TmFtZSI6IkVkZ2UiLCJ2ZXJzaW9uIjoiMTQwLjAuMzQ4NS42NiIsInBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlcyAoeDg2KVxcTWljcm9zb2Z0XFxFZGdlXFxBcHBsaWNhdGlvblxcbXNlZGdlLmV4ZSIsIm1pblN1cHBvcnRlZFZlcnNpb24iOjc5LCJtYWpvclZlcnNpb24iOiIxNDAifSx7Im5hbWUiOiJlbGVjdHJvbiIsImNoYW5uZWwiOiJzdGFibGUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImRpc3BsYXlOYW1lIjoiRWxlY3Ryb24iLCJ2ZXJzaW9uIjoiMTE4LjAuNTk5My4xNTkiLCJwYXRoIjoiIiwibWFqb3JWZXJzaW9uIjoxMTh9XSwiZnJvbSI6InJ1bnRpbWUifSwiaG9zdHMiOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sImlzSW50ZXJhY3RpdmUiOnsidmFsdWUiOnRydWUsImZyb20iOiJkZWZhdWx0In0sImNvbmZpZ0ZpbGUiOnsidmFsdWUiOiJEOlxcbW9zYWljLWUyZS10ZXN0c1xcY3lwcmVzcy5jb25maWcudHMiLCJmcm9tIjoicGx1Z2luIn0sInRlc3RpbmdUeXBlIjp7InZhbHVlIjoiZTJlIiwiZnJvbSI6InBsdWdpbiJ9fSwiYnJvd3NlclVybCI6Imh0dHBzOi8vbG9naW4tcmVsZWFzZS5wYXJ0eS5tb3NhaWNhcHAuY29tL19fLyIsInByb3h5U2VydmVyIjoiaHR0cDovL2xvY2FsaG9zdDo2NTMyMyIsInByb3h5VXJsIjoiaHR0cDovL2xvY2FsaG9zdDo2NTMyMyIsInJlbW90ZSI6eyJhdXRoIjpudWxsLCJvcmlnaW4iOiJodHRwczovL2xvZ2luLXJlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbSIsInN0cmF0ZWd5IjoiaHR0cCIsImZpbGVTZXJ2ZXIiOm51bGwsImRvbWFpbk5hbWUiOiJtb3NhaWNhcHAuY29tIiwicHJvcHMiOnsicG9ydCI6IjQ0MyIsInByb3RvY29sIjoiaHR0cHM6Iiwic3ViZG9tYWluIjoibG9naW4tcmVsZWFzZS5wYXJ0eSIsImRvbWFpbiI6Im1vc2FpY2FwcCIsInRsZCI6ImNvbSJ9fSwicmVwb3J0ZXJVcmwiOiJodHRwczovL2xvZ2luLXJlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbS9fX2N5cHJlc3MvcmVwb3J0ZXIiLCJicm93c2VyIjp7Im5hbWUiOiJlbGVjdHJvbiIsImNoYW5uZWwiOiJzdGFibGUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImRpc3BsYXlOYW1lIjoiRWxlY3Ryb24iLCJ2ZXJzaW9uIjoiMTE4LjAuNTk5My4xNTkiLCJwYXRoIjoiIiwibWFqb3JWZXJzaW9uIjoxMTgsImlzSGVhZGVkIjp0cnVlLCJpc0hlYWRsZXNzIjpmYWxzZX19',
+        hideCommandLog: false,
+        hideRunnerUi: false,
+      };
+      window.__CYPRESS_TESTING_TYPE__ = 'e2e';
+      window.__CYPRESS_BROWSER__ = {
+        name: 'electron',
+        channel: 'stable',
+        family: 'chromium',
+        displayName: 'Electron',
+        version: '118.0.5993.159',
+        path: '',
+        majorVersion: 118,
+      };
+    </script>
 
+    <div id="app"></div>
 
-      <body>
-        <script>
-          window.__RUN_MODE_SPECS__ = [{"fileExtension":".ts","baseName":"createDashboard.cy.ts","fileName":"createDashboard","specFileExtension":".cy.ts","relativeToCommonRoot":"Dashboard/createDashboard.cy.ts","specType":"integration","name":"cypress/e2e/Dashboard/createDashboard.cy.ts","relative":"cypress\\e2e\\Dashboard\\createDashboard.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/Dashboard/createDashboard.cy.ts"},{"fileExtension":".js","baseName":"inviteMember.cy.js","fileName":"inviteMember","specFileExtension":".cy.js","relativeToCommonRoot":"member/inviteMember.cy.js","specType":"integration","name":"cypress/e2e/member/inviteMember.cy.js","relative":"cypress\\e2e\\member\\inviteMember.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/member/inviteMember.cy.js"},{"fileExtension":".ts","baseName":"private-with-date.cy.ts","fileName":"private-with-date","specFileExtension":".cy.ts","relativeToCommonRoot":"member/private-with-date.cy.ts","specType":"integration","name":"cypress/e2e/member/private-with-date.cy.ts","relative":"cypress\\e2e\\member\\private-with-date.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/member/private-with-date.cy.ts"},{"fileExtension":".ts","baseName":"private-without-date.cy.ts","fileName":"private-without-date","specFileExtension":".cy.ts","relativeToCommonRoot":"member/private-without-date.cy.ts","specType":"integration","name":"cypress/e2e/member/private-without-date.cy.ts","relative":"cypress\\e2e\\member\\private-without-date.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/member/private-without-date.cy.ts"},{"fileExtension":".ts","baseName":"login.cy.ts","fileName":"login","specFileExtension":".cy.ts","relativeToCommonRoot":"login/login.cy.ts","specType":"integration","name":"cypress/e2e/login/login.cy.ts","relative":"cypress\\e2e\\login\\login.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/login/login.cy.ts"},{"fileExtension":".js","baseName":"inviteMember.cy.js","fileName":"inviteMember","specFileExtension":".cy.js","relativeToCommonRoot":"Org Settings/inviteMember.cy.js","specType":"integration","name":"cypress/e2e/Org Settings/inviteMember.cy.js","relative":"cypress\\e2e\\Org Settings\\inviteMember.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/Org Settings/inviteMember.cy.js"},{"fileExtension":".ts","baseName":"milestone.cy.ts","fileName":"milestone","specFileExtension":".cy.ts","relativeToCommonRoot":"phase-dependency-clear-date/milestone.cy.ts","specType":"integration","name":"cypress/e2e/phase-dependency-clear-date/milestone.cy.ts","relative":"cypress\\e2e\\phase-dependency-clear-date\\milestone.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/phase-dependency-clear-date/milestone.cy.ts"},{"fileExtension":".ts","baseName":"phase.cy.ts","fileName":"phase","specFileExtension":".cy.ts","relativeToCommonRoot":"phase-dependency-clear-date/phase.cy.ts","specType":"integration","name":"cypress/e2e/phase-dependency-clear-date/phase.cy.ts","relative":"cypress\\e2e\\phase-dependency-clear-date\\phase.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/phase-dependency-clear-date/phase.cy.ts"},{"fileExtension":".ts","baseName":"subphase.cy.ts","fileName":"subphase","specFileExtension":".cy.ts","relativeToCommonRoot":"phase-dependency-clear-date/subphase.cy.ts","specType":"integration","name":"cypress/e2e/phase-dependency-clear-date/subphase.cy.ts","relative":"cypress\\e2e\\phase-dependency-clear-date\\subphase.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/phase-dependency-clear-date/subphase.cy.ts"},{"fileExtension":".ts","baseName":"Planner_combined_dependency.cy.ts","fileName":"Planner_combined_dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"planner/Planner_combined_dependency.cy.ts","specType":"integration","name":"cypress/e2e/planner/Planner_combined_dependency.cy.ts","relative":"cypress\\e2e\\planner\\Planner_combined_dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/planner/Planner_combined_dependency.cy.ts"},{"fileExtension":".ts","baseName":"create-workplan.cy.ts","fileName":"create-workplan","specFileExtension":".cy.ts","relativeToCommonRoot":"planner/create-workplan.cy.ts","specType":"integration","name":"cypress/e2e/planner/create-workplan.cy.ts","relative":"cypress\\e2e\\planner\\create-workplan.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/planner/create-workplan.cy.ts"},{"fileExtension":".ts","baseName":"delete-workplan.cy.ts","fileName":"delete-workplan","specFileExtension":".cy.ts","relativeToCommonRoot":"planner/delete-workplan.cy.ts","specType":"integration","name":"cypress/e2e/planner/delete-workplan.cy.ts","relative":"cypress\\e2e\\planner\\delete-workplan.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/planner/delete-workplan.cy.ts"},{"fileExtension":".ts","baseName":"edit_workplan.cy.ts","fileName":"edit_workplan","specFileExtension":".cy.ts","relativeToCommonRoot":"planner/edit_workplan.cy.ts","specType":"integration","name":"cypress/e2e/planner/edit_workplan.cy.ts","relative":"cypress\\e2e\\planner\\edit_workplan.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/planner/edit_workplan.cy.ts"},{"fileExtension":".ts","baseName":"hrsday-end-dependency.cy.ts","fileName":"hrsday-end-dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"planner/hrsday-end-dependency.cy.ts","specType":"integration","name":"cypress/e2e/planner/hrsday-end-dependency.cy.ts","relative":"cypress\\e2e\\planner\\hrsday-end-dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/planner/hrsday-end-dependency.cy.ts"},{"fileExtension":".ts","baseName":"percentage-end-dependency.cy.ts","fileName":"percentage-end-dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"planner/percentage-end-dependency.cy.ts","specType":"integration","name":"cypress/e2e/planner/percentage-end-dependency.cy.ts","relative":"cypress\\e2e\\planner\\percentage-end-dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/planner/percentage-end-dependency.cy.ts"},{"fileExtension":".ts","baseName":"testWorkplan.cy.ts","fileName":"testWorkplan","specFileExtension":".cy.ts","relativeToCommonRoot":"planner/testWorkplan.cy.ts","specType":"integration","name":"cypress/e2e/planner/testWorkplan.cy.ts","relative":"cypress\\e2e\\planner\\testWorkplan.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/planner/testWorkplan.cy.ts"},{"fileExtension":".ts","baseName":"workday-end-dependency.cy.ts","fileName":"workday-end-dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"planner/workday-end-dependency.cy.ts","specType":"integration","name":"cypress/e2e/planner/workday-end-dependency.cy.ts","relative":"cypress\\e2e\\planner\\workday-end-dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/planner/workday-end-dependency.cy.ts"},{"fileExtension":".ts","baseName":"custom-milestone.cy.ts","fileName":"custom-milestone","specFileExtension":".cy.ts","relativeToCommonRoot":"phase/custom-milestone.cy.ts","specType":"integration","name":"cypress/e2e/phase/custom-milestone.cy.ts","relative":"cypress\\e2e\\phase\\custom-milestone.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/phase/custom-milestone.cy.ts"},{"fileExtension":".ts","baseName":"custom-phase.cy.ts","fileName":"custom-phase","specFileExtension":".cy.ts","relativeToCommonRoot":"phase/custom-phase.cy.ts","specType":"integration","name":"cypress/e2e/phase/custom-phase.cy.ts","relative":"cypress\\e2e\\phase\\custom-phase.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/phase/custom-phase.cy.ts"},{"fileExtension":".ts","baseName":"custom-subphase.cy.ts","fileName":"custom-subphase","specFileExtension":".cy.ts","relativeToCommonRoot":"phase/custom-subphase.cy.ts","specType":"integration","name":"cypress/e2e/phase/custom-subphase.cy.ts","relative":"cypress\\e2e\\phase\\custom-subphase.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/phase/custom-subphase.cy.ts"},{"fileExtension":".ts","baseName":"create-portfolio.cy.ts","fileName":"create-portfolio","specFileExtension":".cy.ts","relativeToCommonRoot":"portfolio/create-portfolio.cy.ts","specType":"integration","name":"cypress/e2e/portfolio/create-portfolio.cy.ts","relative":"cypress\\e2e\\portfolio\\create-portfolio.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/portfolio/create-portfolio.cy.ts"},{"fileExtension":".ts","baseName":"duplicate-project.cy.ts","fileName":"duplicate-project","specFileExtension":".cy.ts","relativeToCommonRoot":"portfolio/duplicate-project.cy.ts","specType":"integration","name":"cypress/e2e/portfolio/duplicate-project.cy.ts","relative":"cypress\\e2e\\portfolio\\duplicate-project.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/portfolio/duplicate-project.cy.ts"},{"fileExtension":".ts","baseName":"existing-portfolio.cy.ts","fileName":"existing-portfolio","specFileExtension":".cy.ts","relativeToCommonRoot":"portfolio/existing-portfolio.cy.ts","specType":"integration","name":"cypress/e2e/portfolio/existing-portfolio.cy.ts","relative":"cypress\\e2e\\portfolio\\existing-portfolio.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/portfolio/existing-portfolio.cy.ts"},{"fileExtension":".ts","baseName":"new-portfolio-project.cy.ts","fileName":"new-portfolio-project","specFileExtension":".cy.ts","relativeToCommonRoot":"portfolio/new-portfolio-project.cy.ts","specType":"integration","name":"cypress/e2e/portfolio/new-portfolio-project.cy.ts","relative":"cypress\\e2e\\portfolio\\new-portfolio-project.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/portfolio/new-portfolio-project.cy.ts"},{"fileExtension":".ts","baseName":"add-members.cy.ts","fileName":"add-members","specFileExtension":".cy.ts","relativeToCommonRoot":"project/add-members.cy.ts","specType":"integration","name":"cypress/e2e/project/add-members.cy.ts","relative":"cypress\\e2e\\project\\add-members.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/add-members.cy.ts"},{"fileExtension":".ts","baseName":"addMembers_updated.cy.ts","fileName":"addMembers_updated","specFileExtension":".cy.ts","relativeToCommonRoot":"project/addMembers_updated.cy.ts","specType":"integration","name":"cypress/e2e/project/addMembers_updated.cy.ts","relative":"cypress\\e2e\\project\\addMembers_updated.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/addMembers_updated.cy.ts"},{"fileExtension":".ts","baseName":"budgetUpdate.cy.ts","fileName":"budgetUpdate","specFileExtension":".cy.ts","relativeToCommonRoot":"project/budgetUpdate.cy.ts","specType":"integration","name":"cypress/e2e/project/budgetUpdate.cy.ts","relative":"cypress\\e2e\\project\\budgetUpdate.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/budgetUpdate.cy.ts"},{"fileExtension":".ts","baseName":"budget_override.cy.ts","fileName":"budget_override","specFileExtension":".cy.ts","relativeToCommonRoot":"project/budget_override.cy.ts","specType":"integration","name":"cypress/e2e/project/budget_override.cy.ts","relative":"cypress\\e2e\\project\\budget_override.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/budget_override.cy.ts"},{"fileExtension":".ts","baseName":"new_budget_override.cy.ts","fileName":"new_budget_override","specFileExtension":".cy.ts","relativeToCommonRoot":"project/new_budget_override.cy.ts","specType":"integration","name":"cypress/e2e/project/new_budget_override.cy.ts","relative":"cypress\\e2e\\project\\new_budget_override.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/new_budget_override.cy.ts"},{"fileExtension":".ts","baseName":"pbudget_override.cy.ts","fileName":"pbudget_override","specFileExtension":".cy.ts","relativeToCommonRoot":"project/pbudget_override.cy.ts","specType":"integration","name":"cypress/e2e/project/pbudget_override.cy.ts","relative":"cypress\\e2e\\project\\pbudget_override.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/pbudget_override.cy.ts"},{"fileExtension":".ts","baseName":"phaseInfo_update.cy.ts","fileName":"phaseInfo_update","specFileExtension":".cy.ts","relativeToCommonRoot":"project/phaseInfo_update.cy.ts","specType":"integration","name":"cypress/e2e/project/phaseInfo_update.cy.ts","relative":"cypress\\e2e\\project\\phaseInfo_update.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/phaseInfo_update.cy.ts"},{"fileExtension":".ts","baseName":"project-search.cy.ts","fileName":"project-search","specFileExtension":".cy.ts","relativeToCommonRoot":"project/project-search.cy.ts","specType":"integration","name":"cypress/e2e/project/project-search.cy.ts","relative":"cypress\\e2e\\project\\project-search.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/project-search.cy.ts"},{"fileExtension":".ts","baseName":"task-with-date.cy.ts","fileName":"task-with-date","specFileExtension":".cy.ts","relativeToCommonRoot":"project/task-with-date.cy.ts","specType":"integration","name":"cypress/e2e/project/task-with-date.cy.ts","relative":"cypress\\e2e\\project\\task-with-date.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/task-with-date.cy.ts"},{"fileExtension":".ts","baseName":"task-without-date.cy.ts","fileName":"task-without-date","specFileExtension":".cy.ts","relativeToCommonRoot":"project/task-without-date.cy.ts","specType":"integration","name":"cypress/e2e/project/task-without-date.cy.ts","relative":"cypress\\e2e\\project\\task-without-date.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/task-without-date.cy.ts"},{"fileExtension":".ts","baseName":"testAMember.cy.ts","fileName":"testAMember","specFileExtension":".cy.ts","relativeToCommonRoot":"project/testAMember.cy.ts","specType":"integration","name":"cypress/e2e/project/testAMember.cy.ts","relative":"cypress\\e2e\\project\\testAMember.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/testAMember.cy.ts"},{"fileExtension":".ts","baseName":"update_phase_budget_fee.cy.ts","fileName":"update_phase_budget_fee","specFileExtension":".cy.ts","relativeToCommonRoot":"project/update_phase_budget_fee.cy.ts","specType":"integration","name":"cypress/e2e/project/update_phase_budget_fee.cy.ts","relative":"cypress\\e2e\\project\\update_phase_budget_fee.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/update_phase_budget_fee.cy.ts"},{"fileExtension":".ts","baseName":"add-timesheet.cy.ts","fileName":"add-timesheet","specFileExtension":".cy.ts","relativeToCommonRoot":"report/add-timesheet.cy.ts","specType":"integration","name":"cypress/e2e/report/add-timesheet.cy.ts","relative":"cypress\\e2e\\report\\add-timesheet.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/report/add-timesheet.cy.ts"},{"fileExtension":".ts","baseName":"edit-timesheet.cy.ts","fileName":"edit-timesheet","specFileExtension":".cy.ts","relativeToCommonRoot":"report/edit-timesheet.cy.ts","specType":"integration","name":"cypress/e2e/report/edit-timesheet.cy.ts","relative":"cypress\\e2e\\report\\edit-timesheet.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/report/edit-timesheet.cy.ts"},{"fileExtension":".ts","baseName":"multiple-approve-timesheet.cy.ts","fileName":"multiple-approve-timesheet","specFileExtension":".cy.ts","relativeToCommonRoot":"report/multiple-approve-timesheet.cy.ts","specType":"integration","name":"cypress/e2e/report/multiple-approve-timesheet.cy.ts","relative":"cypress\\e2e\\report\\multiple-approve-timesheet.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/report/multiple-approve-timesheet.cy.ts"},{"fileExtension":".ts","baseName":"plannedTime_Report_update.cy.ts","fileName":"plannedTime_Report_update","specFileExtension":".cy.ts","relativeToCommonRoot":"report/plannedTime_Report_update.cy.ts","specType":"integration","name":"cypress/e2e/report/plannedTime_Report_update.cy.ts","relative":"cypress\\e2e\\report\\plannedTime_Report_update.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/report/plannedTime_Report_update.cy.ts"},{"fileExtension":".ts","baseName":"single-approve-timesheet.cy.ts","fileName":"single-approve-timesheet","specFileExtension":".cy.ts","relativeToCommonRoot":"report/single-approve-timesheet.cy.ts","specType":"integration","name":"cypress/e2e/report/single-approve-timesheet.cy.ts","relative":"cypress\\e2e\\report\\single-approve-timesheet.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/report/single-approve-timesheet.cy.ts"},{"fileExtension":".ts","baseName":"workload_report_update.cy.ts","fileName":"workload_report_update","specFileExtension":".cy.ts","relativeToCommonRoot":"report/workload_report_update.cy.ts","specType":"integration","name":"cypress/e2e/report/workload_report_update.cy.ts","relative":"cypress\\e2e\\report\\workload_report_update.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/report/workload_report_update.cy.ts"},{"fileExtension":".ts","baseName":"Combine_dependency.cy.ts","fileName":"Combine_dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"workload/Combine_dependency.cy.ts","specType":"integration","name":"cypress/e2e/workload/Combine_dependency.cy.ts","relative":"cypress\\e2e\\workload\\Combine_dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/workload/Combine_dependency.cy.ts"},{"fileExtension":".ts","baseName":"create-workplan.cy.ts","fileName":"create-workplan","specFileExtension":".cy.ts","relativeToCommonRoot":"workload/create-workplan.cy.ts","specType":"integration","name":"cypress/e2e/workload/create-workplan.cy.ts","relative":"cypress\\e2e\\workload\\create-workplan.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/workload/create-workplan.cy.ts"},{"fileExtension":".ts","baseName":"delete-workplan.cy.ts","fileName":"delete-workplan","specFileExtension":".cy.ts","relativeToCommonRoot":"workload/delete-workplan.cy.ts","specType":"integration","name":"cypress/e2e/workload/delete-workplan.cy.ts","relative":"cypress\\e2e\\workload\\delete-workplan.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/workload/delete-workplan.cy.ts"},{"fileExtension":".ts","baseName":"hrsday-end-dependency.cy.ts","fileName":"hrsday-end-dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"workload/hrsday-end-dependency.cy.ts","specType":"integration","name":"cypress/e2e/workload/hrsday-end-dependency.cy.ts","relative":"cypress\\e2e\\workload\\hrsday-end-dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/workload/hrsday-end-dependency.cy.ts"},{"fileExtension":".ts","baseName":"hrsday-start-dependency.cy.ts","fileName":"hrsday-start-dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"workload/hrsday-start-dependency.cy.ts","specType":"integration","name":"cypress/e2e/workload/hrsday-start-dependency.cy.ts","relative":"cypress\\e2e\\workload\\hrsday-start-dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/workload/hrsday-start-dependency.cy.ts"},{"fileExtension":".ts","baseName":"percentage-end-dependency.cy.ts","fileName":"percentage-end-dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"workload/percentage-end-dependency.cy.ts","specType":"integration","name":"cypress/e2e/workload/percentage-end-dependency.cy.ts","relative":"cypress\\e2e\\workload\\percentage-end-dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/workload/percentage-end-dependency.cy.ts"},{"fileExtension":".ts","baseName":"percentage-start-dependency.cy.ts","fileName":"percentage-start-dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"workload/percentage-start-dependency.cy.ts","specType":"integration","name":"cypress/e2e/workload/percentage-start-dependency.cy.ts","relative":"cypress\\e2e\\workload\\percentage-start-dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/workload/percentage-start-dependency.cy.ts"},{"fileExtension":".ts","baseName":"workday-end-dependency.cy.ts","fileName":"workday-end-dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"workload/workday-end-dependency.cy.ts","specType":"integration","name":"cypress/e2e/workload/workday-end-dependency.cy.ts","relative":"cypress\\e2e\\workload\\workday-end-dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/workload/workday-end-dependency.cy.ts"},{"fileExtension":".ts","baseName":"workday-start-dependency.cy.ts","fileName":"workday-start-dependency","specFileExtension":".cy.ts","relativeToCommonRoot":"workload/workday-start-dependency.cy.ts","specType":"integration","name":"cypress/e2e/workload/workday-start-dependency.cy.ts","relative":"cypress\\e2e\\workload\\workday-start-dependency.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/workload/workday-start-dependency.cy.ts"},{"fileExtension":".js","baseName":"createDashboard.cy.js","fileName":"createDashboard","specFileExtension":".cy.js","relativeToCommonRoot":"Dashboard/Dashboard/createDashboard.cy.js","specType":"integration","name":"cypress/e2e/Dashboard/Dashboard/createDashboard.cy.js","relative":"cypress\\e2e\\Dashboard\\Dashboard\\createDashboard.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/Dashboard/Dashboard/createDashboard.cy.js"},{"fileExtension":".ts","baseName":"edit_task.cy.ts","fileName":"edit_task","specFileExtension":".cy.ts","relativeToCommonRoot":"home/task/edit_task.cy.ts","specType":"integration","name":"cypress/e2e/home/task/edit_task.cy.ts","relative":"cypress\\e2e\\home\\task\\edit_task.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/task/edit_task.cy.ts"},{"fileExtension":".ts","baseName":"personal-with-date.cy.ts","fileName":"personal-with-date","specFileExtension":".cy.ts","relativeToCommonRoot":"home/task/personal-with-date.cy.ts","specType":"integration","name":"cypress/e2e/home/task/personal-with-date.cy.ts","relative":"cypress\\e2e\\home\\task\\personal-with-date.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/task/personal-with-date.cy.ts"},{"fileExtension":".ts","baseName":"personal-without-date.cy.ts","fileName":"personal-without-date","specFileExtension":".cy.ts","relativeToCommonRoot":"home/task/personal-without-date.cy.ts","specType":"integration","name":"cypress/e2e/home/task/personal-without-date.cy.ts","relative":"cypress\\e2e\\home\\task\\personal-without-date.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/task/personal-without-date.cy.ts"},{"fileExtension":".ts","baseName":"public-with-date.cy.ts","fileName":"public-with-date","specFileExtension":".cy.ts","relativeToCommonRoot":"home/task/public-with-date.cy.ts","specType":"integration","name":"cypress/e2e/home/task/public-with-date.cy.ts","relative":"cypress\\e2e\\home\\task\\public-with-date.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/task/public-with-date.cy.ts"},{"fileExtension":".ts","baseName":"public-without-date.cy.ts","fileName":"public-without-date","specFileExtension":".cy.ts","relativeToCommonRoot":"home/task/public-without-date.cy.ts","specType":"integration","name":"cypress/e2e/home/task/public-without-date.cy.ts","relative":"cypress\\e2e\\home\\task\\public-without-date.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/task/public-without-date.cy.ts"},{"fileExtension":".ts","baseName":"calendar.cy.ts","fileName":"calendar","specFileExtension":".cy.ts","relativeToCommonRoot":"project/basics/calendar.cy.ts","specType":"integration","name":"cypress/e2e/project/basics/calendar.cy.ts","relative":"cypress\\e2e\\project\\basics\\calendar.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/project/basics/calendar.cy.ts"},{"fileExtension":".js","baseName":"plannerPersonalWithdate.cy.js","fileName":"plannerPersonalWithdate","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Planner/plannerPersonalWithdate.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Planner/plannerPersonalWithdate.cy.js","relative":"cypress\\e2e\\home\\Home\\Planner\\plannerPersonalWithdate.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Planner/plannerPersonalWithdate.cy.js"},{"fileExtension":".js","baseName":"plannerPrivateWithdate.cy.js","fileName":"plannerPrivateWithdate","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Planner/plannerPrivateWithdate.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Planner/plannerPrivateWithdate.cy.js","relative":"cypress\\e2e\\home\\Home\\Planner\\plannerPrivateWithdate.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Planner/plannerPrivateWithdate.cy.js"},{"fileExtension":".js","baseName":"existingProjectsCheck.cy.js","fileName":"existingProjectsCheck","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Projects/existingProjectsCheck.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Projects/existingProjectsCheck.cy.js","relative":"cypress\\e2e\\home\\Home\\Projects\\existingProjectsCheck.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/existingProjectsCheck.cy.js"},{"fileExtension":".ts","baseName":"nDelete_phase1.cy.ts","fileName":"nDelete_phase1","specFileExtension":".cy.ts","relativeToCommonRoot":"home/Home/Projects/nDelete_phase1.cy.ts","specType":"integration","name":"cypress/e2e/home/Home/Projects/nDelete_phase1.cy.ts","relative":"cypress\\e2e\\home\\Home\\Projects\\nDelete_phase1.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/nDelete_phase1.cy.ts"},{"fileExtension":".ts","baseName":"nEPort_new_Project.cy.ts","fileName":"nEPort_new_Project","specFileExtension":".cy.ts","relativeToCommonRoot":"home/Home/Projects/nEPort_new_Project.cy.ts","specType":"integration","name":"cypress/e2e/home/Home/Projects/nEPort_new_Project.cy.ts","relative":"cypress\\e2e\\home\\Home\\Projects\\nEPort_new_Project.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/nEPort_new_Project.cy.ts"},{"fileExtension":".ts","baseName":"nNewPhases_custom.cy.ts","fileName":"nNewPhases_custom","specFileExtension":".cy.ts","relativeToCommonRoot":"home/Home/Projects/nNewPhases_custom.cy.ts","specType":"integration","name":"cypress/e2e/home/Home/Projects/nNewPhases_custom.cy.ts","relative":"cypress\\e2e\\home\\Home\\Projects\\nNewPhases_custom.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/nNewPhases_custom.cy.ts"},{"fileExtension":".ts","baseName":"nPort_create_project_icon.cy.ts","fileName":"nPort_create_project_icon","specFileExtension":".cy.ts","relativeToCommonRoot":"home/Home/Projects/nPort_create_project_icon.cy.ts","specType":"integration","name":"cypress/e2e/home/Home/Projects/nPort_create_project_icon.cy.ts","relative":"cypress\\e2e\\home\\Home\\Projects\\nPort_create_project_icon.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/nPort_create_project_icon.cy.ts"},{"fileExtension":".ts","baseName":"ndelete_phases.cy.ts","fileName":"ndelete_phases","specFileExtension":".cy.ts","relativeToCommonRoot":"home/Home/Projects/ndelete_phases.cy.ts","specType":"integration","name":"cypress/e2e/home/Home/Projects/ndelete_phases.cy.ts","relative":"cypress\\e2e\\home\\Home\\Projects\\ndelete_phases.cy.ts","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Projects/ndelete_phases.cy.ts"},{"fileExtension":".js","baseName":"PersonalWithdate.cy.js","fileName":"PersonalWithdate","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Task/PersonalWithdate.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Task/PersonalWithdate.cy.js","relative":"cypress\\e2e\\home\\Home\\Task\\PersonalWithdate.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/PersonalWithdate.cy.js"},{"fileExtension":".js","baseName":"Personalwithoutdate.cy.js","fileName":"Personalwithoutdate","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Task/Personalwithoutdate.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Task/Personalwithoutdate.cy.js","relative":"cypress\\e2e\\home\\Home\\Task\\Personalwithoutdate.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/Personalwithoutdate.cy.js"},{"fileExtension":".js","baseName":"Publicwithdate.cy.js","fileName":"Publicwithdate","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Task/Publicwithdate.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Task/Publicwithdate.cy.js","relative":"cypress\\e2e\\home\\Home\\Task\\Publicwithdate.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/Publicwithdate.cy.js"},{"fileExtension":".js","baseName":"Publicwithoutdate.cy.js","fileName":"Publicwithoutdate","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Task/Publicwithoutdate.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Task/Publicwithoutdate.cy.js","relative":"cypress\\e2e\\home\\Home\\Task\\Publicwithoutdate.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/Publicwithoutdate.cy.js"},{"fileExtension":".js","baseName":"addTask.cy.js","fileName":"addTask","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Task/addTask.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Task/addTask.cy.js","relative":"cypress\\e2e\\home\\Home\\Task\\addTask.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/addTask.cy.js"},{"fileExtension":".js","baseName":"deleteTask.cy.js","fileName":"deleteTask","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Task/deleteTask.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Task/deleteTask.cy.js","relative":"cypress\\e2e\\home\\Home\\Task\\deleteTask.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/deleteTask.cy.js"},{"fileExtension":".js","baseName":"editTask copy.cy.js","fileName":"editTask copy","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Task/editTask copy.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Task/editTask copy.cy.js","relative":"cypress\\e2e\\home\\Home\\Task\\editTask copy.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/editTask copy.cy.js"},{"fileExtension":".js","baseName":"editTask.cy.js","fileName":"editTask","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Task/editTask.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Task/editTask.cy.js","relative":"cypress\\e2e\\home\\Home\\Task\\editTask.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Task/editTask.cy.js"},{"fileExtension":".js","baseName":"create.cy.js","fileName":"create","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Workplan/create.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Workplan/create.cy.js","relative":"cypress\\e2e\\home\\Home\\Workplan\\create.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Workplan/create.cy.js"},{"fileExtension":".js","baseName":"createPTO.cy.js","fileName":"createPTO","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Workplan/createPTO.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Workplan/createPTO.cy.js","relative":"cypress\\e2e\\home\\Home\\Workplan\\createPTO.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Workplan/createPTO.cy.js"},{"fileExtension":".js","baseName":"delete.cy.js","fileName":"delete","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Workplan/delete.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Workplan/delete.cy.js","relative":"cypress\\e2e\\home\\Home\\Workplan\\delete.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Workplan/delete.cy.js"},{"fileExtension":".js","baseName":"create.cy.js","fileName":"create","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Timesheet/create.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Timesheet/create.cy.js","relative":"cypress\\e2e\\home\\Home\\Timesheet\\create.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Timesheet/create.cy.js"},{"fileExtension":".js","baseName":"delete.cy.js","fileName":"delete","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Timesheet/delete.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Timesheet/delete.cy.js","relative":"cypress\\e2e\\home\\Home\\Timesheet\\delete.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Timesheet/delete.cy.js"},{"fileExtension":".js","baseName":"edit.cy.js","fileName":"edit","specFileExtension":".cy.js","relativeToCommonRoot":"home/Home/Timesheet/edit.cy.js","specType":"integration","name":"cypress/e2e/home/Home/Timesheet/edit.cy.js","relative":"cypress\\e2e\\home\\Home\\Timesheet\\edit.cy.js","absolute":"D:/mosaic-e2e-tests/cypress/e2e/home/Home/Timesheet/edit.cy.js"}]
-          window.__CYPRESS_MODE__ = "open";
-          window.__CYPRESS_CONFIG__ = {"projectName":"mosaic-e2e-tests","namespace":"__cypress","base64Config":"eyJjb25maWdGaWxlIjoiRDpcXG1vc2FpYy1lMmUtdGVzdHNcXGN5cHJlc3MuY29uZmlnLnRzIiwidGVzdGluZ1R5cGUiOiJlMmUiLCJwYWdlTG9hZFRpbWVvdXQiOjEyMDAwMCwiYmFzZVVybCI6Imh0dHBzOi8vbG9naW4tcmVsZWFzZS5wYXJ0eS5tb3NhaWNhcHAuY29tL2xvZ2luP3NvdXJjZVVybD1odHRwczovL3JlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbS8iLCJzdXBwb3J0RmlsZSI6IkQ6XFxtb3NhaWMtZTJlLXRlc3RzXFxjeXByZXNzXFxzdXBwb3J0XFxlMmUudHMiLCJzcGVjUGF0dGVybiI6ImN5cHJlc3MvZTJlLyoqLyouY3kue2pzLGpzeCx0cyx0c3h9Iiwic2V0dXBOb2RlRXZlbnRzIjoiW0Z1bmN0aW9uIHNldHVwTm9kZUV2ZW50c10iLCJkZWZhdWx0Q29tbWFuZFRpbWVvdXQiOjMwMDAwLCJyZXF1ZXN0VGltZW91dCI6MzAwMDAsInJlc3BvbnNlVGltZW91dCI6MzAwMDAsInRhc2tUaW1lb3V0IjozMDAwMCwiZXhlY1RpbWVvdXQiOjMwMDAwLCJ2aWRlb3NGb2xkZXIiOiJEOlxcbW9zYWljLWUyZS10ZXN0c1xcY3lwcmVzc1xcdmlkZW9zIiwic2NyZWVuc2hvdHNGb2xkZXIiOiJEOlxcbW9zYWljLWUyZS10ZXN0c1xcY3lwcmVzc1xcc2NyZWVuc2hvdHMiLCJ2aWRlbyI6dHJ1ZSwidmlld3BvcnRXaWR0aCI6MTkyMCwidmlld3BvcnRIZWlnaHQiOjEwODAsImNocm9tZVdlYlNlY3VyaXR5IjpmYWxzZSwiZXhwZXJpbWVudGFsU3R1ZGlvIjp0cnVlLCJlbnYiOnsiTE9HSU5fVVNFUk5BTUUiOiJwaW5reV9hZG1AeW9wbWFpbC5jb20iLCJMT0dJTl9QQVNTV09SRCI6IlRlc3RAMTIzNDU2Nzg5IiwiaW52YWxpZGVtYWlsIjoia3dtbXlAeW9wbWFpbC5jb20yMyIsImludmFsaWRwYXNzd29yZCI6IlBhcnRoQDEyMzQ1Njc4MyIsImVtYWlsd2hpdGVzcGFjZSI6ImtlbW15QHlvcG1haWwuY29tIiwiQ2FzZWVtYWlsIjoiS0VNTVlAeW9wbWFpbC5jb20iLCJCdXR0b24iOiJDb250aW51ZXgiLCJCdXR0b24yIjoiU2lnbiBJbiIsIkNBQ0hFX0ZPTERFUiI6IkQ6XFxDeXByZXNzQ2FjaGUifSwicHJvamVjdFJvb3QiOiJEOlxcbW9zYWljLWUyZS10ZXN0cyIsInByb2plY3ROYW1lIjoibW9zYWljLWUyZS10ZXN0cyIsInJlcG9Sb290IjoiRDovbW9zYWljLWUyZS10ZXN0cyIsInJhd0pzb24iOnsicGFnZUxvYWRUaW1lb3V0IjoxMjAwMDAsImUyZSI6eyJiYXNlVXJsIjoiaHR0cHM6Ly9sb2dpbi1yZWxlYXNlLnBhcnR5Lm1vc2FpY2FwcC5jb20vbG9naW4/c291cmNlVXJsPWh0dHBzOi8vcmVsZWFzZS5wYXJ0eS5tb3NhaWNhcHAuY29tLyIsInN1cHBvcnRGaWxlIjoiY3lwcmVzcy9zdXBwb3J0L2UyZS50cyIsInNwZWNQYXR0ZXJuIjoiY3lwcmVzcy9lMmUvKiovKi5jeS57anMsanN4LHRzLHRzeH0iLCJzZXR1cE5vZGVFdmVudHMiOiJbRnVuY3Rpb24gc2V0dXBOb2RlRXZlbnRzXSIsImRlZmF1bHRDb21tYW5kVGltZW91dCI6MzAwMDAsInJlcXVlc3RUaW1lb3V0IjozMDAwMCwicmVzcG9uc2VUaW1lb3V0IjozMDAwMCwidGFza1RpbWVvdXQiOjMwMDAwLCJleGVjVGltZW91dCI6MzAwMDAsInZpZGVvc0ZvbGRlciI6ImN5cHJlc3MvdmlkZW9zIiwic2NyZWVuc2hvdHNGb2xkZXIiOiJjeXByZXNzL3NjcmVlbnNob3RzIiwidmlkZW8iOnRydWUsInZpZXdwb3J0V2lkdGgiOjE5MjAsInZpZXdwb3J0SGVpZ2h0IjoxMDgwLCJjaHJvbWVXZWJTZWN1cml0eSI6ZmFsc2UsImV4cGVyaW1lbnRhbFN0dWRpbyI6dHJ1ZSwiZW52Ijp7IkxPR0lOX1VTRVJOQU1FIjoicGlua3lfYWRtQHlvcG1haWwuY29tIiwiTE9HSU5fUEFTU1dPUkQiOiJUZXN0QDEyMzQ1Njc4OSIsImludmFsaWRlbWFpbCI6Imt3bW15QHlvcG1haWwuY29tMjMiLCJpbnZhbGlkcGFzc3dvcmQiOiJQYXJ0aEAxMjM0NTY3ODMiLCJlbWFpbHdoaXRlc3BhY2UiOiJrZW1teUB5b3BtYWlsLmNvbSIsIkNhc2VlbWFpbCI6IktFTU1ZQHlvcG1haWwuY29tIiwiQnV0dG9uIjoiQ29udGludWV4IiwiQnV0dG9uMiI6IlNpZ24gSW4ifX0sImJhc2VVcmwiOiJodHRwczovL2xvZ2luLXJlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbS9sb2dpbj9zb3VyY2VVcmw9aHR0cHM6Ly9yZWxlYXNlLnBhcnR5Lm1vc2FpY2FwcC5jb20vIiwic3VwcG9ydEZpbGUiOiJjeXByZXNzL3N1cHBvcnQvZTJlLnRzIiwic3BlY1BhdHRlcm4iOiJjeXByZXNzL2UyZS8qKi8qLmN5Lntqcyxqc3gsdHMsdHN4fSIsInNldHVwTm9kZUV2ZW50cyI6IltGdW5jdGlvbiBzZXR1cE5vZGVFdmVudHNdIiwiZGVmYXVsdENvbW1hbmRUaW1lb3V0IjozMDAwMCwicmVxdWVzdFRpbWVvdXQiOjMwMDAwLCJyZXNwb25zZVRpbWVvdXQiOjMwMDAwLCJ0YXNrVGltZW91dCI6MzAwMDAsImV4ZWNUaW1lb3V0IjozMDAwMCwidmlkZW9zRm9sZGVyIjoiY3lwcmVzcy92aWRlb3MiLCJzY3JlZW5zaG90c0ZvbGRlciI6ImN5cHJlc3Mvc2NyZWVuc2hvdHMiLCJ2aWRlbyI6dHJ1ZSwidmlld3BvcnRXaWR0aCI6MTkyMCwidmlld3BvcnRIZWlnaHQiOjEwODAsImNocm9tZVdlYlNlY3VyaXR5IjpmYWxzZSwiZXhwZXJpbWVudGFsU3R1ZGlvIjp0cnVlLCJlbnYiOnsiTE9HSU5fVVNFUk5BTUUiOiJwaW5reV9hZG1AeW9wbWFpbC5jb20iLCJMT0dJTl9QQVNTV09SRCI6IlRlc3RAMTIzNDU2Nzg5IiwiaW52YWxpZGVtYWlsIjoia3dtbXlAeW9wbWFpbC5jb20yMyIsImludmFsaWRwYXNzd29yZCI6IlBhcnRoQDEyMzQ1Njc4MyIsImVtYWlsd2hpdGVzcGFjZSI6ImtlbW15QHlvcG1haWwuY29tIiwiQ2FzZWVtYWlsIjoiS0VNTVlAeW9wbWFpbC5jb20iLCJCdXR0b24iOiJDb250aW51ZXgiLCJCdXR0b24yIjoiU2lnbiBJbiJ9LCJlbnZGaWxlIjp7fSwicHJvamVjdFJvb3QiOiJEOlxcbW9zYWljLWUyZS10ZXN0cyIsInByb2plY3ROYW1lIjoibW9zYWljLWUyZS10ZXN0cyIsInJlcG9Sb290IjoiRDovbW9zYWljLWUyZS10ZXN0cyJ9LCJhbmltYXRpb25EaXN0YW5jZVRocmVzaG9sZCI6NSwiYXJjaCI6Ing2NCIsImJsb2NrSG9zdHMiOm51bGwsImNsaWVudENlcnRpZmljYXRlcyI6W10sImRvd25sb2Fkc0ZvbGRlciI6IkQ6XFxtb3NhaWMtZTJlLXRlc3RzXFxjeXByZXNzXFxkb3dubG9hZHMiLCJleHBlcmltZW50YWxDc3BBbGxvd0xpc3QiOmZhbHNlLCJleHBlcmltZW50YWxGZXRjaFBvbHlmaWxsIjpmYWxzZSwiZXhwZXJpbWVudGFsSW50ZXJhY3RpdmVSdW5FdmVudHMiOmZhbHNlLCJleHBlcmltZW50YWxSdW5BbGxTcGVjcyI6ZmFsc2UsImV4cGVyaW1lbnRhbE1lbW9yeU1hbmFnZW1lbnQiOmZhbHNlLCJleHBlcmltZW50YWxNb2RpZnlPYnN0cnVjdGl2ZVRoaXJkUGFydHlDb2RlIjpmYWxzZSwiZXhwZXJpbWVudGFsU2tpcERvbWFpbkluamVjdGlvbiI6bnVsbCwiZXhwZXJpbWVudGFsSnVzdEluVGltZUNvbXBpbGUiOmZhbHNlLCJleHBlcmltZW50YWxPcmlnaW5EZXBlbmRlbmNpZXMiOmZhbHNlLCJleHBlcmltZW50YWxTb3VyY2VSZXdyaXRpbmciOmZhbHNlLCJleHBlcmltZW50YWxTaW5nbGVUYWJSdW5Nb2RlIjpmYWxzZSwiZXhwZXJpbWVudGFsV2ViS2l0U3VwcG9ydCI6ZmFsc2UsImZpbGVTZXJ2ZXJGb2xkZXIiOiJEOlxcbW9zYWljLWUyZS10ZXN0cyIsImZpeHR1cmVzRm9sZGVyIjoiRDpcXG1vc2FpYy1lMmUtdGVzdHNcXGN5cHJlc3NcXGZpeHR1cmVzIiwiZXhjbHVkZVNwZWNQYXR0ZXJuIjoiKi5ob3QtdXBkYXRlLmpzIiwiaW5jbHVkZVNoYWRvd0RvbSI6ZmFsc2UsImtleXN0cm9rZURlbGF5IjowLCJtb2RpZnlPYnN0cnVjdGl2ZUNvZGUiOnRydWUsIm51bVRlc3RzS2VwdEluTWVtb3J5Ijo1MCwicGxhdGZvcm0iOiJ3aW4zMiIsInBvcnQiOjY1MzIzLCJwcm9qZWN0SWQiOm51bGwsInJlZGlyZWN0aW9uTGltaXQiOjIwLCJyZXBvcnRlciI6InNwZWMiLCJyZXBvcnRlck9wdGlvbnMiOm51bGwsInJlc29sdmVkTm9kZVBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlc1xcbm9kZWpzXFxub2RlLmV4ZSIsInJlc29sdmVkTm9kZVZlcnNpb24iOiIyMi4xNi4wIiwicmV0cmllcyI6eyJydW5Nb2RlIjowLCJvcGVuTW9kZSI6MH0sInNjcmVlbnNob3RPblJ1bkZhaWx1cmUiOnRydWUsInNsb3dUZXN0VGhyZXNob2xkIjoxMDAwMCwic2Nyb2xsQmVoYXZpb3IiOiJ0b3AiLCJzdXBwb3J0Rm9sZGVyIjoiRDpcXG1vc2FpYy1lMmUtdGVzdHNcXGN5cHJlc3NcXHN1cHBvcnQiLCJ0ZXN0SXNvbGF0aW9uIjp0cnVlLCJ0cmFzaEFzc2V0c0JlZm9yZVJ1bnMiOnRydWUsInVzZXJBZ2VudCI6bnVsbCwidmlkZW9Db21wcmVzc2lvbiI6ZmFsc2UsIndhaXRGb3JBbmltYXRpb25zIjp0cnVlLCJ3YXRjaEZvckZpbGVDaGFuZ2VzIjp0cnVlLCJhZGRpdGlvbmFsSWdub3JlUGF0dGVybiI6W10sImF1dG9PcGVuIjpmYWxzZSwiYnJvd3NlcnMiOlt7Im5hbWUiOiJjaHJvbWUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImNoYW5uZWwiOiJzdGFibGUiLCJkaXNwbGF5TmFtZSI6IkNocm9tZSIsInZlcnNpb24iOiIxNDAuMC43MzM5LjEyOCIsInBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlc1xcR29vZ2xlXFxDaHJvbWVcXEFwcGxpY2F0aW9uXFxjaHJvbWUuZXhlIiwibWluU3VwcG9ydGVkVmVyc2lvbiI6NjQsIm1ham9yVmVyc2lvbiI6IjE0MCJ9LHsibmFtZSI6ImVkZ2UiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImNoYW5uZWwiOiJzdGFibGUiLCJkaXNwbGF5TmFtZSI6IkVkZ2UiLCJ2ZXJzaW9uIjoiMTQwLjAuMzQ4NS42NiIsInBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlcyAoeDg2KVxcTWljcm9zb2Z0XFxFZGdlXFxBcHBsaWNhdGlvblxcbXNlZGdlLmV4ZSIsIm1pblN1cHBvcnRlZFZlcnNpb24iOjc5LCJtYWpvclZlcnNpb24iOiIxNDAifSx7Im5hbWUiOiJlbGVjdHJvbiIsImNoYW5uZWwiOiJzdGFibGUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImRpc3BsYXlOYW1lIjoiRWxlY3Ryb24iLCJ2ZXJzaW9uIjoiMTE4LjAuNTk5My4xNTkiLCJwYXRoIjoiIiwibWFqb3JWZXJzaW9uIjoxMTh9XSwiY2xpZW50Um91dGUiOiIvX18vIiwiY3lwcmVzc0JpbmFyeVJvb3QiOiJEOlxcQ3lwcmVzc0NhY2hlXFwxMy4xNC4xXFxDeXByZXNzXFxyZXNvdXJjZXNcXGFwcCIsImRldlNlcnZlclB1YmxpY1BhdGhSb3V0ZSI6Ii9fX2N5cHJlc3Mvc3JjIiwiaG9zdHMiOm51bGwsImlzSW50ZXJhY3RpdmUiOnRydWUsImlzVGV4dFRlcm1pbmFsIjpmYWxzZSwibW9yZ2FuIjp0cnVlLCJuYW1lc3BhY2UiOiJfX2N5cHJlc3MiLCJyZXBvcnRlclJvdXRlIjoiL19fY3lwcmVzcy9yZXBvcnRlciIsInNvY2tldElkIjpudWxsLCJzb2NrZXRJb0Nvb2tpZSI6Il9fc29ja2V0Iiwic29ja2V0SW9Sb3V0ZSI6Ii9fX3NvY2tldCIsInZlcnNpb24iOiIxMy4xNC4xIiwicHJvdG9jb2xFbmFibGVkIjpmYWxzZSwiaGlkZUNvbW1hbmRMb2ciOmZhbHNlLCJoaWRlUnVubmVyVWkiOmZhbHNlLCJjeXByZXNzRW52IjoicHJvZHVjdGlvbiIsInJlc29sdmVkIjp7ImFuaW1hdGlvbkRpc3RhbmNlVGhyZXNob2xkIjp7InZhbHVlIjo1LCJmcm9tIjoiZGVmYXVsdCJ9LCJhcmNoIjp7InZhbHVlIjoieDY0IiwiZnJvbSI6ImRlZmF1bHQifSwiYmFzZVVybCI6eyJ2YWx1ZSI6Imh0dHBzOi8vbG9naW4tcmVsZWFzZS5wYXJ0eS5tb3NhaWNhcHAuY29tL2xvZ2luP3NvdXJjZVVybD1odHRwczovL3JlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbS8iLCJmcm9tIjoiY29uZmlnIn0sImJsb2NrSG9zdHMiOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sImNocm9tZVdlYlNlY3VyaXR5Ijp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImNvbmZpZyJ9LCJjbGllbnRDZXJ0aWZpY2F0ZXMiOnsidmFsdWUiOltdLCJmcm9tIjoiZGVmYXVsdCJ9LCJkZWZhdWx0Q29tbWFuZFRpbWVvdXQiOnsidmFsdWUiOjMwMDAwLCJmcm9tIjoiY29uZmlnIn0sImRvd25sb2Fkc0ZvbGRlciI6eyJ2YWx1ZSI6ImN5cHJlc3MvZG93bmxvYWRzIiwiZnJvbSI6ImRlZmF1bHQifSwiZW52Ijp7IkxPR0lOX1VTRVJOQU1FIjp7InZhbHVlIjoicGlua3lfYWRtQHlvcG1haWwuY29tIiwiZnJvbSI6ImNvbmZpZyJ9LCJMT0dJTl9QQVNTV09SRCI6eyJ2YWx1ZSI6IlRlc3RAMTIzNDU2Nzg5IiwiZnJvbSI6ImNvbmZpZyJ9LCJpbnZhbGlkZW1haWwiOnsidmFsdWUiOiJrd21teUB5b3BtYWlsLmNvbTIzIiwiZnJvbSI6ImNvbmZpZyJ9LCJpbnZhbGlkcGFzc3dvcmQiOnsidmFsdWUiOiJQYXJ0aEAxMjM0NTY3ODMiLCJmcm9tIjoiY29uZmlnIn0sImVtYWlsd2hpdGVzcGFjZSI6eyJ2YWx1ZSI6ImtlbW15QHlvcG1haWwuY29tIiwiZnJvbSI6ImNvbmZpZyJ9LCJDYXNlZW1haWwiOnsidmFsdWUiOiJLRU1NWUB5b3BtYWlsLmNvbSIsImZyb20iOiJjb25maWcifSwiQnV0dG9uIjp7InZhbHVlIjoiQ29udGludWV4IiwiZnJvbSI6ImNvbmZpZyJ9LCJCdXR0b24yIjp7InZhbHVlIjoiU2lnbiBJbiIsImZyb20iOiJjb25maWcifSwiQ0FDSEVfRk9MREVSIjp7InZhbHVlIjoiRDpcXEN5cHJlc3NDYWNoZSIsImZyb20iOiJlbnYifX0sImV4ZWNUaW1lb3V0Ijp7InZhbHVlIjozMDAwMCwiZnJvbSI6ImNvbmZpZyJ9LCJleHBlcmltZW50YWxDc3BBbGxvd0xpc3QiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxGZXRjaFBvbHlmaWxsIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwiZXhwZXJpbWVudGFsSW50ZXJhY3RpdmVSdW5FdmVudHMiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxSdW5BbGxTcGVjcyI6eyJ2YWx1ZSI6ZmFsc2UsImZyb20iOiJkZWZhdWx0In0sImV4cGVyaW1lbnRhbE1lbW9yeU1hbmFnZW1lbnQiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxNb2RpZnlPYnN0cnVjdGl2ZVRoaXJkUGFydHlDb2RlIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwiZXhwZXJpbWVudGFsU2tpcERvbWFpbkluamVjdGlvbiI6eyJ2YWx1ZSI6bnVsbCwiZnJvbSI6ImRlZmF1bHQifSwiZXhwZXJpbWVudGFsSnVzdEluVGltZUNvbXBpbGUiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxPcmlnaW5EZXBlbmRlbmNpZXMiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxTb3VyY2VSZXdyaXRpbmciOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJleHBlcmltZW50YWxTaW5nbGVUYWJSdW5Nb2RlIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwiZXhwZXJpbWVudGFsU3R1ZGlvIjp7InZhbHVlIjp0cnVlLCJmcm9tIjoiY29uZmlnIn0sImV4cGVyaW1lbnRhbFdlYktpdFN1cHBvcnQiOnsidmFsdWUiOmZhbHNlLCJmcm9tIjoiZGVmYXVsdCJ9LCJmaWxlU2VydmVyRm9sZGVyIjp7InZhbHVlIjoiIiwiZnJvbSI6ImRlZmF1bHQifSwiZml4dHVyZXNGb2xkZXIiOnsidmFsdWUiOiJjeXByZXNzL2ZpeHR1cmVzIiwiZnJvbSI6ImRlZmF1bHQifSwiZXhjbHVkZVNwZWNQYXR0ZXJuIjp7InZhbHVlIjoiKi5ob3QtdXBkYXRlLmpzIiwiZnJvbSI6ImRlZmF1bHQifSwiaW5jbHVkZVNoYWRvd0RvbSI6eyJ2YWx1ZSI6ZmFsc2UsImZyb20iOiJkZWZhdWx0In0sImtleXN0cm9rZURlbGF5Ijp7InZhbHVlIjowLCJmcm9tIjoiZGVmYXVsdCJ9LCJtb2RpZnlPYnN0cnVjdGl2ZUNvZGUiOnsidmFsdWUiOnRydWUsImZyb20iOiJkZWZhdWx0In0sIm51bVRlc3RzS2VwdEluTWVtb3J5Ijp7InZhbHVlIjo1MCwiZnJvbSI6ImRlZmF1bHQifSwicGxhdGZvcm0iOnsidmFsdWUiOiJ3aW4zMiIsImZyb20iOiJkZWZhdWx0In0sInBhZ2VMb2FkVGltZW91dCI6eyJ2YWx1ZSI6MTIwMDAwLCJmcm9tIjoiY29uZmlnIn0sInBvcnQiOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sInByb2plY3RJZCI6eyJ2YWx1ZSI6bnVsbCwiZnJvbSI6ImRlZmF1bHQifSwicmVkaXJlY3Rpb25MaW1pdCI6eyJ2YWx1ZSI6MjAsImZyb20iOiJkZWZhdWx0In0sInJlcG9ydGVyIjp7InZhbHVlIjoic3BlYyIsImZyb20iOiJkZWZhdWx0In0sInJlcG9ydGVyT3B0aW9ucyI6eyJ2YWx1ZSI6bnVsbCwiZnJvbSI6ImRlZmF1bHQifSwicmVxdWVzdFRpbWVvdXQiOnsidmFsdWUiOjMwMDAwLCJmcm9tIjoiY29uZmlnIn0sInJlc29sdmVkTm9kZVBhdGgiOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sInJlc29sdmVkTm9kZVZlcnNpb24iOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sInJlc3BvbnNlVGltZW91dCI6eyJ2YWx1ZSI6MzAwMDAsImZyb20iOiJkZWZhdWx0In0sInJldHJpZXMiOnsidmFsdWUiOnsicnVuTW9kZSI6MCwib3Blbk1vZGUiOjB9LCJmcm9tIjoiZGVmYXVsdCJ9LCJzY3JlZW5zaG90T25SdW5GYWlsdXJlIjp7InZhbHVlIjp0cnVlLCJmcm9tIjoiZGVmYXVsdCJ9LCJzY3JlZW5zaG90c0ZvbGRlciI6eyJ2YWx1ZSI6ImN5cHJlc3Mvc2NyZWVuc2hvdHMiLCJmcm9tIjoiZGVmYXVsdCJ9LCJzbG93VGVzdFRocmVzaG9sZCI6eyJ2YWx1ZSI6MTAwMDAsImZyb20iOiJkZWZhdWx0In0sInNjcm9sbEJlaGF2aW9yIjp7InZhbHVlIjoidG9wIiwiZnJvbSI6ImRlZmF1bHQifSwic3VwcG9ydEZpbGUiOnsidmFsdWUiOiJjeXByZXNzL3N1cHBvcnQvZTJlLnRzIiwiZnJvbSI6ImNvbmZpZyJ9LCJzdXBwb3J0Rm9sZGVyIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwidGFza1RpbWVvdXQiOnsidmFsdWUiOjMwMDAwLCJmcm9tIjoiY29uZmlnIn0sInRlc3RJc29sYXRpb24iOnsidmFsdWUiOnRydWUsImZyb20iOiJkZWZhdWx0In0sInRyYXNoQXNzZXRzQmVmb3JlUnVucyI6eyJ2YWx1ZSI6dHJ1ZSwiZnJvbSI6ImRlZmF1bHQifSwidXNlckFnZW50Ijp7InZhbHVlIjpudWxsLCJmcm9tIjoiZGVmYXVsdCJ9LCJ2aWRlbyI6eyJ2YWx1ZSI6dHJ1ZSwiZnJvbSI6ImNvbmZpZyJ9LCJ2aWRlb0NvbXByZXNzaW9uIjp7InZhbHVlIjpmYWxzZSwiZnJvbSI6ImRlZmF1bHQifSwidmlkZW9zRm9sZGVyIjp7InZhbHVlIjoiY3lwcmVzcy92aWRlb3MiLCJmcm9tIjoiZGVmYXVsdCJ9LCJ2aWV3cG9ydEhlaWdodCI6eyJ2YWx1ZSI6MTA4MCwiZnJvbSI6ImNvbmZpZyJ9LCJ2aWV3cG9ydFdpZHRoIjp7InZhbHVlIjoxOTIwLCJmcm9tIjoiY29uZmlnIn0sIndhaXRGb3JBbmltYXRpb25zIjp7InZhbHVlIjp0cnVlLCJmcm9tIjoiZGVmYXVsdCJ9LCJ3YXRjaEZvckZpbGVDaGFuZ2VzIjp7InZhbHVlIjp0cnVlLCJmcm9tIjoiZGVmYXVsdCJ9LCJzcGVjUGF0dGVybiI6eyJ2YWx1ZSI6ImN5cHJlc3MvZTJlLyoqLyouY3kue2pzLGpzeCx0cyx0c3h9IiwiZnJvbSI6ImRlZmF1bHQifSwiYnJvd3NlcnMiOnsidmFsdWUiOlt7Im5hbWUiOiJjaHJvbWUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImNoYW5uZWwiOiJzdGFibGUiLCJkaXNwbGF5TmFtZSI6IkNocm9tZSIsInZlcnNpb24iOiIxNDAuMC43MzM5LjEyOCIsInBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlc1xcR29vZ2xlXFxDaHJvbWVcXEFwcGxpY2F0aW9uXFxjaHJvbWUuZXhlIiwibWluU3VwcG9ydGVkVmVyc2lvbiI6NjQsIm1ham9yVmVyc2lvbiI6IjE0MCJ9LHsibmFtZSI6ImVkZ2UiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImNoYW5uZWwiOiJzdGFibGUiLCJkaXNwbGF5TmFtZSI6IkVkZ2UiLCJ2ZXJzaW9uIjoiMTQwLjAuMzQ4NS42NiIsInBhdGgiOiJDOlxcUHJvZ3JhbSBGaWxlcyAoeDg2KVxcTWljcm9zb2Z0XFxFZGdlXFxBcHBsaWNhdGlvblxcbXNlZGdlLmV4ZSIsIm1pblN1cHBvcnRlZFZlcnNpb24iOjc5LCJtYWpvclZlcnNpb24iOiIxNDAifSx7Im5hbWUiOiJlbGVjdHJvbiIsImNoYW5uZWwiOiJzdGFibGUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImRpc3BsYXlOYW1lIjoiRWxlY3Ryb24iLCJ2ZXJzaW9uIjoiMTE4LjAuNTk5My4xNTkiLCJwYXRoIjoiIiwibWFqb3JWZXJzaW9uIjoxMTh9XSwiZnJvbSI6InJ1bnRpbWUifSwiaG9zdHMiOnsidmFsdWUiOm51bGwsImZyb20iOiJkZWZhdWx0In0sImlzSW50ZXJhY3RpdmUiOnsidmFsdWUiOnRydWUsImZyb20iOiJkZWZhdWx0In0sImNvbmZpZ0ZpbGUiOnsidmFsdWUiOiJEOlxcbW9zYWljLWUyZS10ZXN0c1xcY3lwcmVzcy5jb25maWcudHMiLCJmcm9tIjoicGx1Z2luIn0sInRlc3RpbmdUeXBlIjp7InZhbHVlIjoiZTJlIiwiZnJvbSI6InBsdWdpbiJ9fSwiYnJvd3NlclVybCI6Imh0dHBzOi8vbG9naW4tcmVsZWFzZS5wYXJ0eS5tb3NhaWNhcHAuY29tL19fLyIsInByb3h5U2VydmVyIjoiaHR0cDovL2xvY2FsaG9zdDo2NTMyMyIsInByb3h5VXJsIjoiaHR0cDovL2xvY2FsaG9zdDo2NTMyMyIsInJlbW90ZSI6eyJhdXRoIjpudWxsLCJvcmlnaW4iOiJodHRwczovL2xvZ2luLXJlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbSIsInN0cmF0ZWd5IjoiaHR0cCIsImZpbGVTZXJ2ZXIiOm51bGwsImRvbWFpbk5hbWUiOiJtb3NhaWNhcHAuY29tIiwicHJvcHMiOnsicG9ydCI6IjQ0MyIsInByb3RvY29sIjoiaHR0cHM6Iiwic3ViZG9tYWluIjoibG9naW4tcmVsZWFzZS5wYXJ0eSIsImRvbWFpbiI6Im1vc2FpY2FwcCIsInRsZCI6ImNvbSJ9fSwicmVwb3J0ZXJVcmwiOiJodHRwczovL2xvZ2luLXJlbGVhc2UucGFydHkubW9zYWljYXBwLmNvbS9fX2N5cHJlc3MvcmVwb3J0ZXIiLCJicm93c2VyIjp7Im5hbWUiOiJlbGVjdHJvbiIsImNoYW5uZWwiOiJzdGFibGUiLCJmYW1pbHkiOiJjaHJvbWl1bSIsImRpc3BsYXlOYW1lIjoiRWxlY3Ryb24iLCJ2ZXJzaW9uIjoiMTE4LjAuNTk5My4xNTkiLCJwYXRoIjoiIiwibWFqb3JWZXJzaW9uIjoxMTgsImlzSGVhZGVkIjp0cnVlLCJpc0hlYWRsZXNzIjpmYWxzZX19","hideCommandLog":false,"hideRunnerUi":false};
-          window.__CYPRESS_TESTING_TYPE__ = 'e2e'
-          window.__CYPRESS_BROWSER__ = {"name":"electron","channel":"stable","family":"chromium","displayName":"Electron","version":"118.0.5993.159","path":"","majorVersion":118}
-          
-          
-        </script>
-    
-  <div id="app"></div>
-
-  <script type="text/javascript">
-    // set a global so we know the 'top' window
-    window.__Cypress__ = true
-  </script>
-
-</body>
-
+    <script type="text/javascript">
+      // set a global so we know the 'top' window
+      window.__Cypress__ = true;
+    </script>
+  </body>
 </html>
