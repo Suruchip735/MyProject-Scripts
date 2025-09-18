@@ -21,7 +21,7 @@ describe('Report Timesheet - Edit Timesheet', () => {
     Description: '.styles__ReportTimesheetStyledCell-sc-194g64u-61.hFWJAc',
   };
 
-  it('Timesheet-  edit Timesheet', () => {
+  it('Timesheet-  edit Timesheet', { tags: ['TESC-0'] }, () => {
     login(
       Cypress.env('LOGIN_USERNAME'),
       Cypress.env('Button'),

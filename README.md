@@ -101,41 +101,6 @@ mosaic-e2e-tests/
 └── README.md                 # This file
 ```
 
-## Test Modules Coverage
-
-The test suite covers all major application modules:
-
-### 🏠 **Home & Tasks**
-
-- Personal tasks with/without dates
-- Public tasks with/without dates
-- Task management workflows
-
-### 🔐 **Authentication**
-
-- User login/logout flows
-- Session management
-- Authentication error handling
-
-### 👥 **Member Management**
-
-- Private member tasks
-- Member permissions
-- Collaboration features
-
-### 📊 **Project & Portfolio Management**
-
-- Project creation and search
-- Portfolio management
-- Duplicate project handling
-- Task scheduling
-
-### 🎯 **Phase Management**
-
-- Custom phases and milestones
-- Phase dependencies
-- Subphase management
-
 ## Running Tests
 
 ### Interactive Development

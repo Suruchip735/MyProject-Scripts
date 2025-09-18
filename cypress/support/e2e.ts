@@ -15,6 +15,10 @@
 
 // Import commands.ts using ES2015 syntax:
 import './commands';
+// @ts-expect-error see @cypress/grep documentation for details
+import registerCypressGrep from '@cypress/grep';
+
+registerCypressGrep();
 
 // Handle uncaught exceptions to prevent test failures
 Cypress.on('uncaught:exception', () => {

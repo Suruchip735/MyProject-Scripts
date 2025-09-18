@@ -12,7 +12,7 @@ describe('Validate Login Functionality', () => {
 
   // Runs before each test in the block
 
-  it('Validate Login with valid Credentials', () => {
+  it('Validate Login with valid Credentials', { tags: ['TESC-0'] }, () => {
     // Set viewport size to mimic full HD screen
 
     // Perform login using environment variables

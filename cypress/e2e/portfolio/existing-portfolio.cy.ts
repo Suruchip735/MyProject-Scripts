@@ -1,6 +1,6 @@
 import { login } from '../../support/login';
 
-describe('Exsting Portfolio - Create New Project', () => {
+describe('Existing Portfolio - Create New Project', () => {
   const selector = {
     Addicon: '[data-testid="quick-actions-plus-button"]',
     Project: '[data-testid="quick-actions-new-project"]',
@@ -8,7 +8,7 @@ describe('Exsting Portfolio - Create New Project', () => {
       '.BoardSelectMenu__BoardItemContents-sc-aholn7-6.cvVGdF.board-item-contents',
   };
 
-  it('Create New Project Exsting Portfolio ', () => {
+  it('Create New Project Exsting Portfolio ', { tags: ['TESC-0'] }, () => {
     // Set viewport to Full HD resolution
 
     // Perform Login

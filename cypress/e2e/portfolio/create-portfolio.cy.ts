@@ -1,6 +1,6 @@
 import { login } from '../../support/login';
 
-describe('Crearte New Portfolio - New Project', () => {
+describe('Create New Portfolio - New Project', () => {
   const selector = {
     Addicon: '[data-testid="quick-actions-plus-button"]',
     Portfolio: '[data-testid="quick-actions-new-portfolio"]',
@@ -22,7 +22,7 @@ describe('Crearte New Portfolio - New Project', () => {
     'Kuehne Nagel',
     'Ryder System, Inc.',
   ];
-  it('Crearte New Portfolio - New Project', () => {
+  it('Crearte New Portfolio - New Project', { tags: ['TESC-0'] }, () => {
     // Set viewport to Full HD resolution
 
     //Perfom Login

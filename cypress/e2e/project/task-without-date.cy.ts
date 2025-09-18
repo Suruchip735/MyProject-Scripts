@@ -15,35 +15,41 @@ describe('Project Task - Project Create task without date', () => {
       '.filter-list-item-container > [style="position: absolute; left: 0px; top: 120px; height: 50px; width: calc(100% + 0px); padding-left: 24px; display: flex; align-items: center; outline: none;"]',
   };
 
-  it('should log in successfully with valid credentials Project Create task without date', () => {
-    // Set viewport to Full HD resolution
+  it(
+    'should log in successfully with valid credentials Project Create task without date',
+    { tags: ['TESC-0'] },
+    () => {
+      // Set viewport to Full HD resolution
 
-    // Perform Login
-    login(
-      (Cypress.env('LOGIN_USERNAME') as string) || '',
-      (Cypress.env('Button') as string) || '', // This should be the text on the Continue button (e.g., "Continue")
-      (Cypress.env('LOGIN_PASSWORD') as string) || ''
-    );
+      // Perform Login
+      login(
+        (Cypress.env('LOGIN_USERNAME') as string) || '',
+        (Cypress.env('Button') as string) || '', // This should be the text on the Continue button (e.g., "Continue")
+        (Cypress.env('LOGIN_PASSWORD') as string) || ''
+      );
 
-    // Click on the side Menu Project Option
-    cy.get(selector.Project).click({ force: true });
+      // Click on the side Menu Project Option
+      cy.get(selector.Project).click({ force: true });
 
-    // Select Project "PlayBox"
-    cy.get(selector.SelectProject).should('be.visible').click({ force: true });
+      // Select Project "PlayBox"
+      cy.get(selector.SelectProject)
+        .should('be.visible')
+        .click({ force: true });
 
-    cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
-      .first()
-      .find('.ProjectRow__ProjectInfo-sc-17zwnx2-2')
-      .click({ force: true });
+      cy.get('[data-testid^="row-project"][data-testid$="projects-sidebar"]')
+        .first()
+        .find('.ProjectRow__ProjectInfo-sc-17zwnx2-2')
+        .click({ force: true });
 
-    // Generate short random task name like "T783"
-    const randomTaskName = `T${Math.floor(Math.random() * 1000)}`;
+      // Generate short random task name like "T783"
+      const randomTaskName = `T${Math.floor(Math.random() * 1000)}`;
 
-    // Click and create task
-    cy.contains('Type task', { timeout: 10000 })
-      .should('be.visible')
-      .click({ force: true });
+      // Click and create task
+      cy.contains('Type task', { timeout: 10000 })
+        .should('be.visible')
+        .click({ force: true });
 
-    cy.focused().type(`${randomTaskName}{enter}`, { force: true });
-  });
+      cy.focused().type(`${randomTaskName}{enter}`, { force: true });
+    }
+  );
 });
