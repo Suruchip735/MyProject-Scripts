@@ -66,7 +66,7 @@ describe('Project schedule - Create Custom subphase', () => {
           cy.get(selector.AddPhaseButton).click();
           cy.get(selector.ModalItem).first().click();
           cy.get(selector.AddCustomRow).click();
-          cy.get(selector.Input, { timeout: 10000 })
+          cy.get(selector.Input, { timeout:10000 })
             .should('be.visible')
             .clear()
             .type(uniquePhaseName)
@@ -82,7 +82,7 @@ describe('Project schedule - Create Custom subphase', () => {
 
         // Create Subphase
         cy.get(selector.AddCustomRow).click();
-        cy.get(selector.Input, { timeout: 10000 })
+        cy.get(selector.Input, { timeout:10000 })
           .should('be.visible')
           .clear()
           .type(uniqueSubphaseName)
