@@ -80,7 +80,7 @@ describe('Edit phase budget/fee on budget modal', () => {
       cy.get(selectors.edtBudgetBtn).click();
 
       // Check if phases exist or not
-      cy.get(selectors.firstPhaseRow).then(($el ) => {
+      cy.get(selectors.firstPhaseRow).then(($el) => {
         // If there are no phases (only Project Total exists), create one
         if ($el.text().includes('Project Total')) {
           cy.log('No phases found. Creating new phase');

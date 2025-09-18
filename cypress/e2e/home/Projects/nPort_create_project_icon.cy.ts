@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { login } from '../../../../support/login';
+import { login } from '../../../support/login';
 
 describe('Creating automation scripts for practice', () => {
   const selectors = {

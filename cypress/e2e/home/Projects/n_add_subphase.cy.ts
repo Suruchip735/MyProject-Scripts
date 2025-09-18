@@ -1,5 +1,4 @@
-/// <reference types="cypress" />
-import { login } from '../../../../support/login';
+import { login } from '../../../support/login';
 import { faker } from '@faker-js/faker';
 describe('Creating automation scripts for mosaic project', () => {
   const selectors = {
@@ -211,7 +210,6 @@ describe('Creating automation scripts for mosaic project', () => {
           .contains('Add Subphase')
           .click({ force: true });
 
-        // Click on add custom phase
         cy.get(
           '.LabelWithHelperIndicator__StyledContainer-sc-13rp2ar-0.kMleQj.styles__StickyRowLabel-sc-te9dv3-5.kPCaPM'
         )
@@ -223,6 +221,7 @@ describe('Creating automation scripts for mosaic project', () => {
         const randomInt = faker.number.int({ min: 10000, max: 99999 });
 
         const sub_phaseName = `SPhase - ${randomInt}`;
+
         // Type input in phase name
         cy.get('[data-testid="phase-name-input"]').type(sub_phaseName);
 
@@ -241,6 +240,8 @@ describe('Creating automation scripts for mosaic project', () => {
           .then(($el) => {
             if ($el.is(':visible')) {
               cy.log(`✔ Subphase "${sub_phaseName}" is created. `);
+
+              // Plan dates for subphase created
             } else {
               cy.log(`ℹ Subphase "${sub_phaseName}" is not created.`);
             }

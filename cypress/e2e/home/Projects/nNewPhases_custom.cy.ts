@@ -1,4 +1,4 @@
-import { login } from '../../../../support/login';
+import { login } from '../../../support/login';
 import { faker } from '@faker-js/faker';
 
 describe('Creating automation scripts for mosaic project', () => {
@@ -110,6 +110,42 @@ describe('Creating automation scripts for mosaic project', () => {
               .invoke('text')
               .then((subInfoText) => {
                 cy.log('Phase is added ' + subInfoText.trim() + ' position');
+
+                // Plan phase dates
+
+                // Click on plan button
+                cy.get('.DateRangeTag__Base-sc-1bpyqqi-4')
+                  .last()
+                  .click({ force: true });
+
+                const startDate = new Date();
+                startDate.setDate(startDate.getDate() + 0);
+
+                const endDate = new Date();
+                endDate.setDate(endDate.getDate() + 2);
+
+                const date1 = new Date();
+
+                function formatDateToLongUS(dateInput: string | number | Date) {
+                  const date = new Date(dateInput);
+                  return date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  });
+                }
+
+                const startDate_formated = formatDateToLongUS(startDate);
+
+                const endDate_formated = formatDateToLongUS(endDate);
+                cy.get('.CalendarDay__today > div').click();
+
+                cy.log(`End Date: ${endDate_formated}`);
+
+                cy.get(`[aria-label*="${endDate_formated}"]`).click();
+
+                //cy.get(`td[aria-label="${startDate_formated}"]`).click();
+                //cy.get(`td[aria-label="${endDate_formated}"]`).click();
               });
           });
       } else {
