@@ -1,4 +1,4 @@
-import { login } from '../../support/Login';
+import { login } from '../../support/login';
 
 describe('Project schdule - set or clear milestone date with dependency', () => {
   const selector = {

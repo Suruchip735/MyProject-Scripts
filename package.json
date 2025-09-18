@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "End-to-end testing using Cypress",
   "main": "index.js",
-   "type": "module",
- 
+  "type": "module",
   "scripts": {
     "open": "cypress open",
     "run": "cypress run",
