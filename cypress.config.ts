@@ -6,7 +6,9 @@ dotenv.config();
 export default defineConfig({
   pageLoadTimeout: 120000, // 2 minutes
   e2e: {
-    baseUrl: process.env.APP_DOMAIN,
+    baseUrl:
+      process.env.APP_DOMAIN ||
+      'https://login-release.party.mosaicapp.com/login?sourceUrl=https://release.party.mosaicapp.com',
     supportFile: 'cypress/support/e2e.ts',
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
     setupNodeEvents(on, config) {
