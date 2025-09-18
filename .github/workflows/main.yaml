@@ -3,16 +3,16 @@ name: Cypress E2E Tests
 on:
   # Run on pushes to main branches only
   push:
-    branches: [ main ]
-  
+    branches: [main]
+
   # Run on all pull requests
   pull_request:
-    branches: [ main ]
-  
+    branches: [main]
+
   # Run daily at 8 AM UTC
   schedule:
     - cron: '0 8 * * *'
-  
+
   # Allow manual triggers
   workflow_dispatch:
 
@@ -22,7 +22,7 @@ concurrency:
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-24.04 
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false # https://github.com/cypress-io/github-action/issues/48
       matrix:
@@ -34,21 +34,35 @@ jobs:
       # and run all Cypress tests
       - name: Install dependencies
         run: |
+          # Install mise
           curl https://mise.run | sh
+          
+          # Add mise to PATH for subsequent steps
           echo "$HOME/.local/share/mise/bin" >> $GITHUB_PATH
           echo "$HOME/.local/share/mise/shims" >> $GITHUB_PATH
+          
+          # Install tools
           mise install
-          npm ci
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          record: true
-          parallel: true # Runs test in parallel using settings above  
+      
+          # Install dependencies with bun
+          mise exec -- bun install
+      - name: Lint code
+        run: |
+          # Run linting with bun
+          # mise exec -- bun run lint
+      - name: Run Cypress tests
+        run: |
+          # Alternative: use mise exec to run bun commands
+          mise exec -- bun --version
+          
+          # Run Cypress with bun manually
+          mise exec -- bun run cypress run --browser chrome --record --parallel
         env:
           # Cypress environment variables
           CYPRESS_PROJECT_ID: ${{ vars.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
-          LOGIN_USERNAME: ${{ vars.LOGIN_USERNAME }}
+          LOGIN_USERNAME: ${{ vars.LOGIN_USERNAME }} 
           APP_DOMAIN: ${{ vars.APP_DOMAIN }}
+          CI: true
