@@ -124,8 +124,6 @@ describe('Creating automation scripts for mosaic project', () => {
                 const endDate = new Date();
                 endDate.setDate(endDate.getDate() + 2);
 
-                const date1 = new Date();
-
                 function formatDateToLongUS(dateInput: string | number | Date) {
                   const date = new Date(dateInput);
                   return date.toLocaleDateString('en-US', {
@@ -134,8 +132,6 @@ describe('Creating automation scripts for mosaic project', () => {
                     day: 'numeric',
                   });
                 }
-
-                const startDate_formated = formatDateToLongUS(startDate);
 
                 const endDate_formated = formatDateToLongUS(endDate);
                 cy.get('.CalendarDay__today > div').click();

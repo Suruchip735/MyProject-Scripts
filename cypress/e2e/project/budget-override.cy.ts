@@ -150,7 +150,7 @@ describe('Project Budget Override', () => {
                           .trigger('mouseover')
                           .wait(3000);
 
-                        let tooltiptext: string | undefined;
+                        //let tooltiptext: string | undefined;
                         cy.get('[data-testid="total-target-cell"]')
                           .invoke('attr', 'data-tooltip-content')
                           .then((tooltiptext) => {
