@@ -25,13 +25,14 @@ describe('Validate Login Functionality', () => {
     // Wait for page and user data to load
 
     // Navigate to 'Planner' section
-    cy.get(selector.Planner).click({ force: true });
+    cy.get(selector.Planner).click();
 
     // Click on the first project in the list
     cy.get(selector.Project).first().click({ force: true });
 
     // Select the first team member
     cy.get(selector.Member).first().click({ force: true });
+    cy.wait(3000);
 
     // Try to find existing schedule bars (work plans)
     cy.document().then((doc) => {
@@ -43,6 +44,7 @@ describe('Validate Login Functionality', () => {
         // Randomly select one work plan to delete
         const randomIndex = Math.floor(Math.random() * elements.length);
         const randomElement = elements[randomIndex];
+        cy.wait(3000);
 
         // Wrap the selected DOM element to allow Cypress actions
         cy.wrap(randomElement)

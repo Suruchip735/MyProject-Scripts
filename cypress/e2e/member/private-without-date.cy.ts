@@ -30,7 +30,7 @@ describe('Member Task - Create Task Private Project without date', () => {
       );
 
       //Click on side menu Member option
-      cy.get(selector.Member, { timeout: 1000 }).click({ force: true });
+      cy.get(selector.Member, { timeout:1000 }).click({ force: true });
 
       //select member Modle
       cy.get(selector.MemberModle).first().click({ force: true });
@@ -73,7 +73,7 @@ describe('Member Task - Create Task Private Project without date', () => {
       // Wait for the calendar to appear
       cy.get(
         'div.NewDependencyDateRangeCalendar__CalendarInputContainer-sc-si16xr-0',
-        { timeout: 10000 }
+        { timeout:10000 }
       ).should('be.visible');
 
       // Step 3: Select the end date (3 days after today)

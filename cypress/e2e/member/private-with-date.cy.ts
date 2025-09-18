@@ -26,10 +26,10 @@ describe('Member Task - Create Task Private Project with date', () => {
         (Cypress.env('LOGIN_PASSWORD') as string) || ''
       );
 
-      cy.contains('Dashboard', { timeout: 10000 }).should('be.visible'); // or some unique element
+      cy.contains('Dashboard', { timeout:10000 }).should('be.visible'); // or some unique element
 
       //Click on side menu Member option
-      cy.get(selector.Member, { timeout: 15000 })
+      cy.get(selector.Member, { timeout:7000 })
         .should('be.visible')
         .click({ force: true });
 
@@ -37,7 +37,7 @@ describe('Member Task - Create Task Private Project with date', () => {
       cy.get(selector.MemberModle).click({ force: true });
 
       //click on the task
-      cy.get(selector.Task, { timeout: 10000 }).click();
+      cy.get(selector.Task, { timeout:10000 }).click();
       cy.contains('Type task').click({ force: true }); // opens/activates the input
 
       //click on the select Project and Phase

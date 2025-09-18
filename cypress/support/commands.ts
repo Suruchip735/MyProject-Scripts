@@ -2,35 +2,57 @@
 // Custom Cypress commands with TypeScript support
 // ***********************************************
 
-// TypeScript declarations for custom commands
-// The @typescript-eslint/prefer-namespace-keyword rule is disabled here because
-// the `namespace` keyword is used within a `declare global` block, which is a valid
-// and standard TypeScript practice for extending global types.
 /* eslint-disable @typescript-eslint/no-namespace */
 declare global {
   namespace Cypress {
     interface Chainable {
-      /**
-       * Custom login command
-       * @param email - User email
-       * @param continueButtonText - Text for continue button
-       * @param password - User password
-       */
       login(
         email: string,
         continueButtonText: string,
         password: string
       ): Chainable<void>;
+
+      selectFirstMemberIfNone(
+        selectors: Record<string, string>
+      ): Chainable<void>;
     }
   }
 }
-/* eslint-enable @typescript-eslint/no-namespace */
 
-// Import login utility
 import { login } from './login';
 
-// Add custom commands
 Cypress.Commands.add('login', login);
 
-// Export to ensure this file is treated as a module
+Cypress.Commands.add(
+  'selectFirstMemberIfNone',
+  (selectors: Record<string, string>) => {
+    const { emptyMemberText, selectMembersText, memberCheckbox, saveButton } =
+      selectors;
+
+    if (
+      !emptyMemberText ||
+      !selectMembersText ||
+      !memberCheckbox ||
+      !saveButton
+    ) {
+      throw new Error(
+        "One or more required selector keys are missing in 'selectors' object passed to selectFirstMemberIfNone"
+      );
+    }
+
+    cy.get('body').then(($body) => {
+      if ($body.find(emptyMemberText).length > 0) {
+        const message = $body.find(emptyMemberText).text().trim();
+        if (message.includes('No Members Selected')) {
+          cy.log('No members selected – selecting one now');
+          cy.get(selectMembersText).first().click({ force: true });
+          cy.get(memberCheckbox).first().check({ force: true });
+          cy.get(saveButton).contains('Save').click({ force: true });
+          cy.wait(2000);
+        }
+      }
+    });
+  }
+);
+
 export {};
