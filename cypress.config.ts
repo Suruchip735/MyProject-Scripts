@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default defineConfig({
+  projectId: 'raodzb',
   pageLoadTimeout: 120000, // 2 minutes
   e2e: {
     baseUrl:
