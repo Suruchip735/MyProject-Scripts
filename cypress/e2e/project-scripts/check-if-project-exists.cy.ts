@@ -32,6 +32,7 @@ describe('Check if creating existing projects fail', () => {
       cy.wait(3000);
 
       //Select "Ädmin Portfolio" from the available portfolios
+
       cy.get('.BoardSelectMenu__StyledBody-sc-aholn7-5')
         .find('.BoardSelectMenu__BoardItemContents-sc-aholn7-6')
         .contains('Admin Portfolio')

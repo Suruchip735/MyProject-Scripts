@@ -14,9 +14,24 @@ describe('Creating automation scripts for mosaic project', () => {
     cy.clearLocalStorage();
   });
 
+  function validateIfPublicProject() {
+    // Check that the budget tab is selected or not
+    cy.get('body').then(($body) => {
+      if ($body.find('budget-tab').length > 0) {
+        // element exists, now check visibility
+        cy.get('budget-tab').should('be.visible');
+      } else {
+        cy.log('Public project selected.');
+        // eslint-disable-next-line no-console
+        console.log('budget-tab is not visible');
+      }
+    });
+  }
+  s;
+
   it(
     'Delete phases from the project',
-    { tags: ['@TESC-001', 'Project', 'Phase', 'Subphase'] },
+    { tags: ['@TESC-9019', 'Project', 'Subphases'] },
     () => {
       login(
         Cypress.env('LOGIN_USERNAME'),
@@ -46,6 +61,8 @@ describe('Creating automation scripts for mosaic project', () => {
 
       // Click on projects icon again to close
       cy.get(selectors.ProjectIconSideBar).click();
+
+      validateIfPublicProject();
 
       // Click on project phases icon
       cy.get(selectors.projectPhasesIcon).click();
@@ -220,6 +237,7 @@ describe('Creating automation scripts for mosaic project', () => {
             .contains('Add Subphase')
             .click({ force: true });
 
+          // Click on add custom phase
           cy.get(
             '.LabelWithHelperIndicator__StyledContainer-sc-13rp2ar-0.kMleQj.styles__StickyRowLabel-sc-te9dv3-5.kPCaPM'
           )
@@ -231,7 +249,6 @@ describe('Creating automation scripts for mosaic project', () => {
           const randomInt = faker.number.int({ min: 10000, max: 99999 });
 
           const sub_phaseName = `SPhase - ${randomInt}`;
-
           // Type input in phase name
           cy.get('[data-testid="phase-name-input"]').type(sub_phaseName);
 
@@ -250,8 +267,6 @@ describe('Creating automation scripts for mosaic project', () => {
             .then(($el) => {
               if ($el.is(':visible')) {
                 cy.log(`✔ Subphase "${sub_phaseName}" is created. `);
-
-                // Plan dates for subphase created
               } else {
                 cy.log(`ℹ Subphase "${sub_phaseName}" is not created.`);
               }

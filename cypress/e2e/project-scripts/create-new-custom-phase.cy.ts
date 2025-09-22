@@ -9,6 +9,26 @@ describe('Creating automation scripts for mosaic project', () => {
       '[data-testid="sidebar-menu-projects-btn"] > .styledComponents__ImageContainer-sc-tmkfvh-20',
     projectPhasesIcon: '.ProjectPhasesButton__Container-sc-evyft6-0',
   };
+
+  afterEach(() => {
+    cy.clearAllCookies();
+    cy.clearAllLocalStorage();
+  });
+
+  function validateIfPublicProject() {
+    // Check that the budget tab is selected or not
+    cy.get('body').then(($body) => {
+      if ($body.find('budget-tab').length > 0) {
+        // element exists, now check visibility
+        cy.get('budget-tab').should('be.visible');
+      } else {
+        cy.log('Public project selected.');
+        // eslint-disable-next-line no-console
+        console.log('budget-tab is not visible');
+      }
+    });
+  }
+
   it.only('Add new custom phase to a project', () => {
     login(
       Cypress.env('LOGIN_USERNAME'),
@@ -50,11 +70,14 @@ describe('Creating automation scripts for mosaic project', () => {
       }
     );
 
+    // Validate if public project is selected
+    validateIfPublicProject();
+
     // Click on phases
     cy.get(selectors.projectPhasesIcon).click();
 
     // Click on Add button
-    cy.get('.CreateButton__Button-sc-1clbypk-0').click();
+    cy.get('[data-testid="add-phase-milestone-button"]').click();
 
     // Select Add phase option
     cy.get(
@@ -139,6 +162,24 @@ describe('Creating automation scripts for mosaic project', () => {
                 cy.log(`End Date: ${endDate_formated}`);
 
                 cy.get(`[aria-label*="${endDate_formated}"]`).click();
+
+                // Click on Done button
+                cy.contains('Done').click();
+
+                // Click on Status dropdown
+                cy.get(
+                  '  .statusColumn > [data-testid="status-cell"] > .BudgetStatusTag__Container-sc-1vyowkp-2'
+                )
+                  .last()
+                  .click();
+
+                // Find the menu container
+                cy.get('.Menu__Scroller-sc-6fjgt9-2.ffHtwy')
+                  // Find the option elements inside it
+                  .find('.Menu__Item-sc-6fjgt9-11.jHqfUO')
+                  // Pick the first one (or any nth one)
+                  .eq(2)
+                  .click();
 
                 //cy.get(`td[aria-label="${startDate_formated}"]`).click();
                 //cy.get(`td[aria-label="${endDate_formated}"]`).click();
